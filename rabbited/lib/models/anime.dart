@@ -1,24 +1,63 @@
+import 'package:graphql/client.dart';
+
 class Anime {
+  int id;
   String name;
   bool isWatched;
   String imageUrl;
   String mainColor;
 
-  Anime({this.name, this.isWatched, this.imageUrl, this.mainColor});
+  Anime({
+    this.id,
+    this.name = 'vazio',
+    this.isWatched = false,
+    this.imageUrl = ' ',
+    this.mainColor = '#FFFFFF',
+  });
 
-  Anime.fromJson(Map<String, dynamic> json) {
-    name = json['name'];
-    isWatched = json['isWatched'];
-    imageUrl = json['imageUrl'];
-    mainColor = json['mainColor'];
+  Future getAnime(String anime) async {
+    final HttpLink _httpLink = HttpLink(
+      uri: 'https://graphql.anilist.co',
+    );
+
+    final GraphQLClient _client = GraphQLClient(
+      cache: InMemoryCache(),
+      link: _httpLink,
+    );
+
+    const String readRepositories = r'''
+  query AnimeSearch($anime: String) {
+  Media(search: $anime, type: ANIME) {
+    id
+    title {
+      romaji
+    }
+    format
+    status
+    bannerImage
+    coverImage {
+      color
+    }
+    trailer {
+      id
+    }
   }
+}
+''';
 
-  Map<String, dynamic> toJson() {
-    final Map<String, dynamic> data = new Map<String, dynamic>();
-    data['name'] = this.name;
-    data['isWatched'] = this.isWatched;
-    data['imageUrl'] = this.imageUrl;
-    data['mainColor'] = this.mainColor;
-    return data;
+    final QueryOptions options = QueryOptions(
+      document: readRepositories,
+      variables: <String, dynamic>{
+        'anime': anime,
+      },
+    );
+
+    final QueryResult result = await _client.query(options);
+
+    if (result.hasErrors) {
+      print(result.errors.toString());
+    }
+
+    return result.data['Media']['title']['romaji'];
   }
 }

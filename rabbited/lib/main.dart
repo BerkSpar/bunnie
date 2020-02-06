@@ -23,14 +23,7 @@ class MainPage extends StatefulWidget {
   MainPage() {
     animes = [];
 
-    animes.add(
-      Anime(
-          name: "Your Name",
-          mainColor: '#5dbbf1',
-          isWatched: true,
-          imageUrl:
-              'https://s4.anilist.co/file/anilistcdn/media/anime/banner/21519-1ayMXgNlmByb.jpg'),
-    );
+    animes.add(Anime(id: 1));
     animes.add(Anime(
         name: "Naruto",
         mainColor: '#e4e450',
@@ -38,7 +31,6 @@ class MainPage extends StatefulWidget {
         imageUrl:
             'https://s4.anilist.co/file/anilistcdn/media/anime/banner/20-AM2e7i3vmgf5.jpg'));
   }
-
   @override
   _MainPageState createState() => _MainPageState();
 }
@@ -66,8 +58,12 @@ class _MainPageState extends State<MainPage> {
       ),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
       floatingActionButton: FloatingActionButton(
-        onPressed: () {},
-        tooltip: 'Adicionar um Anime novo',
+        onPressed: () {
+          Anime().getAnime('shippuden').then((value) {
+            print(value);
+          });
+        },
+        tooltip: 'Adicionar um Anime',
         child: Icon(Icons.playlist_add),
         backgroundColor: Colors.cyan,
         elevation: 2.0,
@@ -108,7 +104,7 @@ class CardAnime extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ClipRRect(
-      borderRadius: BorderRadius.circular(30.0),
+      borderRadius: BorderRadius.circular(20.0),
       child: Card(
         color: HexColor(anime.mainColor),
         child: Column(
