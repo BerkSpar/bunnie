@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:native_color/native_color.dart';
 import 'models/anime.dart';
 
 void main() => runApp(MyApp());
@@ -21,8 +22,21 @@ class MainPage extends StatefulWidget {
 
   MainPage() {
     animes = [];
-    animes.add(Anime(name: "Naruto", isWatched: false));
-    animes.add(Anime(name: "Your Name", isWatched: true));
+
+    animes.add(
+      Anime(
+          name: "Your Name",
+          mainColor: '#5dbbf1',
+          isWatched: true,
+          imageUrl:
+              'https://s4.anilist.co/file/anilistcdn/media/anime/banner/21519-1ayMXgNlmByb.jpg'),
+    );
+    animes.add(Anime(
+        name: "Naruto",
+        mainColor: '#e4e450',
+        isWatched: false,
+        imageUrl:
+            'https://s4.anilist.co/file/anilistcdn/media/anime/banner/20-AM2e7i3vmgf5.jpg'));
   }
 
   @override
@@ -43,15 +57,11 @@ class _MainPageState extends State<MainPage> {
       ),
       body: ListView.builder(
         itemCount: widget.animes.length,
+        padding: EdgeInsets.all(10),
         itemBuilder: (_, index) {
           final anime = widget.animes[index];
 
-          return CheckboxListTile(
-            title: Text(anime.name),
-            key: Key(anime.name),
-            value: anime.isWatched,
-            onChanged: (value) {},
-          );
+          return CardAnime(anime: anime);
         },
       ),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
@@ -82,6 +92,49 @@ class _MainPageState extends State<MainPage> {
         notchMargin: 6,
         shape: CircularNotchedRectangle(),
         color: Colors.black,
+      ),
+    );
+  }
+}
+
+class CardAnime extends StatelessWidget {
+  const CardAnime({
+    Key key,
+    @required this.anime,
+  }) : super(key: key);
+
+  final Anime anime;
+
+  @override
+  Widget build(BuildContext context) {
+    return ClipRRect(
+      borderRadius: BorderRadius.circular(30.0),
+      child: Card(
+        color: HexColor(anime.mainColor),
+        child: Column(
+          children: <Widget>[
+            Image.network(
+              anime.imageUrl,
+            ),
+            ListTile(
+              title: Text(
+                anime.name,
+                style: TextStyle(
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
+              subtitle: Text(
+                'Foi assistido: ' + anime.isWatched.toString(),
+                style: TextStyle(
+                  fontWeight: FontWeight.w700,
+                ),
+              ),
+              onTap: () {
+                print('clicou no: ' + anime.name);
+              },
+            ),
+          ],
+        ),
       ),
     );
   }
