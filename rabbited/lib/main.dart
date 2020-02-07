@@ -19,6 +19,10 @@ class MainPage extends StatefulWidget {
 
   MainPage() {
     animes = [];
+    animes.add(Anime.searchAnime('Kimi no na ya'));
+    animes.add(Anime.searchAnime('Naruto'));
+    animes.add(Anime.searchAnime('Digimon'));
+    animes.add(Anime.searchAnime('Yugioh'));
   }
 
   @override
@@ -50,7 +54,7 @@ class _MainPageState extends State<MainPage> {
       floatingActionButton: FloatingActionButton(
         onPressed: () {
           setState(() {
-            widget.animes.add(Anime.searchAnime('Kimi no na ya'));
+            print('Pagina Atualizada!');
           });
         },
         tooltip: 'Adicionar um Anime',
