@@ -27,16 +27,23 @@ class MainPage extends StatefulWidget {
 }
 
 class _MainPageState extends State<MainPage> {
+  addNewAnime(String name) async {
+    widget.animes.add(Anime.searchAnime(name));
+    await new Future.delayed(const Duration(milliseconds: 1000));
+    setState(() {}); /* Gambiarra */
+  }
+
   showAlertDialog1(BuildContext context) {
     final addAnimeController = TextEditingController();
 
     Widget okButton = FlatButton(
       child: Text("OK"),
-      onPressed: () {
-        if (addAnimeController.text.isNotEmpty)
-          widget.animes.add(Anime.searchAnime(addAnimeController.text));
-
+      onPressed: () async {
         Navigator.pop(context);
+
+        if (addAnimeController.text.isNotEmpty) {
+          addNewAnime(addAnimeController.text);
+        }
       },
     );
 
@@ -151,6 +158,14 @@ class CardAnime extends StatelessWidget {
               ),
               onTap: () {
                 print('clicou no: ' + anime.name);
+                showDialog(
+                    context: context,
+                    builder: (_) {
+                      return Dialog(
+                        backgroundColor: HexColor('#FFFFF'),
+                        child: CardAnime(anime: anime),
+                      );
+                    });
               },
             ),
           ],
