@@ -20,6 +20,7 @@ class Anime {
     imageUrl = '';
     mainColor = '#FFFFF';
     name = '';
+    isWatched = false;
 
     queryByName(anime).then((value) {
       QueryResult result = value;

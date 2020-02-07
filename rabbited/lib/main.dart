@@ -19,10 +19,7 @@ class MainPage extends StatefulWidget {
 
   MainPage() {
     animes = [];
-    animes.add(Anime.searchAnime('Kimi no na ya'));
     animes.add(Anime.searchAnime('Naruto'));
-    animes.add(Anime.searchAnime('Digimon'));
-    animes.add(Anime.searchAnime('Yugioh'));
   }
 
   @override
@@ -30,6 +27,37 @@ class MainPage extends StatefulWidget {
 }
 
 class _MainPageState extends State<MainPage> {
+  showAlertDialog1(BuildContext context) {
+    final addAnimeController = TextEditingController();
+
+    Widget okButton = FlatButton(
+      child: Text("OK"),
+      onPressed: () {
+        if (addAnimeController.text.isNotEmpty)
+          widget.animes.add(Anime.searchAnime(addAnimeController.text));
+
+        Navigator.pop(context);
+      },
+    );
+
+    AlertDialog alerta = AlertDialog(
+      title: Text('Adicionar Novo Anime'),
+      content: TextFormField(
+        controller: addAnimeController,
+      ),
+      actions: [
+        okButton,
+      ],
+    );
+
+    showDialog(
+      context: context,
+      builder: (BuildContext context) {
+        return alerta;
+      },
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -54,7 +82,7 @@ class _MainPageState extends State<MainPage> {
       floatingActionButton: FloatingActionButton(
         onPressed: () {
           setState(() {
-            print('Pagina Atualizada!');
+            showAlertDialog1(context);
           });
         },
         tooltip: 'Adicionar um Anime',
@@ -68,9 +96,11 @@ class _MainPageState extends State<MainPage> {
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: <Widget>[
             IconButton(
-              icon: Icon(Icons.menu),
+              icon: Icon(Icons.replay),
               color: Colors.white,
-              onPressed: () {},
+              onPressed: () {
+                setState(() {});
+              },
             ),
             IconButton(
               icon: Icon(Icons.search),
