@@ -8,10 +8,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-      ),
+      title: 'Rabbited',
       home: MainPage(),
     );
   }
@@ -22,15 +19,8 @@ class MainPage extends StatefulWidget {
 
   MainPage() {
     animes = [];
-
-    animes.add(Anime(id: 1));
-    animes.add(Anime(
-        name: "Naruto",
-        mainColor: '#e4e450',
-        isWatched: false,
-        imageUrl:
-            'https://s4.anilist.co/file/anilistcdn/media/anime/banner/20-AM2e7i3vmgf5.jpg'));
   }
+
   @override
   _MainPageState createState() => _MainPageState();
 }
@@ -59,8 +49,8 @@ class _MainPageState extends State<MainPage> {
       floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
       floatingActionButton: FloatingActionButton(
         onPressed: () {
-          Anime().getAnime('shippuden').then((value) {
-            print(value);
+          setState(() {
+            widget.animes.add(Anime.searchAnime('Kimi no na ya'));
           });
         },
         tooltip: 'Adicionar um Anime',

@@ -9,13 +9,29 @@ class Anime {
 
   Anime({
     this.id,
-    this.name = 'vazio',
+    this.name = '',
+    this.mainColor = '#FFFFF',
+    this.imageUrl = '',
     this.isWatched = false,
-    this.imageUrl = ' ',
-    this.mainColor = '#FFFFFF',
   });
 
-  Future getAnime(String anime) async {
+  Anime.searchAnime(String anime) {
+    id = null;
+    imageUrl = '';
+    mainColor = '#FFFFF';
+    name = '';
+
+    queryByName(anime).then((value) {
+      QueryResult result = value;
+
+      id = result.data['Media']['id'];
+      imageUrl = result.data['Media']['bannerImage'];
+      mainColor = result.data['Media']['coverImage']['color'];
+      name = result.data['Media']['title']['romaji'];
+    });
+  }
+
+  Future queryByName(String anime) async {
     final HttpLink _httpLink = HttpLink(
       uri: 'https://graphql.anilist.co',
     );
@@ -58,6 +74,6 @@ class Anime {
       print(result.errors.toString());
     }
 
-    return result.data['Media']['title']['romaji'];
+    if (result.data != null) return result;
   }
 }
