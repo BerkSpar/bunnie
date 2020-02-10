@@ -2,31 +2,31 @@ import 'package:graphql/client.dart';
 
 class Anime {
   int id;
-  String name;
-  bool isWatched;
-  String imageUrl;
-  String mainColor;
+  String name = '';
+  bool isWatched = false;
+  String imageUrl = '';
+  String mainColor = '#FFFFF';
+  String type = '';
+  String format = '';
+  String trailerID = '';
 
   Anime({
     this.id,
-    this.name = '',
-    this.mainColor = '#FFFFF',
-    this.imageUrl = '',
-    this.isWatched = false,
+    this.name,
+    this.mainColor,
+    this.imageUrl,
+    this.isWatched,
+    this.format,
+    this.trailerID,
+    this.type,
   });
 
   Anime.searchAnime(String anime) {
-    id = null;
-    imageUrl = '';
-    mainColor = '#FFFFF';
-    name = '';
-    isWatched = false;
-
     queryByName(anime).then((value) {
       QueryResult result = value;
 
       id = result.data['Media']['id'];
-      imageUrl = result.data['Media']['bannerImage'];
+      imageUrl = result.data['Media']['coverImage']['large'];
       mainColor = result.data['Media']['coverImage']['color'];
       name = result.data['Media']['title']['romaji'];
     });
@@ -43,20 +43,27 @@ class Anime {
     );
 
     const String readRepositories = r'''
-  query AnimeSearch($anime: String) {
-  Media(search: $anime, type: ANIME) {
+query AnimeSearch($anime: String) {
+  Media(search: $anime) {
     id
     title {
       romaji
     }
+    type
     format
     status
     bannerImage
     coverImage {
+      large
       color
     }
     trailer {
       id
+      site
+    }
+    externalLinks {
+      site
+      url
     }
   }
 }

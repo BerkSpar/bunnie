@@ -19,7 +19,18 @@ class MainPage extends StatefulWidget {
 
   MainPage() {
     animes = [];
-    animes.add(Anime.searchAnime('Naruto'));
+
+    animes.add(Anime(
+      id: 21519,
+      format: 'MOVIE',
+      imageUrl:
+          'https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/nx21519-F2z1QPS5GmpC.jpg',
+      isWatched: true,
+      mainColor: '#5dbbf1',
+      name: 'Kimi no Na wa.',
+      trailerID: '3KR8_igDs1Y',
+      type: 'ANIME',
+    ));
   }
 
   @override
@@ -82,7 +93,27 @@ class _MainPageState extends State<MainPage> {
         itemBuilder: (_, index) {
           final anime = widget.animes[index];
 
-          return CardAnime(anime: anime);
+          return ClipRRect(
+            borderRadius: BorderRadius.circular(20.0),
+            child: Card(
+              color: HexColor(anime.mainColor),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.start,
+                children: <Widget>[
+                  Image.network(
+                    anime.imageUrl,
+                    scale: 1.4,
+                  ),
+                  SizedBox(
+                    width: 10,
+                  ),
+                  Text(
+                    anime.name,
+                  ),
+                ],
+              ),
+            ),
+          );
         },
       ),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
@@ -158,14 +189,6 @@ class CardAnime extends StatelessWidget {
               ),
               onTap: () {
                 print('clicou no: ' + anime.name);
-                showDialog(
-                    context: context,
-                    builder: (_) {
-                      return Dialog(
-                        backgroundColor: HexColor('#FFFFF'),
-                        child: CardAnime(anime: anime),
-                      );
-                    });
               },
             ),
           ],
