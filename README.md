@@ -6,6 +6,10 @@ Rabbited is a anime to-do list that allows add your favorite animes to a beatifu
 <h3>How to code</h3>
  
 * Needs to install flutter and its plugins.
+* Needs to get dependencies. 
+```
+$ flutter pub get
+```
  
 <h3>Features</h3>
  
