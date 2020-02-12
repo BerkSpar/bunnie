@@ -9,7 +9,7 @@ Rabbited is a anime to-do list that allows add your favorite animes to a beatifu
 
 With <b>Pub</b>:
 ```
-$ flutter pub get
+$ pub get
 ```
 With <b>Flutter</b>:
 ```
