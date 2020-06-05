@@ -1,0 +1,4 @@
+lib/app/modules/home/tabs/list/list_widget.dart
+test/app/modules/home/tabs/list/list_widget_test.dart
+lib/app/modules/home/tabs/list/list_controller.dart
+test/app/modules/home/tabs/list/list_controller_test.dart
