@@ -26,9 +26,7 @@ class _HomePageState extends ModularState<HomePage, HomeController> {
         centerTitle: true,
         backgroundColor: Colors.white,
       ),
-      body: Column(
-        children: <Widget>[],
-      ),
+      body: controller.tabs[controller.tabIndex],
       floatingActionButton: Observer(
         builder: (context) {
           return FloatingActionButton(
@@ -38,17 +36,23 @@ class _HomePageState extends ModularState<HomePage, HomeController> {
         },
       ),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
-      bottomNavigationBar: BottomNavigationBar(
-        items: [
-          BottomNavigationBarItem(
-            icon: Icon(Icons.format_list_bulleted),
-            title: Text('Lista'),
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.search),
-            title: Text('Pesquisar'),
-          ),
-        ],
+      bottomNavigationBar: Observer(
+        builder: (context) {
+          return BottomNavigationBar(
+            onTap: controller.switchTab,
+            currentIndex: controller.tabIndex,
+            items: [
+              BottomNavigationBarItem(
+                icon: Icon(Icons.format_list_bulleted),
+                title: Text('Lista'),
+              ),
+              BottomNavigationBarItem(
+                icon: Icon(Icons.search),
+                title: Text('Pesquisar'),
+              ),
+            ],
+          );
+        },
       ),
     );
   }

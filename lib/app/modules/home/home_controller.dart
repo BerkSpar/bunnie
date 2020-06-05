@@ -22,4 +22,9 @@ abstract class _HomeControllerBase with Store {
 
   @observable
   int tabIndex = 0;
+
+  @action
+  switchTab(int value) {
+    tabIndex = value;
+  }
 }
