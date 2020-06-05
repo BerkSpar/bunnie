@@ -1,25 +1,16 @@
 # Rabbited
  
 ### What is it?
-Rabbited is a anime to-do list that allows add your favorite animes to a beatiful list. You can change some values like if you ever watched or not and other things.
+Rabbited is a anime list that allows add your favorite animes to a beatiful list. You can change some values like if you ever watched or not and other things more.
  
 ### How to code
 * Needs to install flutter and its plugins.
 * Needs to get dependencies. 
-
-With <b>Pub</b>:
-```
-$ pub get
-```
-With <b>Flutter</b>:
-```
-$ flutter pub get
-```
+* Needs to install [Slidy](https://github.com/Flutterando/slidy).
  
 ### Features
 * Uses graphQL to get informations on [AniList](https://github.com/AniList/ApiV2-GraphQL-Docs).
-* Get a banner image by anime's name.
-* Get a description by anime's name.
-
-### Next Features
-* Show a youtube player that displays the anime's trailer.
+* Create group of animes on your list.
+* Save your animes' information on your phone. 
+* Search your saved animes by filter.
+* Watch your anime's trailer.
