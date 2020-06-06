@@ -12,12 +12,13 @@ class DioService extends Disposable {
   }
 
   Future<List<Anime>> searchAnime(String search) async {
+    List<Anime> animeList = List<Anime>();
+    search = Uri.encodeFull(search);
+
     try {
-      search = Uri.encodeFull(search);
       final result = await dio.get(
           '/anime?filter%5Btext%5D=$search&page%5Blimit%1D=1&page%5Boffset%5D=0/json');
 
-      List<Anime> animeList = List<Anime>();
       Map decodedMap = json.decode(result.data);
 
       for (Map item in decodedMap['data']) {
