@@ -24,21 +24,6 @@ mixin _$HomeController on _HomeControllerBase, Store {
     });
   }
 
-  final _$tabsAtom = Atom(name: '_HomeControllerBase.tabs');
-
-  @override
-  List<Widget> get tabs {
-    _$tabsAtom.reportRead();
-    return super.tabs;
-  }
-
-  @override
-  set tabs(List<Widget> value) {
-    _$tabsAtom.reportWrite(value, super.tabs, () {
-      super.tabs = value;
-    });
-  }
-
   final _$tabIndexAtom = Atom(name: '_HomeControllerBase.tabIndex');
 
   @override
@@ -54,12 +39,49 @@ mixin _$HomeController on _HomeControllerBase, Store {
     });
   }
 
+  final _$animesPesquisaAtom = Atom(name: '_HomeControllerBase.animesPesquisa');
+
+  @override
+  List<Anime> get animesPesquisa {
+    _$animesPesquisaAtom.reportRead();
+    return super.animesPesquisa;
+  }
+
+  @override
+  set animesPesquisa(List<Anime> value) {
+    _$animesPesquisaAtom.reportWrite(value, super.animesPesquisa, () {
+      super.animesPesquisa = value;
+    });
+  }
+
+  final _$searchAnimeAsyncAction =
+      AsyncAction('_HomeControllerBase.searchAnime');
+
+  @override
+  Future searchAnime(String search) {
+    return _$searchAnimeAsyncAction.run(() => super.searchAnime(search));
+  }
+
+  final _$_HomeControllerBaseActionController =
+      ActionController(name: '_HomeControllerBase');
+
+  @override
+  dynamic switchTab(int value) {
+    final _$actionInfo = _$_HomeControllerBaseActionController.startAction(
+        name: '_HomeControllerBase.switchTab');
+    try {
+      return super.switchTab(value);
+    } finally {
+      _$_HomeControllerBaseActionController.endAction(_$actionInfo);
+    }
+  }
+
   @override
   String toString() {
     return '''
 fabIcons: ${fabIcons},
-tabs: ${tabs},
-tabIndex: ${tabIndex}
+tabIndex: ${tabIndex},
+animesPesquisa: ${animesPesquisa}
     ''';
   }
 }

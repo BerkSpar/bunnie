@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_mobx/flutter_mobx.dart';
 import 'package:flutter_modular/flutter_modular.dart';
+import 'package:rabbited/app/modules/home/tabs/list/list_widget.dart';
+import 'package:rabbited/app/modules/home/tabs/search/search_widget.dart';
 import 'package:rabbited/app/shared/const.dart';
 import 'home_controller.dart';
 
@@ -17,6 +19,11 @@ class _HomePageState extends ModularState<HomePage, HomeController> {
 
   @override
   Widget build(BuildContext context) {
+    List<Widget> tabs = [
+      ListWidget(),
+      SearchWidget(controller: controller),
+    ];
+
     return Scaffold(
       appBar: AppBar(
         title: Text(
@@ -26,11 +33,17 @@ class _HomePageState extends ModularState<HomePage, HomeController> {
         centerTitle: true,
         backgroundColor: Colors.white,
       ),
-      body: controller.tabs[controller.tabIndex],
+      body: Observer(
+        builder: (context) {
+          return tabs[controller.tabIndex];
+        },
+      ),
       floatingActionButton: Observer(
         builder: (context) {
           return FloatingActionButton(
-            onPressed: () {},
+            onPressed: () {
+              controller.searchAnime("your name");
+            },
             child: controller.fabIcons[controller.tabIndex],
           );
         },

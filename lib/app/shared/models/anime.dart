@@ -1,13 +1,15 @@
 class Anime {
   String id;
   String type;
+  User user;
   Attributes attributes;
 
-  Anime({this.id, this.type, this.attributes});
+  Anime({this.id, this.type, this.user, this.attributes});
 
   Anime.fromJson(Map<String, dynamic> json) {
     id = json['id'];
     type = json['type'];
+    user = json['user'] != null ? new User.fromJson(json['user']) : null;
     attributes = json['attributes'] != null
         ? new Attributes.fromJson(json['attributes'])
         : null;
@@ -17,9 +19,34 @@ class Anime {
     final Map<String, dynamic> data = new Map<String, dynamic>();
     data['id'] = this.id;
     data['type'] = this.type;
+    if (this.user != null) {
+      data['user'] = this.user.toJson();
+    }
     if (this.attributes != null) {
       data['attributes'] = this.attributes.toJson();
     }
+    return data;
+  }
+}
+
+class User {
+  bool finished;
+  int episode;
+  int rating;
+
+  User({this.finished, this.episode, this.rating});
+
+  User.fromJson(Map<String, dynamic> json) {
+    finished = json['finished'];
+    episode = json['episode'];
+    rating = json['rating'];
+  }
+
+  Map<String, dynamic> toJson() {
+    final Map<String, dynamic> data = new Map<String, dynamic>();
+    data['finished'] = this.finished;
+    data['episode'] = this.episode;
+    data['rating'] = this.rating;
     return data;
   }
 }
