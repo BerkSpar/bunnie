@@ -1,10 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_mobx/flutter_mobx.dart';
 import 'package:flutter_modular/flutter_modular.dart';
+import 'package:lottie/lottie.dart';
 import 'package:rabbited/app/modules/home/tabs/list/list_widget.dart';
 import 'package:rabbited/app/modules/home/tabs/search/search_widget.dart';
 import 'package:rabbited/app/modules/home/widgets/search_delegate/search_delegate_widget.dart';
 import 'package:rabbited/app/shared/const.dart';
+import 'package:rabbited/app/shared/models/anime.dart';
+import '../../app_controller.dart';
 import 'home_controller.dart';
 
 class HomePage extends StatefulWidget {
@@ -17,12 +20,13 @@ class HomePage extends StatefulWidget {
 
 class _HomePageState extends ModularState<HomePage, HomeController> {
   final controller = Modular.get<HomeController>();
+  final app = Modular.get<AppController>();
 
   @override
   Widget build(BuildContext context) {
     List<Widget> tabs = [
       ListWidget(),
-      SearchWidget(controller: controller),
+      SearchWidget(),
     ];
 
     return Scaffold(
@@ -42,11 +46,20 @@ class _HomePageState extends ModularState<HomePage, HomeController> {
       floatingActionButton: Observer(
         builder: (context) {
           return FloatingActionButton(
-            onPressed: () {
-              showSearch(
-                context: context,
-                delegate: SearchDelegateWidget(),
-              );
+            onPressed: () async {
+              if (controller.tabIndex == 0) {
+                Anime anime = await showSearch(
+                  context: context,
+                  delegate: SearchDelegateWidget(),
+                );
+
+                if (anime != null) {
+                  anime.user = User();
+                  setState(() {
+                    app.insertAnime(anime);
+                  });
+                }
+              }
             },
             child: controller.fabIcons[controller.tabIndex],
           );
@@ -61,11 +74,11 @@ class _HomePageState extends ModularState<HomePage, HomeController> {
             items: [
               BottomNavigationBarItem(
                 icon: Icon(Icons.format_list_bulleted),
-                title: Text('Lista'),
+                title: Text('Animes'),
               ),
               BottomNavigationBarItem(
-                icon: Icon(Icons.search),
-                title: Text('Pesquisar'),
+                icon: Icon(Icons.person),
+                title: Text('Perfil'),
               ),
             ],
           );

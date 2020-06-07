@@ -39,29 +39,6 @@ mixin _$HomeController on _HomeControllerBase, Store {
     });
   }
 
-  final _$animesPesquisaAtom = Atom(name: '_HomeControllerBase.animesPesquisa');
-
-  @override
-  List<Anime> get animesPesquisa {
-    _$animesPesquisaAtom.reportRead();
-    return super.animesPesquisa;
-  }
-
-  @override
-  set animesPesquisa(List<Anime> value) {
-    _$animesPesquisaAtom.reportWrite(value, super.animesPesquisa, () {
-      super.animesPesquisa = value;
-    });
-  }
-
-  final _$searchAnimeAsyncAction =
-      AsyncAction('_HomeControllerBase.searchAnime');
-
-  @override
-  Future searchAnime(String search) {
-    return _$searchAnimeAsyncAction.run(() => super.searchAnime(search));
-  }
-
   final _$_HomeControllerBaseActionController =
       ActionController(name: '_HomeControllerBase');
 
@@ -80,8 +57,7 @@ mixin _$HomeController on _HomeControllerBase, Store {
   String toString() {
     return '''
 fabIcons: ${fabIcons},
-tabIndex: ${tabIndex},
-animesPesquisa: ${animesPesquisa}
+tabIndex: ${tabIndex}
     ''';
   }
 }

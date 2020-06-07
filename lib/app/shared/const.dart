@@ -1,6 +1,6 @@
 const app_name = "RABBITED";
 
-const version = "0.0.1t";
+const version = "0.0.2t";
 /*
 version meaning
 t - test version

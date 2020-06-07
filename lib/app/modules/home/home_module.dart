@@ -1,3 +1,4 @@
+import 'package:rabbited/app/modules/home/widgets/search_delegate/search_delegate_controller.dart';
 import 'package:rabbited/app/modules/home/widgets/anime_card/anime_card_controller.dart';
 import 'package:rabbited/app/modules/home/tabs/search/search_controller.dart';
 import 'package:rabbited/app/modules/home/tabs/list/list_controller.dart';
@@ -8,6 +9,7 @@ import 'package:rabbited/app/modules/home/home_page.dart';
 class HomeModule extends ChildModule {
   @override
   List<Bind> get binds => [
+        Bind((i) => SearchDelegateController()),
         Bind((i) => AnimeCardController()),
         Bind((i) => SearchController()),
         Bind((i) => ListController()),

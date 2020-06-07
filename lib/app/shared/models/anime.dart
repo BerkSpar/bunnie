@@ -6,7 +6,7 @@ class Anime {
 
   Anime({this.id, this.type, this.user, this.attributes});
 
-  Anime.fromJson(Map<String, dynamic> json) {
+  Anime.fromJson(Map json) {
     id = json['id'];
     type = json['type'];
     user = json['user'] != null ? new User.fromJson(json['user']) : null;
@@ -15,8 +15,8 @@ class Anime {
         : null;
   }
 
-  Map<String, dynamic> toJson() {
-    final Map<String, dynamic> data = new Map<String, dynamic>();
+  Map toJson() {
+    final Map data = new Map();
     data['id'] = this.id;
     data['type'] = this.type;
     if (this.user != null) {
@@ -34,16 +34,16 @@ class User {
   int episode;
   int rating;
 
-  User({this.finished, this.episode, this.rating});
+  User({this.finished = false, this.episode = 0, this.rating = 0});
 
-  User.fromJson(Map<String, dynamic> json) {
+  User.fromJson(Map json) {
     finished = json['finished'];
     episode = json['episode'];
     rating = json['rating'];
   }
 
-  Map<String, dynamic> toJson() {
-    final Map<String, dynamic> data = new Map<String, dynamic>();
+  Map toJson() {
+    final Map data = new Map();
     data['finished'] = this.finished;
     data['episode'] = this.episode;
     data['rating'] = this.rating;
@@ -113,7 +113,7 @@ class Attributes {
       this.showType,
       this.nsfw});
 
-  Attributes.fromJson(Map<String, dynamic> json) {
+  Attributes.fromJson(Map json) {
     createdAt = json['createdAt'];
     updatedAt = json['updatedAt'];
     slug = json['slug'];
@@ -150,8 +150,8 @@ class Attributes {
     nsfw = json['nsfw'];
   }
 
-  Map<String, dynamic> toJson() {
-    final Map<String, dynamic> data = new Map<String, dynamic>();
+  Map toJson() {
+    final Map data = new Map();
     data['createdAt'] = this.createdAt;
     data['updatedAt'] = this.updatedAt;
     data['slug'] = this.slug;
@@ -198,14 +198,14 @@ class Titles {
 
   Titles({this.en, this.enJp, this.jaJp});
 
-  Titles.fromJson(Map<String, dynamic> json) {
+  Titles.fromJson(Map json) {
     en = json['en'];
     enJp = json['en_jp'];
     jaJp = json['ja_jp'];
   }
 
-  Map<String, dynamic> toJson() {
-    final Map<String, dynamic> data = new Map<String, dynamic>();
+  Map toJson() {
+    final Map data = new Map();
     data['en'] = this.en;
     data['en_jp'] = this.enJp;
     data['ja_jp'] = this.jaJp;
@@ -222,7 +222,7 @@ class PosterImage {
 
   PosterImage({this.tiny, this.small, this.medium, this.large, this.original});
 
-  PosterImage.fromJson(Map<String, dynamic> json) {
+  PosterImage.fromJson(Map json) {
     tiny = json['tiny'];
     small = json['small'];
     medium = json['medium'];
@@ -230,8 +230,8 @@ class PosterImage {
     original = json['original'];
   }
 
-  Map<String, dynamic> toJson() {
-    final Map<String, dynamic> data = new Map<String, dynamic>();
+  Map toJson() {
+    final Map data = new Map();
     data['tiny'] = this.tiny;
     data['small'] = this.small;
     data['medium'] = this.medium;
@@ -249,15 +249,15 @@ class CoverImage {
 
   CoverImage({this.tiny, this.small, this.large, this.original});
 
-  CoverImage.fromJson(Map<String, dynamic> json) {
+  CoverImage.fromJson(Map json) {
     tiny = json['tiny'];
     small = json['small'];
     large = json['large'];
     original = json['original'];
   }
 
-  Map<String, dynamic> toJson() {
-    final Map<String, dynamic> data = new Map<String, dynamic>();
+  Map toJson() {
+    final Map data = new Map();
     data['tiny'] = this.tiny;
     data['small'] = this.small;
     data['large'] = this.large;

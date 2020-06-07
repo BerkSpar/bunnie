@@ -26,12 +26,11 @@ class DioService extends Disposable {
         final Anime anime = Anime.fromJson(item);
         animeList.add(anime);
       }
-
-      return animeList;
     } catch (e) {
       debugPrint('Erro Dio: $e');
-      return null;
     }
+
+    return animeList;
   }
 
   @override

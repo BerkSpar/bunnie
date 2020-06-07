@@ -9,30 +9,38 @@ part of 'app_controller.dart';
 // ignore_for_file: non_constant_identifier_names, unnecessary_lambdas, prefer_expression_function_bodies, lines_longer_than_80_chars, avoid_as, avoid_annotating_with_dynamic
 
 mixin _$AppController on _AppControllerBase, Store {
-  final _$valueAtom = Atom(name: '_AppControllerBase.value');
+  final _$savedAnimesAtom = Atom(name: '_AppControllerBase.savedAnimes');
 
   @override
-  int get value {
-    _$valueAtom.reportRead();
-    return super.value;
+  List<Anime> get savedAnimes {
+    _$savedAnimesAtom.reportRead();
+    return super.savedAnimes;
   }
 
   @override
-  set value(int value) {
-    _$valueAtom.reportWrite(value, super.value, () {
-      super.value = value;
+  set savedAnimes(List<Anime> value) {
+    _$savedAnimesAtom.reportWrite(value, super.savedAnimes, () {
+      super.savedAnimes = value;
     });
+  }
+
+  final _$getCurrentAnimesAsyncAction =
+      AsyncAction('_AppControllerBase.getCurrentAnimes');
+
+  @override
+  Future getCurrentAnimes() {
+    return _$getCurrentAnimesAsyncAction.run(() => super.getCurrentAnimes());
   }
 
   final _$_AppControllerBaseActionController =
       ActionController(name: '_AppControllerBase');
 
   @override
-  void increment() {
+  dynamic insertAnime(Anime anime) {
     final _$actionInfo = _$_AppControllerBaseActionController.startAction(
-        name: '_AppControllerBase.increment');
+        name: '_AppControllerBase.insertAnime');
     try {
-      return super.increment();
+      return super.insertAnime(anime);
     } finally {
       _$_AppControllerBaseActionController.endAction(_$actionInfo);
     }
@@ -41,7 +49,7 @@ mixin _$AppController on _AppControllerBase, Store {
   @override
   String toString() {
     return '''
-value: ${value}
+savedAnimes: ${savedAnimes}
     ''';
   }
 }
