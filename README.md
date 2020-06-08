@@ -1,5 +1,5 @@
-# Rabbited
- 
+# Rabbited - The anime list that saves your time!
+
 ![Searching Anime](https://i.imgur.com/Tryt8c1.gif) 
  
 ### What is it?
