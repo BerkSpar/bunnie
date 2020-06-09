@@ -13,13 +13,13 @@ mixin _$SearchDelegateController on _SearchDelegateControllerBase, Store {
       Atom(name: '_SearchDelegateControllerBase.animesPesquisa');
 
   @override
-  List<Anime> get animesPesquisa {
+  ObservableList<Anime> get animesPesquisa {
     _$animesPesquisaAtom.reportRead();
     return super.animesPesquisa;
   }
 
   @override
-  set animesPesquisa(List<Anime> value) {
+  set animesPesquisa(ObservableList<Anime> value) {
     _$animesPesquisaAtom.reportWrite(value, super.animesPesquisa, () {
       super.animesPesquisa = value;
     });

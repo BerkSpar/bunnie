@@ -4,7 +4,9 @@ import 'package:flutter_modular/flutter_modular.dart';
 import 'package:rabbited/app/shared/models/anime.dart';
 import 'dart:convert';
 
-class DioService extends Disposable {
+import 'package:rabbited/app/shared/services/interface/api_interface.dart';
+
+class DioService extends Disposable implements IApi {
   Dio dio;
 
   DioService(this.dio) {
@@ -34,5 +36,7 @@ class DioService extends Disposable {
   }
 
   @override
-  void dispose() {}
+  void dispose() {
+    dio.close();
+  }
 }
