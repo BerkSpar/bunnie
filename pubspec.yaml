@@ -7,6 +7,8 @@ environment:
   sdk: ">=2.1.0 <3.0.0"
 
 dependencies:
+  auto_size_text: ^2.1.0
+  optimized_cached_image: ^0.1.13
   stepper_counter_swipe: ^0.0.5
   lottie: ^0.4.0
   path_provider: ^1.6.10

@@ -5,7 +5,6 @@ import 'package:rabbited/app/modules/home/tabs/list/list_widget.dart';
 import 'package:rabbited/app/modules/home/tabs/perfil/perfil_widget.dart';
 import 'package:rabbited/app/modules/home/widgets/search_delegate/search_delegate_widget.dart';
 import 'package:rabbited/app/shared/const.dart';
-import 'package:rabbited/app/shared/models/anime.dart';
 import '../../app_controller.dart';
 import 'home_controller.dart';
 
@@ -30,6 +29,14 @@ class _HomePageState extends ModularState<HomePage, HomeController> {
 
     return Scaffold(
       appBar: AppBar(
+        actions: <Widget>[
+          IconButton(
+            icon: Icon(Icons.search),
+            onPressed: () {
+              showSearch(context: context, delegate: SearchDelegateWidget());
+            },
+          ),
+        ],
         title: Text(
           app_name,
           style: TextStyle(color: Theme.of(context).accentColor),
@@ -42,29 +49,6 @@ class _HomePageState extends ModularState<HomePage, HomeController> {
           return tabs[controller.tabIndex];
         },
       ),
-      floatingActionButton: Observer(
-        builder: (context) {
-          return FloatingActionButton(
-            onPressed: () async {
-              if (controller.tabIndex == 0) {
-                Anime anime = await showSearch(
-                  context: context,
-                  delegate: SearchDelegateWidget(),
-                );
-
-                if (anime != null) {
-                  anime.user = User();
-                  setState(() {
-                    app.insertAnime(anime);
-                  });
-                }
-              }
-            },
-            child: controller.fabIcons[controller.tabIndex],
-          );
-        },
-      ),
-      floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
       bottomNavigationBar: Observer(
         builder: (context) {
           return BottomNavigationBar(
