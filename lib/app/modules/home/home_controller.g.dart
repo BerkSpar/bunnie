@@ -6,36 +6,21 @@ part of 'home_controller.dart';
 // StoreGenerator
 // **************************************************************************
 
-// ignore_for_file: non_constant_identifier_names, unnecessary_lambdas, prefer_expression_function_bodies, lines_longer_than_80_chars, avoid_as, avoid_annotating_with_dynamic
+// ignore_for_file: non_constant_identifier_names, unnecessary_brace_in_string_interps, unnecessary_lambdas, prefer_expression_function_bodies, lines_longer_than_80_chars, avoid_as, avoid_annotating_with_dynamic
 
 mixin _$HomeController on _HomeControllerBase, Store {
-  final _$fabIconsAtom = Atom(name: '_HomeControllerBase.fabIcons');
+  final _$valueAtom = Atom(name: '_HomeControllerBase.value');
 
   @override
-  List<Icon> get fabIcons {
-    _$fabIconsAtom.reportRead();
-    return super.fabIcons;
+  int get value {
+    _$valueAtom.reportRead();
+    return super.value;
   }
 
   @override
-  set fabIcons(List<Icon> value) {
-    _$fabIconsAtom.reportWrite(value, super.fabIcons, () {
-      super.fabIcons = value;
-    });
-  }
-
-  final _$tabIndexAtom = Atom(name: '_HomeControllerBase.tabIndex');
-
-  @override
-  int get tabIndex {
-    _$tabIndexAtom.reportRead();
-    return super.tabIndex;
-  }
-
-  @override
-  set tabIndex(int value) {
-    _$tabIndexAtom.reportWrite(value, super.tabIndex, () {
-      super.tabIndex = value;
+  set value(int value) {
+    _$valueAtom.reportWrite(value, super.value, () {
+      super.value = value;
     });
   }
 
@@ -43,11 +28,11 @@ mixin _$HomeController on _HomeControllerBase, Store {
       ActionController(name: '_HomeControllerBase');
 
   @override
-  dynamic switchTab(int value) {
+  void increment() {
     final _$actionInfo = _$_HomeControllerBaseActionController.startAction(
-        name: '_HomeControllerBase.switchTab');
+        name: '_HomeControllerBase.increment');
     try {
-      return super.switchTab(value);
+      return super.increment();
     } finally {
       _$_HomeControllerBaseActionController.endAction(_$actionInfo);
     }
@@ -56,8 +41,7 @@ mixin _$HomeController on _HomeControllerBase, Store {
   @override
   String toString() {
     return '''
-fabIcons: ${fabIcons},
-tabIndex: ${tabIndex}
+value: ${value}
     ''';
   }
 }
