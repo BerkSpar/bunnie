@@ -13,7 +13,7 @@ import 'package:rabbited/app/modules/search/presenter/widgets/search_anime_deleg
 class AppModule extends MainModule {
   @override
   List<Bind> get binds => [
-        Bind((i) => SearchAnimeDelegateController()),
+        Bind((i) => SearchAnimeDelegateController(), singleton: false),
         Bind((i) => HomeController()),
         Bind((i) => AppController()),
         Bind((i) => Dio()),
