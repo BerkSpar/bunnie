@@ -6,5 +6,6 @@ abstract class SearchRepository {
   Future<Either<FailureSearch, List<AnimeResult>>> search(
     String searchText, {
     int page,
+    int limit,
   });
 }

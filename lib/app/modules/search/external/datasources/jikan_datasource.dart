@@ -9,9 +9,13 @@ class JikanDatasource implements SearchDatasource {
   JikanDatasource(this.dio);
 
   @override
-  Future<List<AnimeResultModel>> getSearch(String searchText,
-      {int page}) async {
-    String path = 'http://api.jikan.moe/v3/search/anime?q=$searchText&limit=15';
+  Future<List<AnimeResultModel>> getSearch(
+    String searchText, {
+    int page,
+    int limit = 50,
+  }) async {
+    String path =
+        'http://api.jikan.moe/v3/search/anime?q=$searchText&limit=$limit';
     if (page != null) path += '&page=$page';
 
     final response = await dio.get(path);

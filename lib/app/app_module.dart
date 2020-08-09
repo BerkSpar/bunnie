@@ -7,6 +7,7 @@ import 'package:rabbited/app/modules/search/domain/usecases/search_by_text.dart'
 import 'package:rabbited/app/modules/search/external/datasources/jikan_datasource.dart';
 import 'package:rabbited/app/modules/search/infra/repositories/search_repository_impl.dart';
 import 'package:rabbited/app/modules/search/presenter/page/home/home_controller.dart';
+import 'package:rabbited/app/modules/search/presenter/page/home/home_page.dart';
 import 'package:rabbited/app/modules/search/presenter/widgets/search_anime_delegate/search_anime_delegate_controller.dart';
 
 class AppModule extends MainModule {
@@ -22,7 +23,9 @@ class AppModule extends MainModule {
       ];
 
   @override
-  List<Router> get routers => [];
+  List<Router> get routers => [
+        Router(Modular.initialRoute, child: (context, args) => HomePage()),
+      ];
 
   @override
   Widget get bootstrap => AppWidget();

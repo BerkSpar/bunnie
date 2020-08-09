@@ -10,10 +10,34 @@ part of 'search_anime_delegate_controller.dart';
 
 mixin _$SearchAnimeDelegateController
     on _SearchAnimeDelegateControllerBase, Store {
+  final _$animeListAtom =
+      Atom(name: '_SearchAnimeDelegateControllerBase.animeList');
+
+  @override
+  ObservableList<AnimeResult> get animeList {
+    _$animeListAtom.reportRead();
+    return super.animeList;
+  }
+
+  @override
+  set animeList(ObservableList<AnimeResult> value) {
+    _$animeListAtom.reportWrite(value, super.animeList, () {
+      super.animeList = value;
+    });
+  }
+
+  final _$searchAnimeAsyncAction =
+      AsyncAction('_SearchAnimeDelegateControllerBase.searchAnime');
+
+  @override
+  Future searchAnime(String searchText) {
+    return _$searchAnimeAsyncAction.run(() => super.searchAnime(searchText));
+  }
+
   @override
   String toString() {
     return '''
-
+animeList: ${animeList}
     ''';
   }
 }

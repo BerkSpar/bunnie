@@ -7,6 +7,7 @@ abstract class SearchByText {
   Future<Either<FailureSearch, List<AnimeResult>>> call(
     String searchText, {
     int page,
+    int limit,
   });
 }
 
@@ -19,6 +20,7 @@ class SearchByTextImpl implements SearchByText {
   Future<Either<FailureSearch, List<AnimeResult>>> call(
     String searchText, {
     int page,
+    int limit,
   }) async {
     if (searchText == null || searchText.isEmpty) {
       return Left(InvalidTextError());
@@ -28,6 +30,10 @@ class SearchByTextImpl implements SearchByText {
       return Left(InvalidPageError());
     }
 
-    return repository.search(searchText, page: page);
+    if (limit != null && limit <= 0) {
+      return Left(InvalidPageError());
+    }
+
+    return repository.search(searchText, page: page, limit: limit);
   }
 }

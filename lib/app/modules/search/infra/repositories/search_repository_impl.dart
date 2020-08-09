@@ -13,6 +13,7 @@ class SearchRepositoryImpl implements SearchRepository {
   Future<Either<FailureSearch, List<AnimeResult>>> search(
     String searchText, {
     int page,
+    int limit,
   }) async {
     try {
       final result = await searchDatasource.getSearch(searchText, page: page);
