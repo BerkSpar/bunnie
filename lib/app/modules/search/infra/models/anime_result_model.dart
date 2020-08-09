@@ -10,7 +10,7 @@ class AnimeResultModel extends AnimeResult {
     synopsis = json['synopsis'];
     type = json['type'];
     episodes = json['episodes'];
-    score = json['score'];
+    score = json['score'].toDouble();
     startDate = json['start_date'];
     endDate = json['end_date'];
     members = json['members'];
