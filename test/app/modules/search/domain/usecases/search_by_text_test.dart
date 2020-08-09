@@ -44,9 +44,9 @@ main() {
 
     var result = await usecase(null);
 
-    expect(result.fold(id, id), isA<InvalidTextError>());
+    expect(result.fold(id, id), isA<InvalidInputError>());
 
     result = await usecase("");
-    expect(result.fold(id, id), isA<InvalidTextError>());
+    expect(result.fold(id, id), isA<InvalidInputError>());
   });
 }
