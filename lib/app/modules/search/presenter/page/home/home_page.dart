@@ -27,7 +27,10 @@ class _HomePageState extends ModularState<HomePage, HomeController> {
         ],
       ),
       body: Center(
-        child: Text('Rabbited - Anime List'),
+        child: RaisedButton(
+          child: Text('Press the button to acess anime full page'),
+          onPressed: () {},
+        ),
       ),
     );
   }
