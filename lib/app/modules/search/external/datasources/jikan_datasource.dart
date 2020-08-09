@@ -12,7 +12,7 @@ class JikanDatasource implements SearchDatasource {
   Future<List<AnimeResultModel>> getSearch(
     String searchText, {
     int page,
-    int limit = 50,
+    int limit = 20,
   }) async {
     String path =
         'http://api.jikan.moe/v3/search/anime?q=$searchText&limit=$limit';
