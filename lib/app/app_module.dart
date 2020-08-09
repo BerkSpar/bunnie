@@ -3,6 +3,7 @@ import 'package:rabbited/app/app_controller.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 import 'package:flutter/material.dart';
 import 'package:rabbited/app/app_widget.dart';
+import 'package:rabbited/app/modules/search/domain/usecases/search_by_id.dart';
 import 'package:rabbited/app/modules/search/domain/usecases/search_by_text.dart';
 import 'package:rabbited/app/modules/search/external/datasources/jikan_datasource.dart';
 import 'package:rabbited/app/modules/search/infra/repositories/search_repository_impl.dart';
@@ -19,6 +20,7 @@ class AppModule extends MainModule {
         Bind((i) => Dio()),
         Bind((i) => JikanDatasource(i())),
         Bind((i) => SearchByTextImpl(i())),
+        Bind((i) => SearchByIdImpl(i())),
         Bind((i) => SearchRepositoryImpl(i())),
       ];
 

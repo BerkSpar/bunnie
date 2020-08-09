@@ -19,11 +19,22 @@ main() {
     expect(result, completes);
   });
 
+  test('deve retonar um Anime', () async {
+    when(dio.get(any))
+        .thenAnswer((_) async => Response(data: animeResult, statusCode: 200));
+
+    final result = datasource.getSearchById(1);
+    expect(result, completes);
+  });
+
   test('deve retonar um DataSourceError se o código não for 200', () async {
     when(dio.get(any))
         .thenAnswer((_) async => Response(data: null, statusCode: 400));
 
-    final result = datasource.getSearch("Naruto");
-    expect(result, throwsA(isA<DataSourceError>()));
+    final search = datasource.getSearch("Naruto");
+    expect(search, throwsA(isA<DataSourceError>()));
+
+    final searchById = datasource.getSearchById(1);
+    expect(searchById, throwsA(isA<DataSourceError>()));
   });
 }
