@@ -1,4 +1,5 @@
 import 'package:dartz/dartz.dart';
+import 'package:rabbited/app/modules/search/domain/entities/anime.dart';
 import 'package:rabbited/app/modules/search/domain/entities/anime_result.dart';
 import 'package:rabbited/app/modules/search/domain/errors/errors.dart';
 
@@ -8,4 +9,6 @@ abstract class SearchRepository {
     int page,
     int limit,
   });
+
+  Future<Either<FailureSearch, Anime>> searchById(int id);
 }

@@ -1,3 +1,5 @@
+import 'dart:math';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 import 'package:rabbited/app/modules/search/presenter/widgets/search_anime_delegate/search_anime_delegate_widget.dart';
@@ -27,7 +29,12 @@ class _HomePageState extends ModularState<HomePage, HomeController> {
         ],
       ),
       body: Center(
-        child: Text('Rabbited - Anime List'),
+        child: RaisedButton(
+          child: Text('Press the button to acess anime full page'),
+          onPressed: () {
+            Navigator.pushNamed(context, '/anime/${Random().nextInt(300)}');
+          },
+        ),
       ),
     );
   }

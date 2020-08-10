@@ -23,7 +23,7 @@ class SearchByTextImpl implements SearchByText {
     int limit,
   }) async {
     if (searchText == null || searchText.isEmpty) {
-      return Left(InvalidTextError());
+      return Left(InvalidInputError());
     }
 
     if (page != null && page <= 0) {

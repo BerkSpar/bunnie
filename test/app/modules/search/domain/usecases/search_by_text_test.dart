@@ -1,22 +1,25 @@
 import 'package:dartz/dartz.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mockito/mockito.dart';
+import 'package:rabbited/app/modules/search/domain/entities/anime.dart';
 import 'package:rabbited/app/modules/search/domain/entities/anime_result.dart';
 import 'package:rabbited/app/modules/search/domain/errors/errors.dart';
 import 'package:rabbited/app/modules/search/domain/repositories/search_repository.dart';
+import 'package:rabbited/app/modules/search/domain/usecases/search_by_id.dart';
 import 'package:rabbited/app/modules/search/domain/usecases/search_by_text.dart';
 
 class SearchRepositoryMock extends Mock implements SearchRepository {}
 
 main() {
   final repository = SearchRepositoryMock();
-  final usecase = SearchByTextImpl(repository);
+  final searchByText = SearchByTextImpl(repository);
+  final searchById = SearchByIdImpl(repository);
 
   test('deve retornar uma lista de AnimeResult', () async {
     when(repository.search(any))
         .thenAnswer((_) async => Right(<AnimeResult>[]));
 
-    final result = await usecase("Naruto");
+    final result = await searchByText("Naruto");
     expect(result | null, isA<List<AnimeResult>>());
   });
 
@@ -24,7 +27,7 @@ main() {
     when(repository.search(any, page: anyNamed('page')))
         .thenAnswer((_) async => Right(<AnimeResult>[]));
 
-    final result = await usecase("Naruto", page: 1);
+    final result = await searchByText("Naruto", page: 1);
     expect(result | null, isA<List<AnimeResult>>());
   });
 
@@ -33,7 +36,7 @@ main() {
     when(repository.search(any, page: anyNamed('page')))
         .thenAnswer((_) async => Right(<AnimeResult>[]));
 
-    final result = await usecase("Naruto", page: -1);
+    final result = await searchByText("Naruto", page: -1);
     expect(result.fold(id, id), isA<InvalidPageError>());
   });
 
@@ -42,11 +45,26 @@ main() {
     when(repository.search(any))
         .thenAnswer((_) async => Right(<AnimeResult>[]));
 
-    var result = await usecase(null);
+    var result = await searchByText(null);
 
-    expect(result.fold(id, id), isA<InvalidTextError>());
+    expect(result.fold(id, id), isA<InvalidInputError>());
 
-    result = await usecase("");
-    expect(result.fold(id, id), isA<InvalidTextError>());
+    result = await searchByText("");
+    expect(result.fold(id, id), isA<InvalidInputError>());
+  });
+
+  test('deve retornar um Anime', () async {
+    when(repository.searchById(any)).thenAnswer((_) async => Right(Anime()));
+
+    var result = await searchById(20);
+    expect(result | null, isA<Anime>());
+  });
+
+  test('deve retornar um InvalidInputError caso pesquise um id inválido',
+      () async {
+    when(repository.searchById(any)).thenAnswer((_) async => Right(Anime()));
+
+    var result = await searchById(-1);
+    expect(result.fold(id, id), isA<InvalidInputError>());
   });
 }
