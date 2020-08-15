@@ -11,12 +11,60 @@ class SearchAnimeDelegateWidget extends SearchDelegate {
 
     return Observer(
       builder: (context) {
-        return ListView.builder(
+        return GridView.builder(
+          gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+            crossAxisCount: 3,
+            mainAxisSpacing: 10,
+            crossAxisSpacing: 10,
+            childAspectRatio: 0.7,
+          ),
+          padding: EdgeInsets.all(5),
           itemCount: controller?.animeList?.length ?? 0,
           itemBuilder: (_, index) {
             final anime = controller.animeList[index];
 
-            return Text(anime.title);
+            return GestureDetector(
+              onTap: () {
+                Navigator.pushNamed(context, '/anime/${anime.malId}');
+              },
+              child: ClipRRect(
+                borderRadius: BorderRadius.circular(10),
+                child: Stack(
+                  children: [
+                    ShaderMask(
+                      shaderCallback: (rect) {
+                        return LinearGradient(
+                          begin: Alignment.topCenter,
+                          end: Alignment.bottomCenter,
+                          colors: [Colors.transparent, Colors.black],
+                        ).createShader(Rect.fromLTRB(
+                            0, 120, rect.width, rect.height + 20));
+                      },
+                      blendMode: BlendMode.darken,
+                      child: Container(
+                        decoration: BoxDecoration(
+                          image: DecorationImage(
+                            fit: BoxFit.cover,
+                            image: NetworkImage(anime.imageUrl),
+                          ),
+                        ),
+                      ),
+                    ),
+                    Align(
+                      alignment: Alignment.bottomCenter,
+                      child: Text(
+                        anime.title,
+                        style: TextStyle(
+                          color: Colors.white,
+                          fontWeight: FontWeight.bold,
+                        ),
+                        textAlign: TextAlign.center,
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+            );
           },
         );
       },

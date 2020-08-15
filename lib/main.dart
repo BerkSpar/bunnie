@@ -7,5 +7,6 @@ void main() {
   SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle(
     statusBarColor: Colors.transparent,
   ));
+
   runApp(ModularApp(module: AppModule()));
 }

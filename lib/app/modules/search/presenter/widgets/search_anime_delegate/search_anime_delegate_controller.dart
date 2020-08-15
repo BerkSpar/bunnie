@@ -20,7 +20,7 @@ abstract class _SearchAnimeDelegateControllerBase with Store {
     if (searchText.isNotEmpty) {
       final result = await _search(searchText);
 
-      animeList = result.getOrElse(() => null).asObservable();
+      animeList = result.getOrElse(() => <AnimeResult>[]).asObservable();
     }
   }
 }
