@@ -32,7 +32,7 @@ class _HomePageState extends ModularState<HomePage, HomeController> {
         child: RaisedButton(
           child: Text('Press the button to acess anime full page'),
           onPressed: () {
-            Navigator.pushNamed(context, '/anime/${Random().nextInt(300)}');
+            Navigator.pushNamed(context, '/anime/20');
           },
         ),
       ),
