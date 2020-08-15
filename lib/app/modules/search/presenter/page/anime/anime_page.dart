@@ -34,16 +34,21 @@ class _AnimePageState extends ModularState<AnimePage, AnimeController> {
                 AnimeAppBar(controller: controller),
               ],
               body: ListView(
+                padding: EdgeInsets.symmetric(horizontal: 5, vertical: 5),
                 children: [
+                  Text(
+                    controller.anime.title,
+                    style:
+                        TextStyle(fontSize: 36.0, fontStyle: FontStyle.italic),
+                  ),
                   Container(
                     height: 50,
-                    padding: EdgeInsets.symmetric(horizontal: 5),
                     child: Row(
                       children: [
                         Expanded(
                           child: RaisedButton(
                             onPressed: () {},
-                            child: Text('Add to library'),
+                            child: Text('Adicionar à biblioteca'),
                             textColor: Colors.white,
                           ),
                         ),
@@ -77,12 +82,24 @@ class AnimeAppBar extends StatelessWidget {
     return SliverAppBar(
       expandedHeight: 250,
       floating: false,
-      pinned: true,
+      pinned: false,
       snap: false,
       elevation: 5,
       backgroundColor: Colors.transparent,
       flexibleSpace: BackgroundFlexibleSpaceBar(
-        title: Text(controller.anime.title),
+        title: Container(
+          height: 120,
+          width: 90,
+          decoration: BoxDecoration(
+            borderRadius: BorderRadius.circular(10),
+            image: DecorationImage(
+              fit: BoxFit.cover,
+              image: NetworkImage(
+                controller.anime.imageUrl,
+              ),
+            ),
+          ),
+        ),
         centerTitle: true,
         titlePadding: EdgeInsets.only(left: 20.0, bottom: 20.0),
         background: Container(
