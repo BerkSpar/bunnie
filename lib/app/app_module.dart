@@ -1,3 +1,7 @@
+import 'package:rabbited/app/modules/login/presenter/page/login/login_page.dart';
+import 'package:rabbited/app/modules/main/presenter/page/home/home_page.dart';
+
+import 'modules/login/presenter/page/login/login_controller.dart';
 import 'package:dio/dio.dart';
 import 'package:rabbited/app/app_controller.dart';
 import 'package:flutter_modular/flutter_modular.dart';
@@ -9,7 +13,6 @@ import 'package:rabbited/app/modules/main/external/datasources/jikan_datasource.
 import 'package:rabbited/app/modules/main/infra/repositories/search_repository_impl.dart';
 import 'package:rabbited/app/modules/main/presenter/page/anime/anime_page.dart';
 import 'package:rabbited/app/modules/main/presenter/page/home/home_controller.dart';
-import 'package:rabbited/app/modules/main/presenter/page/home/home_page.dart';
 import 'package:rabbited/app/modules/main/presenter/widgets/search_anime_delegate/search_anime_delegate_controller.dart';
 
 import 'modules/main/presenter/page/anime/anime_controller.dart';
@@ -17,6 +20,7 @@ import 'modules/main/presenter/page/anime/anime_controller.dart';
 class AppModule extends MainModule {
   @override
   List<Bind> get binds => [
+        Bind((i) => LoginController()),
         Bind((i) => AnimeController()),
         Bind((i) => SearchAnimeDelegateController(), singleton: false),
         Bind((i) => HomeController()),
@@ -30,7 +34,8 @@ class AppModule extends MainModule {
 
   @override
   List<Router> get routers => [
-        Router(Modular.initialRoute, child: (context, args) => HomePage()),
+        Router(Modular.initialRoute, child: (context, args) => LoginPage()),
+        Router('/home', child: (context, args) => HomePage()),
         Router('/anime/:id',
             child: (context, args) =>
                 AnimePage(animeId: int.parse(args.params['id']))),
