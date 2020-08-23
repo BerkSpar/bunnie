@@ -1,8 +1,8 @@
 import 'package:dio/dio.dart';
-import 'package:rabbited/app/modules/search/domain/errors/errors.dart';
-import 'package:rabbited/app/modules/search/infra/datasources/search_datasource.dart';
-import 'package:rabbited/app/modules/search/infra/models/anime_model.dart';
-import 'package:rabbited/app/modules/search/infra/models/anime_result_model.dart';
+import 'package:rabbited/app/modules/main/domain/errors/errors.dart';
+import 'package:rabbited/app/modules/main/infra/datasources/search_datasource.dart';
+import 'package:rabbited/app/modules/main/infra/models/anime_model.dart';
+import 'package:rabbited/app/modules/main/infra/models/anime_result_model.dart';
 
 class JikanDatasource implements SearchDatasource {
   final Dio dio;

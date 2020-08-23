@@ -1,7 +1,7 @@
 import 'package:flutter_modular/flutter_modular.dart';
 import 'package:mobx/mobx.dart';
-import 'package:rabbited/app/modules/search/domain/entities/anime_result.dart';
-import 'package:rabbited/app/modules/search/domain/usecases/search_by_text.dart';
+import 'package:rabbited/app/modules/main/domain/entities/anime_result.dart';
+import 'package:rabbited/app/modules/main/domain/usecases/search_by_text.dart';
 
 part 'search_anime_delegate_controller.g.dart';
 

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_mobx/flutter_mobx.dart';
 import 'package:flutter_modular/flutter_modular.dart';
-import 'package:rabbited/app/modules/search/presenter/widgets/search_anime_delegate/search_anime_delegate_controller.dart';
+import 'package:rabbited/app/modules/main/presenter/widgets/search_anime_delegate/search_anime_delegate_controller.dart';
 
 class SearchAnimeDelegateWidget extends SearchDelegate {
   final controller = Modular.get<SearchAnimeDelegateController>();

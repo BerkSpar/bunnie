@@ -3,16 +3,16 @@ import 'package:rabbited/app/app_controller.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 import 'package:flutter/material.dart';
 import 'package:rabbited/app/app_widget.dart';
-import 'package:rabbited/app/modules/search/domain/usecases/search_by_id.dart';
-import 'package:rabbited/app/modules/search/domain/usecases/search_by_text.dart';
-import 'package:rabbited/app/modules/search/external/datasources/jikan_datasource.dart';
-import 'package:rabbited/app/modules/search/infra/repositories/search_repository_impl.dart';
-import 'package:rabbited/app/modules/search/presenter/page/anime/anime_page.dart';
-import 'package:rabbited/app/modules/search/presenter/page/home/home_controller.dart';
-import 'package:rabbited/app/modules/search/presenter/page/home/home_page.dart';
-import 'package:rabbited/app/modules/search/presenter/widgets/search_anime_delegate/search_anime_delegate_controller.dart';
+import 'package:rabbited/app/modules/main/domain/usecases/search_by_id.dart';
+import 'package:rabbited/app/modules/main/domain/usecases/search_by_text.dart';
+import 'package:rabbited/app/modules/main/external/datasources/jikan_datasource.dart';
+import 'package:rabbited/app/modules/main/infra/repositories/search_repository_impl.dart';
+import 'package:rabbited/app/modules/main/presenter/page/anime/anime_page.dart';
+import 'package:rabbited/app/modules/main/presenter/page/home/home_controller.dart';
+import 'package:rabbited/app/modules/main/presenter/page/home/home_page.dart';
+import 'package:rabbited/app/modules/main/presenter/widgets/search_anime_delegate/search_anime_delegate_controller.dart';
 
-import 'modules/search/presenter/page/anime/anime_controller.dart';
+import 'modules/main/presenter/page/anime/anime_controller.dart';
 
 class AppModule extends MainModule {
   @override

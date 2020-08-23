@@ -1,12 +1,12 @@
 import 'package:dartz/dartz.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mockito/mockito.dart';
-import 'package:rabbited/app/modules/search/domain/entities/anime.dart';
-import 'package:rabbited/app/modules/search/domain/entities/anime_result.dart';
-import 'package:rabbited/app/modules/search/domain/errors/errors.dart';
-import 'package:rabbited/app/modules/search/domain/repositories/search_repository.dart';
-import 'package:rabbited/app/modules/search/domain/usecases/search_by_id.dart';
-import 'package:rabbited/app/modules/search/domain/usecases/search_by_text.dart';
+import 'package:rabbited/app/modules/main/domain/entities/anime.dart';
+import 'package:rabbited/app/modules/main/domain/entities/anime_result.dart';
+import 'package:rabbited/app/modules/main/domain/errors/errors.dart';
+import 'package:rabbited/app/modules/main/domain/repositories/search_repository.dart';
+import 'package:rabbited/app/modules/main/domain/usecases/search_by_id.dart';
+import 'package:rabbited/app/modules/main/domain/usecases/search_by_text.dart';
 
 class SearchRepositoryMock extends Mock implements SearchRepository {}
 

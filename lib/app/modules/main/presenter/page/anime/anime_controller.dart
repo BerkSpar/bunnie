@@ -1,7 +1,7 @@
 import 'package:flutter_modular/flutter_modular.dart';
 import 'package:mobx/mobx.dart';
-import 'package:rabbited/app/modules/search/domain/entities/anime.dart';
-import 'package:rabbited/app/modules/search/domain/usecases/search_by_id.dart';
+import 'package:rabbited/app/modules/main/domain/entities/anime.dart';
+import 'package:rabbited/app/modules/main/domain/usecases/search_by_id.dart';
 
 part 'anime_controller.g.dart';
 

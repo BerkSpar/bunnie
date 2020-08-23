@@ -1,4 +1,4 @@
-import 'package:rabbited/app/modules/search/domain/entities/anime_result.dart';
+import 'package:rabbited/app/modules/main/domain/entities/anime_result.dart';
 
 class AnimeResultModel extends AnimeResult {
   AnimeResultModel.fromJson(Map<String, dynamic> json) {

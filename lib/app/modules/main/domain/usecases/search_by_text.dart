@@ -1,7 +1,7 @@
 import 'package:dartz/dartz.dart';
-import 'package:rabbited/app/modules/search/domain/entities/anime_result.dart';
-import 'package:rabbited/app/modules/search/domain/errors/errors.dart';
-import 'package:rabbited/app/modules/search/domain/repositories/search_repository.dart';
+import 'package:rabbited/app/modules/main/domain/entities/anime_result.dart';
+import 'package:rabbited/app/modules/main/domain/errors/errors.dart';
+import 'package:rabbited/app/modules/main/domain/repositories/search_repository.dart';
 
 abstract class SearchByText {
   Future<Either<FailureSearch, List<AnimeResult>>> call(

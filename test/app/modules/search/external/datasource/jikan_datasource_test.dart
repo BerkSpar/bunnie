@@ -1,8 +1,8 @@
 import 'package:dio/dio.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mockito/mockito.dart';
-import 'package:rabbited/app/modules/search/domain/errors/errors.dart';
-import 'package:rabbited/app/modules/search/external/datasources/jikan_datasource.dart';
+import 'package:rabbited/app/modules/main/domain/errors/errors.dart';
+import 'package:rabbited/app/modules/main/external/datasources/jikan_datasource.dart';
 import '../../utils/jikan_response.dart';
 
 class DioMock extends Mock implements Dio {}

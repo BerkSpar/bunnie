@@ -1,13 +1,13 @@
 import 'package:dartz/dartz.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mockito/mockito.dart';
-import 'package:rabbited/app/modules/search/domain/entities/anime.dart';
-import 'package:rabbited/app/modules/search/domain/entities/anime_result.dart';
-import 'package:rabbited/app/modules/search/domain/errors/errors.dart';
-import 'package:rabbited/app/modules/search/infra/datasources/search_datasource.dart';
-import 'package:rabbited/app/modules/search/infra/models/anime_model.dart';
-import 'package:rabbited/app/modules/search/infra/models/anime_result_model.dart';
-import 'package:rabbited/app/modules/search/infra/repositories/search_repository_impl.dart';
+import 'package:rabbited/app/modules/main/domain/entities/anime.dart';
+import 'package:rabbited/app/modules/main/domain/entities/anime_result.dart';
+import 'package:rabbited/app/modules/main/domain/errors/errors.dart';
+import 'package:rabbited/app/modules/main/infra/datasources/search_datasource.dart';
+import 'package:rabbited/app/modules/main/infra/models/anime_model.dart';
+import 'package:rabbited/app/modules/main/infra/models/anime_result_model.dart';
+import 'package:rabbited/app/modules/main/infra/repositories/search_repository_impl.dart';
 
 import '../../utils/jikan_response.dart';
 

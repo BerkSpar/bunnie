@@ -1,7 +1,7 @@
 import 'package:dartz/dartz.dart';
-import 'package:rabbited/app/modules/search/domain/entities/anime.dart';
-import 'package:rabbited/app/modules/search/domain/errors/errors.dart';
-import 'package:rabbited/app/modules/search/domain/repositories/search_repository.dart';
+import 'package:rabbited/app/modules/main/domain/entities/anime.dart';
+import 'package:rabbited/app/modules/main/domain/errors/errors.dart';
+import 'package:rabbited/app/modules/main/domain/repositories/search_repository.dart';
 
 abstract class SearchById {
   Future<Either<FailureSearch, Anime>> call(int id);

@@ -1,9 +1,9 @@
-import 'package:rabbited/app/modules/search/domain/entities/anime.dart';
-import 'package:rabbited/app/modules/search/domain/errors/errors.dart';
-import 'package:rabbited/app/modules/search/domain/entities/anime_result.dart';
+import 'package:rabbited/app/modules/main/domain/entities/anime.dart';
+import 'package:rabbited/app/modules/main/domain/errors/errors.dart';
+import 'package:rabbited/app/modules/main/domain/entities/anime_result.dart';
 import 'package:dartz/dartz.dart';
-import 'package:rabbited/app/modules/search/domain/repositories/search_repository.dart';
-import 'package:rabbited/app/modules/search/infra/datasources/search_datasource.dart';
+import 'package:rabbited/app/modules/main/domain/repositories/search_repository.dart';
+import 'package:rabbited/app/modules/main/infra/datasources/search_datasource.dart';
 
 class SearchRepositoryImpl implements SearchRepository {
   final SearchDatasource searchDatasource;

@@ -2,10 +2,10 @@ import 'package:flutter_modular/flutter_modular.dart';
 import 'package:flutter_modular/flutter_modular_test.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:rabbited/app/app_module.dart';
-import 'package:rabbited/app/modules/search/domain/entities/anime.dart';
-import 'package:rabbited/app/modules/search/domain/entities/anime_result.dart';
-import 'package:rabbited/app/modules/search/domain/usecases/search_by_id.dart';
-import 'package:rabbited/app/modules/search/domain/usecases/search_by_text.dart';
+import 'package:rabbited/app/modules/main/domain/entities/anime.dart';
+import 'package:rabbited/app/modules/main/domain/entities/anime_result.dart';
+import 'package:rabbited/app/modules/main/domain/usecases/search_by_id.dart';
+import 'package:rabbited/app/modules/main/domain/usecases/search_by_text.dart';
 
 main() {
   SearchByText search;

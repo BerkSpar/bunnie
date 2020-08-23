@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_modular/flutter_modular.dart';
-import 'package:rabbited/app/modules/search/presenter/widgets/search_anime_delegate/search_anime_delegate_widget.dart';
+import 'package:rabbited/app/modules/main/presenter/widgets/search_anime_delegate/search_anime_delegate_widget.dart';
 import 'home_controller.dart';
 
 class HomePage extends StatefulWidget {
