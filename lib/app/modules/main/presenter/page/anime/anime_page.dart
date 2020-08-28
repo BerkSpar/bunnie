@@ -33,33 +33,156 @@ class _AnimePageState extends ModularState<AnimePage, AnimeController> {
               headerSliverBuilder: (_, __) => <Widget>[
                 AnimeAppBar(controller: controller),
               ],
-              body: ListView(
-                padding: EdgeInsets.symmetric(horizontal: 5, vertical: 5),
-                children: [
-                  Text(
-                    controller.anime.title,
-                    style:
-                        TextStyle(fontSize: 36.0, fontStyle: FontStyle.italic),
-                  ),
-                  Container(
-                    height: 50,
-                    child: Row(
-                      children: [
-                        Expanded(
-                          child: RaisedButton(
-                            onPressed: () {},
-                            child: Text('Adicionar à biblioteca'),
-                            textColor: Colors.white,
-                          ),
-                        ),
-                        IconButton(
-                          onPressed: () {},
-                          icon: Icon(Icons.more_vert),
-                        ),
-                      ],
+              body: SafeArea(
+                child: ListView(
+                  physics: BouncingScrollPhysics(),
+                  padding: EdgeInsets.symmetric(horizontal: 10),
+                  children: [
+                    Text(
+                      '${controller.anime.title}',
+                      style: TextStyle(fontSize: 36),
+                      textAlign: TextAlign.center,
                     ),
-                  ),
-                ],
+                    Padding(
+                      padding: EdgeInsets.only(top: 8),
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                        children: [
+                          Container(
+                            decoration: BoxDecoration(
+                              color: Colors.amber.withOpacity(0.45),
+                              borderRadius: BorderRadius.circular(5),
+                            ),
+                            height: 60,
+                            width: 60,
+                            child: Column(
+                              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                              children: [
+                                Text('Score'),
+                                Text(
+                                  '${controller.anime.score.toStringAsFixed(1)}',
+                                  style: TextStyle(
+                                    fontSize: 20,
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ),
+                          Container(
+                            decoration: BoxDecoration(
+                              color: Colors.amber.withOpacity(0.45),
+                              borderRadius: BorderRadius.circular(5),
+                            ),
+                            height: 60,
+                            width: 60,
+                            child: Column(
+                              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                              children: [
+                                Text('Episodes'),
+                                Text(
+                                  '${controller.anime.episodes}',
+                                  style: TextStyle(
+                                    fontSize: 20,
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ),
+                          Container(
+                            decoration: BoxDecoration(
+                              color: Colors.amber.withOpacity(0.45),
+                              borderRadius: BorderRadius.circular(5),
+                            ),
+                            height: 60,
+                            width: 60,
+                            child: Column(
+                              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                              children: [
+                                Text('Duration'),
+                                Text(
+                                  '${controller.anime.duration.substring(0, controller.anime.duration.indexOf(' '))} min',
+                                  style: TextStyle(
+                                    fontSize: 20,
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ),
+                          Container(
+                            decoration: BoxDecoration(
+                              color: Colors.amber.withOpacity(0.45),
+                              borderRadius: BorderRadius.circular(5),
+                            ),
+                            height: 60,
+                            width: 60,
+                            child: Column(
+                              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                              children: [
+                                Text('Type'),
+                                Text(
+                                  '${controller.anime.type}',
+                                  style: TextStyle(
+                                    fontSize: 20,
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ),
+                          Container(
+                            decoration: BoxDecoration(
+                              color: Colors.amber.withOpacity(0.45),
+                              borderRadius: BorderRadius.circular(5),
+                            ),
+                            height: 60,
+                            width: 60,
+                            child: Column(
+                              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                              children: [
+                                Text('Age'),
+                                Text(
+                                  '13+',
+                                  style: TextStyle(
+                                    fontSize: 20,
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                    SizedBox(
+                      height: 20,
+                    ),
+                    Text(
+                      'Naruto é uma série de mangá escrita e ilustrada por Masashi Kishimoto, que conta a história de Naruto Uzumaki, um jovem ninja que constantemente procura por reconhecimento e sonha em se tornar Hokage, o ninja de sua vila.',
+                      style: TextStyle(
+                        color: Colors.black54,
+                      ),
+                    ),
+                    Padding(
+                      padding: EdgeInsets.only(top: 15),
+                      child: Row(
+                        children: [
+                          Expanded(
+                            child: Container(
+                              height: 50,
+                              child: RaisedButton(
+                                onPressed: () {},
+                                child: Text('Adicionar à biblioteca'),
+                                textColor: Colors.white,
+                              ),
+                            ),
+                          ),
+                          IconButton(
+                            onPressed: () {},
+                            icon: Icon(Icons.more_vert),
+                          ),
+                        ],
+                      ),
+                    ),
+                  ],
+                ),
               ),
             );
           }

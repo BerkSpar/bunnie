@@ -57,7 +57,11 @@ class _LoginPageState extends ModularState<LoginPage, LoginController> {
                     children: [
                       Text(
                         'Bunnie',
-                        style: Theme.of(context).textTheme.headline2,
+                        style: TextStyle(
+                          fontSize: 58,
+                          color: Colors.grey,
+                          letterSpacing: 1.4,
+                        ),
                       ),
                       Padding(padding: EdgeInsets.only(bottom: 15)),
                       Container(
@@ -76,7 +80,9 @@ class _LoginPageState extends ModularState<LoginPage, LoginController> {
                         width: MediaQuery.of(context).size.width,
                         child: FlatButton(
                           onPressed: () {},
-                          child: Text('Cadastrar-se'),
+                          child: Text(
+                            'Cadastrar-se',
+                          ),
                         ),
                       ),
                     ],
