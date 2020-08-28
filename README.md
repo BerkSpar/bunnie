@@ -1,9 +1,9 @@
-# Rabbited - The anime list that saves your time!
+# Bunnie - The anime list that saves your time!
 
 ![Searching Anime](https://i.imgur.com/Tryt8c1.gif) 
  
 ### What is it?
-Rabbited is a anime list that allows add your favorite animes to a beatiful list. You can change some values like if you ever watched or not and other things more.
+Bunnie is a anime list that allows add your favorite animes to a beatiful list. You can change some values like if you ever watched or not and other things more.
  
 ### How to code
 * Needs to install flutter and its plugins.
