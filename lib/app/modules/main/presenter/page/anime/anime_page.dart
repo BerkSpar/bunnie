@@ -29,15 +29,29 @@ class _AnimePageState extends ModularState<AnimePage, AnimeController> {
           if (controller.anime == null) {
             return Center(child: CircularProgressIndicator());
           } else {
-            return NestedScrollView(
-              headerSliverBuilder: (_, __) => <Widget>[
-                AnimeAppBar(controller: controller),
-              ],
-              body: SafeArea(
-                child: ListView(
-                  physics: BouncingScrollPhysics(),
-                  padding: EdgeInsets.symmetric(horizontal: 10),
+            return Stack(
+              children: [
+                Column(
                   children: [
+                    Container(
+                      color: Colors.orange.withOpacity(0.45),
+                      width: MediaQuery.of(context).size.width,
+                      height: MediaQuery.of(context).size.height * 0.18,
+                      child: Align(
+                        alignment: Alignment.topLeft,
+                        child: SafeArea(
+                          child: IconButton(
+                            icon: Icon(Icons.arrow_back),
+                            onPressed: () {
+                              Navigator.pop(context);
+                            },
+                          ),
+                        ),
+                      ),
+                    ),
+                    SizedBox(
+                      height: 50,
+                    ),
                     Text(
                       '${controller.anime.title}',
                       style: TextStyle(fontSize: 36),
@@ -183,66 +197,26 @@ class _AnimePageState extends ModularState<AnimePage, AnimeController> {
                     ),
                   ],
                 ),
-              ),
+                Positioned(
+                  bottom: 700,
+                  left: 158,
+                  child: Container(
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(10),
+                      image: DecorationImage(
+                          image: NetworkImage(
+                            controller.anime.imageUrl,
+                          ),
+                          fit: BoxFit.fill),
+                    ),
+                    width: 100,
+                    height: 140,
+                  ),
+                ),
+              ],
             );
           }
         },
-      ),
-    );
-  }
-}
-
-class AnimeAppBar extends StatelessWidget {
-  const AnimeAppBar({
-    Key key,
-    @required this.controller,
-  }) : super(key: key);
-
-  final AnimeController controller;
-
-  @override
-  Widget build(BuildContext context) {
-    return SliverAppBar(
-      expandedHeight: 250,
-      floating: false,
-      pinned: false,
-      snap: false,
-      elevation: 5,
-      backgroundColor: Colors.transparent,
-      flexibleSpace: BackgroundFlexibleSpaceBar(
-        title: Container(
-          height: 120,
-          width: 90,
-          decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(10),
-            image: DecorationImage(
-              fit: BoxFit.cover,
-              image: NetworkImage(
-                controller.anime.imageUrl,
-              ),
-            ),
-          ),
-        ),
-        centerTitle: true,
-        titlePadding: EdgeInsets.only(left: 20.0, bottom: 20.0),
-        background: Container(
-          child: BackdropFilter(
-            filter: ImageFilter.blur(sigmaX: 5.0, sigmaY: 5.0),
-            child: Container(
-              decoration: BoxDecoration(
-                color: Colors.black.withOpacity(0.5),
-              ),
-            ),
-          ),
-          decoration: BoxDecoration(
-            image: DecorationImage(
-              image: NetworkImage(
-                controller.anime.imageUrl,
-              ),
-              fit: BoxFit.fitWidth,
-            ),
-          ),
-        ),
       ),
     );
   }
