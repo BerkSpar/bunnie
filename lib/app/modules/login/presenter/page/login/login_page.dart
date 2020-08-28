@@ -23,54 +23,65 @@ class _LoginPageState extends ModularState<LoginPage, LoginController> {
       body: Container(
         decoration: BoxDecoration(
           image: DecorationImage(
-            image: ExactAssetImage(image['path']),
+            image: ExactAssetImage(image),
             fit: BoxFit.cover,
           ),
         ),
         child: BackdropFilter(
           filter: ImageFilter.blur(sigmaX: 15, sigmaY: 15),
-          child: ListView(
-            reverse: true,
-            padding: EdgeInsets.all(10),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            mainAxisAlignment: MainAxisAlignment.end,
             children: [
               Container(
-                height: 60,
-                child: FlatButton(
-                  onPressed: () {},
-                  color: Colors.white.withOpacity(0.1),
-                  child: Text('Cadastrar-se'),
-                ),
-              ),
-              Padding(padding: EdgeInsets.only(bottom: 10)),
-              Container(
-                height: 60,
-                child: RaisedButton(
-                  onPressed: () {
-                    Modular.to.pushNamed('/home');
-                  },
-                  child: Text('Entrar'),
-                ),
-              ),
-              Padding(padding: EdgeInsets.only(bottom: 30)),
-              Column(
-                mainAxisSize: MainAxisSize.min,
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Text(
-                    'Bunnie',
-                    style: Theme.of(context)
-                        .textTheme
-                        .headline2
-                        .apply(color: image['textColor']),
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.only(
+                    topLeft: Radius.circular(15),
+                    topRight: Radius.circular(15),
                   ),
-                  Text(
-                    'A sua lista de animes que salva o seu tempo!',
-                    style: Theme.of(context)
-                        .textTheme
-                        .headline4
-                        .apply(color: image['textColor']),
+                  boxShadow: [
+                    BoxShadow(
+                      color: Colors.grey.withOpacity(0.2),
+                      blurRadius: 15,
+                      offset: Offset(0, -5),
+                    ),
+                  ],
+                  color: Colors.white,
+                ),
+                padding: EdgeInsets.only(top: 30),
+                child: Padding(
+                  padding: EdgeInsets.all(8.0),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    mainAxisAlignment: MainAxisAlignment.end,
+                    children: [
+                      Text(
+                        'Bunnie',
+                        style: Theme.of(context).textTheme.headline2,
+                      ),
+                      Padding(padding: EdgeInsets.only(bottom: 15)),
+                      Container(
+                        height: 60,
+                        width: MediaQuery.of(context).size.width,
+                        child: RaisedButton(
+                          onPressed: () {
+                            Modular.to.pushNamed('/home');
+                          },
+                          child: Text('Entrar'),
+                        ),
+                      ),
+                      Padding(padding: EdgeInsets.only(bottom: 10)),
+                      Container(
+                        height: 60,
+                        width: MediaQuery.of(context).size.width,
+                        child: FlatButton(
+                          onPressed: () {},
+                          child: Text('Cadastrar-se'),
+                        ),
+                      ),
+                    ],
                   ),
-                ],
+                ),
               ),
             ],
           ),
