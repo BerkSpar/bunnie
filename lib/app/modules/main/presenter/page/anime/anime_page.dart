@@ -15,6 +15,13 @@ class AnimePage extends StatefulWidget {
 }
 
 class _AnimePageState extends ModularState<AnimePage, AnimeController> {
+  final double _imageHeight = 190;
+  final double _imageWidgth = 140;
+
+  double _getImageLeft() {
+    return MediaQuery.of(context).size.width * 0.5 - _imageWidgth / 2;
+  }
+
   @override
   void initState() {
     controller.getAnime(widget.animeId);
@@ -49,67 +56,75 @@ class _AnimePageState extends ModularState<AnimePage, AnimeController> {
                         ),
                       ),
                     ),
-                    SizedBox(height: 50),
-                    Text(
-                      '${controller.anime.title}',
-                      style: TextStyle(fontSize: 36),
-                      textAlign: TextAlign.center,
-                    ),
-                    Padding(
-                      padding: EdgeInsets.only(top: 8),
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                    SizedBox(height: 80),
+                    Container(
+                      padding: EdgeInsets.symmetric(horizontal: 10),
+                      child: Column(
                         children: [
-                          SimpleCardWidget(
-                            title: 'Score',
-                            content: controller.anime.score.toStringAsFixed(1),
+                          Text(
+                            '${controller.anime.title}',
+                            style: TextStyle(
+                              fontSize: 36,
+                              fontWeight: FontWeight.w600,
+                            ),
+                            textAlign: TextAlign.center,
                           ),
-                          SimpleCardWidget(
-                            title: 'Episodes',
-                            content: controller.anime.episodes.toString(),
-                          ),
-                          SimpleCardWidget(
-                            title: 'Duration',
-                            content: controller.anime.duration.substring(
-                                0, controller.anime.duration.indexOf(' ')),
-                          ),
-                          SimpleCardWidget(
-                            title: 'Type',
-                            content: controller.anime.type,
-                          ),
-                          SimpleCardWidget(
-                            title: 'Age',
-                            content: '13+',
-                          ),
-                        ],
-                      ),
-                    ),
-                    SizedBox(
-                      height: 20,
-                    ),
-                    Text(
-                      'Naruto é uma série de mangá escrita e ilustrada por Masashi Kishimoto, que conta a história de Naruto Uzumaki, um jovem ninja que constantemente procura por reconhecimento e sonha em se tornar Hokage, o ninja de sua vila.',
-                      style: TextStyle(
-                        color: Colors.black54,
-                      ),
-                    ),
-                    Padding(
-                      padding: EdgeInsets.only(top: 15),
-                      child: Row(
-                        children: [
-                          Expanded(
-                            child: Container(
-                              height: 50,
-                              child: RaisedButton(
-                                onPressed: () {},
-                                child: Text('Adicionar à biblioteca'),
-                                textColor: Colors.white,
-                              ),
+                          Padding(
+                            padding: EdgeInsets.only(top: 8),
+                            child: Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                              children: [
+                                SimpleCardWidget(
+                                  title: 'Score',
+                                  content:
+                                      controller.anime.score.toStringAsFixed(1),
+                                ),
+                                SimpleCardWidget(
+                                  title: 'Episodes',
+                                  content: controller.anime.episodes.toString(),
+                                ),
+                                SimpleCardWidget(
+                                  title: 'Duration',
+                                  content: controller.anime.duration.substring(
+                                      0,
+                                      controller.anime.duration.indexOf(' ')),
+                                ),
+                                SimpleCardWidget(
+                                  title: 'Type',
+                                  content: controller.anime.type,
+                                ),
+                                SimpleCardWidget(
+                                  title: 'Age',
+                                  content: '13+',
+                                ),
+                              ],
                             ),
                           ),
-                          IconButton(
-                            onPressed: () {},
-                            icon: Icon(Icons.more_vert),
+                          SizedBox(height: 20),
+                          Text(
+                            'Naruto é uma série de mangá escrita e ilustrada por Masashi Kishimoto, que conta a história de Naruto Uzumaki, um jovem ninja que constantemente procura por reconhecimento e sonha em se tornar Hokage, o ninja de sua vila.',
+                            style: TextStyle(color: Colors.black54),
+                          ),
+                          Padding(
+                            padding: EdgeInsets.only(top: 15),
+                            child: Row(
+                              children: [
+                                Expanded(
+                                  child: Container(
+                                    height: 50,
+                                    child: RaisedButton(
+                                      onPressed: () {},
+                                      child: Text('Adicionar à biblioteca'),
+                                      textColor: Colors.white,
+                                    ),
+                                  ),
+                                ),
+                                IconButton(
+                                  onPressed: () {},
+                                  icon: Icon(Icons.more_vert),
+                                ),
+                              ],
+                            ),
                           ),
                         ],
                       ),
@@ -117,19 +132,20 @@ class _AnimePageState extends ModularState<AnimePage, AnimeController> {
                   ],
                 ),
                 Positioned(
-                  bottom: 700,
-                  left: 158,
+                  top: 40,
+                  left: _getImageLeft(),
                   child: Container(
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(10),
                       image: DecorationImage(
-                          image: NetworkImage(
-                            controller.anime.imageUrl,
-                          ),
-                          fit: BoxFit.fill),
+                        image: NetworkImage(
+                          controller.anime.imageUrl,
+                        ),
+                        fit: BoxFit.fill,
+                      ),
                     ),
-                    width: 100,
-                    height: 140,
+                    width: _imageWidgth,
+                    height: _imageHeight,
                   ),
                 ),
               ],
