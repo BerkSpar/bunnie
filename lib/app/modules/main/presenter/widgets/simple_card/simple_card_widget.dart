@@ -18,7 +18,8 @@ class SimpleCardWidget extends StatelessWidget {
           BoxShadow(
             blurRadius: 15,
             color: Colors.grey.withOpacity(0.4),
-          )
+            offset: Offset(3, 8),
+          ),
         ],
         borderRadius: BorderRadius.circular(5),
       ),
