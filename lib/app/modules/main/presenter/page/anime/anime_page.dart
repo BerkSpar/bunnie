@@ -1,8 +1,8 @@
 import 'dart:ui';
-import 'package:background_app_bar/background_app_bar.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_mobx/flutter_mobx.dart';
 import 'package:flutter_modular/flutter_modular.dart';
+import 'package:rabbited/app/modules/main/presenter/widgets/simple_card/simple_card_widget.dart';
 import 'anime_controller.dart';
 
 class AnimePage extends StatefulWidget {
@@ -49,9 +49,7 @@ class _AnimePageState extends ModularState<AnimePage, AnimeController> {
                         ),
                       ),
                     ),
-                    SizedBox(
-                      height: 50,
-                    ),
+                    SizedBox(height: 50),
                     Text(
                       '${controller.anime.title}',
                       style: TextStyle(fontSize: 36),
@@ -62,105 +60,26 @@ class _AnimePageState extends ModularState<AnimePage, AnimeController> {
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                         children: [
-                          Container(
-                            decoration: BoxDecoration(
-                              color: Colors.amber.withOpacity(0.45),
-                              borderRadius: BorderRadius.circular(5),
-                            ),
-                            height: 60,
-                            width: 60,
-                            child: Column(
-                              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                              children: [
-                                Text('Score'),
-                                Text(
-                                  '${controller.anime.score.toStringAsFixed(1)}',
-                                  style: TextStyle(
-                                    fontSize: 20,
-                                  ),
-                                ),
-                              ],
-                            ),
+                          SimpleCardWidget(
+                            title: 'Score',
+                            content: controller.anime.score.toStringAsFixed(1),
                           ),
-                          Container(
-                            decoration: BoxDecoration(
-                              color: Colors.amber.withOpacity(0.45),
-                              borderRadius: BorderRadius.circular(5),
-                            ),
-                            height: 60,
-                            width: 60,
-                            child: Column(
-                              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                              children: [
-                                Text('Episodes'),
-                                Text(
-                                  '${controller.anime.episodes}',
-                                  style: TextStyle(
-                                    fontSize: 20,
-                                  ),
-                                ),
-                              ],
-                            ),
+                          SimpleCardWidget(
+                            title: 'Episodes',
+                            content: controller.anime.episodes.toString(),
                           ),
-                          Container(
-                            decoration: BoxDecoration(
-                              color: Colors.amber.withOpacity(0.45),
-                              borderRadius: BorderRadius.circular(5),
-                            ),
-                            height: 60,
-                            width: 60,
-                            child: Column(
-                              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                              children: [
-                                Text('Duration'),
-                                Text(
-                                  '${controller.anime.duration.substring(0, controller.anime.duration.indexOf(' '))} min',
-                                  style: TextStyle(
-                                    fontSize: 20,
-                                  ),
-                                ),
-                              ],
-                            ),
+                          SimpleCardWidget(
+                            title: 'Duration',
+                            content: controller.anime.duration.substring(
+                                0, controller.anime.duration.indexOf(' ')),
                           ),
-                          Container(
-                            decoration: BoxDecoration(
-                              color: Colors.amber.withOpacity(0.45),
-                              borderRadius: BorderRadius.circular(5),
-                            ),
-                            height: 60,
-                            width: 60,
-                            child: Column(
-                              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                              children: [
-                                Text('Type'),
-                                Text(
-                                  '${controller.anime.type}',
-                                  style: TextStyle(
-                                    fontSize: 20,
-                                  ),
-                                ),
-                              ],
-                            ),
+                          SimpleCardWidget(
+                            title: 'Type',
+                            content: controller.anime.type,
                           ),
-                          Container(
-                            decoration: BoxDecoration(
-                              color: Colors.amber.withOpacity(0.45),
-                              borderRadius: BorderRadius.circular(5),
-                            ),
-                            height: 60,
-                            width: 60,
-                            child: Column(
-                              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                              children: [
-                                Text('Age'),
-                                Text(
-                                  '13+',
-                                  style: TextStyle(
-                                    fontSize: 20,
-                                  ),
-                                ),
-                              ],
-                            ),
+                          SimpleCardWidget(
+                            title: 'Age',
+                            content: '13+',
                           ),
                         ],
                       ),

@@ -29,13 +29,6 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "2.4.2"
-  background_app_bar:
-    dependency: "direct main"
-    description:
-      name: background_app_bar
-      url: "https://pub.dartlang.org"
-    source: hosted
-    version: "1.0.2"
   boolean_selector:
     dependency: transitive
     description:

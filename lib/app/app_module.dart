@@ -1,6 +1,6 @@
+import 'modules/main/presenter/widgets/simple_card/simple_card_controller.dart';
 import 'package:rabbited/app/modules/login/presenter/page/login/login_page.dart';
 import 'package:rabbited/app/modules/main/presenter/page/home/home_page.dart';
-
 import 'modules/login/presenter/page/login/login_controller.dart';
 import 'package:dio/dio.dart';
 import 'package:rabbited/app/app_controller.dart';
@@ -20,6 +20,7 @@ import 'modules/main/presenter/page/anime/anime_controller.dart';
 class AppModule extends MainModule {
   @override
   List<Bind> get binds => [
+        Bind((i) => SimpleCardController()),
         Bind((i) => LoginController()),
         Bind((i) => AnimeController()),
         Bind((i) => SearchAnimeDelegateController(), singleton: false),

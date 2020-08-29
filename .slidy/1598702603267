@@ -1,0 +1,4 @@
+lib/app/modules/main/presenter/widgets/simple_card/simple_card_widget.dart
+test/app/modules/main/presenter/widgets/simple_card/simple_card_widget_test.dart
+lib/app/modules/main/presenter/widgets/simple_card/simple_card_controller.dart
+test/app/modules/main/presenter/widgets/simple_card/simple_card_controller_test.dart
