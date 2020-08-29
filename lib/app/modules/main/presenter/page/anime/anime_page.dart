@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_mobx/flutter_mobx.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 import 'package:rabbited/app/modules/main/presenter/widgets/simple_card/simple_card_widget.dart';
+import 'package:readmore/readmore.dart';
 import 'anime_controller.dart';
 
 class AnimePage extends StatefulWidget {
@@ -101,30 +102,33 @@ class _AnimePageState extends ModularState<AnimePage, AnimeController> {
                             ),
                           ),
                           SizedBox(height: 20),
-                          Text(
-                            'Naruto é uma série de mangá escrita e ilustrada por Masashi Kishimoto, que conta a história de Naruto Uzumaki, um jovem ninja que constantemente procura por reconhecimento e sonha em se tornar Hokage, o ninja de sua vila.',
+                          ReadMoreText(
+                            controller.anime.synopsis,
+                            trimLines: 4,
+                            colorClickableText: Colors.pink,
+                            trimMode: TrimMode.Line,
+                            trimCollapsedText: '...Show more',
+                            trimExpandedText: ' show less',
                             style: TextStyle(color: Colors.black54),
                           ),
-                          Padding(
-                            padding: EdgeInsets.only(top: 15),
-                            child: Row(
-                              children: [
-                                Expanded(
-                                  child: Container(
-                                    height: 50,
-                                    child: RaisedButton(
-                                      onPressed: () {},
-                                      child: Text('Adicionar à biblioteca'),
-                                      textColor: Colors.white,
-                                    ),
+                          SizedBox(height: 15),
+                          Row(
+                            children: [
+                              Expanded(
+                                child: Container(
+                                  height: 50,
+                                  child: RaisedButton(
+                                    onPressed: () {},
+                                    child: Text('Adicionar à biblioteca'),
+                                    textColor: Colors.white,
                                   ),
                                 ),
-                                IconButton(
-                                  onPressed: () {},
-                                  icon: Icon(Icons.more_vert),
-                                ),
-                              ],
-                            ),
+                              ),
+                              IconButton(
+                                onPressed: () {},
+                                icon: Icon(Icons.more_vert),
+                              ),
+                            ],
                           ),
                         ],
                       ),
