@@ -1,12 +1,12 @@
 import 'package:mobx/mobx.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 
-part 'login_controller.g.dart';
+part 'home_controller.g.dart';
 
 @Injectable()
-class LoginController = _LoginControllerBase with _$LoginController;
+class HomeController = _HomeControllerBase with _$HomeController;
 
-abstract class _LoginControllerBase with Store {
+abstract class _HomeControllerBase with Store {
   @observable
   int value = 0;
 
