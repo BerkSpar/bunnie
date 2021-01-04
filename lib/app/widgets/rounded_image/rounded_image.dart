@@ -31,8 +31,8 @@ class RoundedImage extends StatelessWidget {
       },
       progressIndicatorBuilder: (_, url, download) {
         return Container(
-          height: height,
-          width: width,
+          height: 80,
+          width: 80,
           padding: EdgeInsets.all(16),
           child: CircularProgressIndicator(
             value: download.progress,
@@ -41,11 +41,11 @@ class RoundedImage extends StatelessWidget {
       },
       errorWidget: (_, url, error) {
         return Container(
-          height: height,
-          width: width,
+          height: 80,
+          width: 80,
           child: Icon(
             Icons.error,
-            size: height / 2,
+            size: 40,
           ),
         );
       },

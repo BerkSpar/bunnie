@@ -42,7 +42,7 @@ class NumberProgress extends StatelessWidget {
         Expanded(
           flex: 3,
           child: Text(
-            '$current of $max',
+            '$current of $max episodes',
             textAlign: TextAlign.center,
           ),
         ),
