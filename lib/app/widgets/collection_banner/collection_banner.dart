@@ -13,11 +13,15 @@ class CollectionBanner extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       padding: EdgeInsets.all(8),
-      child: RoundedImage(
-        height: double.maxFinite,
-        width: double.maxFinite,
-        borderRadius: BorderRadius.circular(8),
-        imageUrl: collection.imageUrl,
+      child: Stack(
+        children: [
+          RoundedImage(
+            height: double.maxFinite,
+            width: double.maxFinite,
+            borderRadius: BorderRadius.circular(8),
+            imageUrl: collection.imageUrl,
+          ),
+        ],
       ),
     );
   }

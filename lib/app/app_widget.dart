@@ -35,7 +35,7 @@ class _AppState extends State<App> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Bunnie'),
+        title: Text('Bunnie - Your Anime List'),
       ),
       body: PageView(
         controller: controller.pageController,
