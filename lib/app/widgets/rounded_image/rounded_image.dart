@@ -8,8 +8,8 @@ class RoundedImage extends StatelessWidget {
   final BorderRadius borderRadius;
 
   RoundedImage({
-    @required this.height,
-    @required this.width,
+    this.height,
+    this.width,
     @required this.borderRadius,
     @required this.imageUrl,
   });
