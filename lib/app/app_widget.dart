@@ -14,8 +14,15 @@ class AppWidget extends StatelessWidget {
       navigatorKey: Modular.navigatorKey,
       title: 'Bunnie',
       theme: ThemeData(
-        primarySwatch: Colors.blue,
+        primarySwatch: Colors.orange,
         fontFamily: 'Inter',
+        textTheme: TextTheme(
+          headline4: TextStyle(
+            fontSize: 32,
+            color: Colors.orange,
+            fontWeight: FontWeight.w300,
+          ),
+        ),
       ),
       initialRoute: '/',
       onGenerateRoute: Modular.generateRoute,
@@ -35,7 +42,27 @@ class _AppState extends State<App> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Bunnie - Your Anime List'),
+        title: Row(
+          mainAxisSize: MainAxisSize.min,
+          crossAxisAlignment: CrossAxisAlignment.end,
+          children: [
+            Image.asset(
+              'assets/images/logo.png',
+              height: 50,
+            ),
+            Text(
+              'Bunnie',
+              style: TextStyle(
+                fontSize: 24,
+                color: Colors.orangeAccent,
+                fontWeight: FontWeight.w600,
+              ),
+            ),
+          ],
+        ),
+        centerTitle: true,
+        elevation: 0,
+        backgroundColor: Theme.of(context).scaffoldBackgroundColor,
       ),
       body: PageView(
         controller: controller.pageController,

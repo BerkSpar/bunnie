@@ -23,10 +23,7 @@ class _FavoritePageState
           padding: EdgeInsets.symmetric(horizontal: 20),
           child: Text(
             'My Collections',
-            style: TextStyle(
-              fontSize: 32,
-              fontWeight: FontWeight.w300,
-            ),
+            style: Theme.of(context).textTheme.headline4,
           ),
         ),
         SizedBox(height: 8),
@@ -48,10 +45,7 @@ class _FavoritePageState
           padding: EdgeInsets.symmetric(horizontal: 20),
           child: Text(
             'My Animes',
-            style: TextStyle(
-              fontSize: 32,
-              fontWeight: FontWeight.w300,
-            ),
+            style: Theme.of(context).textTheme.headline4,
           ),
         ),
         SizedBox(height: 8),
