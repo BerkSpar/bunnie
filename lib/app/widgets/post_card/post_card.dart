@@ -40,17 +40,21 @@ class PostCard extends StatelessWidget {
             _image(),
             SizedBox(height: 16),
             Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                GestureDetector(
-                  onTap: () {},
-                  child: Icon(Icons.favorite_border),
+                Row(
+                  children: [
+                    GestureDetector(
+                      onTap: () {},
+                      child: Icon(Icons.favorite_border),
+                    ),
+                    SizedBox(width: 8),
+                    GestureDetector(
+                      onTap: () {},
+                      child: Icon(Icons.comment_outlined),
+                    ),
+                  ],
                 ),
-                SizedBox(width: 8),
-                GestureDetector(
-                  onTap: () {},
-                  child: Icon(Icons.comment_outlined),
-                ),
-                SizedBox(width: 8),
                 GestureDetector(
                   onTap: () {},
                   child: Icon(Icons.share_outlined),

@@ -10,37 +10,50 @@ class UserHeader extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Row(
+      mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
-        RoundedImage(
-          height: 48,
-          width: 48,
-          borderRadius: BorderRadius.circular(8),
-          imageUrl: user.photoUrl,
+        Row(
+          children: [
+            RoundedImage(
+              height: 48,
+              width: 48,
+              borderRadius: BorderRadius.circular(8),
+              imageUrl: user.photoUrl,
+            ),
+            SizedBox(width: 8),
+            Container(
+              height: 48,
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(
+                    user.name,
+                    style: TextStyle(
+                      fontSize: 18,
+                      color: Colors.black,
+                      fontWeight: FontWeight.w700,
+                    ),
+                  ),
+                  SizedBox(height: 4),
+                  Text(
+                    '@${user.username}',
+                    style: TextStyle(
+                      fontSize: 16,
+                      fontWeight: FontWeight.w300,
+                    ),
+                  ),
+                ],
+              ),
+            ),
+          ],
         ),
-        SizedBox(width: 8),
-        Container(
-          height: 48,
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Text(
-                user.name,
-                style: TextStyle(
-                  fontSize: 18,
-                  color: Colors.black,
-                  fontWeight: FontWeight.w700,
-                ),
-              ),
-              SizedBox(height: 4),
-              Text(
-                '@${user.username}',
-                style: TextStyle(
-                  fontSize: 16,
-                  fontWeight: FontWeight.w300,
-                ),
-              ),
-            ],
-          ),
+        OutlineButton(
+          onPressed: () {},
+          color: Theme.of(context).accentColor,
+          highlightColor: Theme.of(context).accentColor,
+          hoverColor: Theme.of(context).accentColor,
+          splashColor: Theme.of(context).accentColor,
+          child: Text('Follow'),
         ),
       ],
     );
