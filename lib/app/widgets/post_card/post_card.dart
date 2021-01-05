@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:rabbited/app/shared/models/post.dart';
 import 'package:rabbited/app/widgets/rounded_image/rounded_image.dart';
 import 'package:rabbited/app/widgets/user_header/user_header.dart';
+import 'package:share/share.dart';
 
 class PostCard extends StatelessWidget {
   final Post post;
@@ -40,9 +41,20 @@ class PostCard extends StatelessWidget {
             SizedBox(height: 16),
             Row(
               children: [
-                Icon(Icons.favorite_border),
+                GestureDetector(
+                  onTap: () {},
+                  child: Icon(Icons.favorite_border),
+                ),
                 SizedBox(width: 8),
-                Icon(Icons.share),
+                GestureDetector(
+                  onTap: () {},
+                  child: Icon(Icons.comment_outlined),
+                ),
+                SizedBox(width: 8),
+                GestureDetector(
+                  onTap: () {},
+                  child: Icon(Icons.share_outlined),
+                ),
               ],
             ),
           ],

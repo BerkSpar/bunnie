@@ -29,7 +29,6 @@ class _ProfilePageState extends ModularState<ProfilePage, ProfileController> {
               'Felipe Passos',
               style: TextStyle(
                 fontSize: 24,
-                color: Theme.of(context).accentColor,
                 fontWeight: FontWeight.w600,
               ),
             ),

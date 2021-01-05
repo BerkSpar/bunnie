@@ -23,31 +23,12 @@ class UserHeader extends StatelessWidget {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              RichText(
-                text: TextSpan(
-                  text: user.name,
-                  style: TextStyle(
-                    fontSize: 16,
-                    color: Colors.black,
-                    fontWeight: FontWeight.w700,
-                  ),
-                  children: <TextSpan>[
-                    TextSpan(
-                      text: ' • ',
-                      style: TextStyle(
-                        fontSize: 16,
-                        color: Colors.black54,
-                      ),
-                    ),
-                    TextSpan(
-                      text: 'Follow',
-                      style: TextStyle(
-                        fontSize: 16,
-                        color: Theme.of(context).accentColor,
-                        fontWeight: FontWeight.w700,
-                      ),
-                    )
-                  ],
+              Text(
+                user.name,
+                style: TextStyle(
+                  fontSize: 18,
+                  color: Colors.black,
+                  fontWeight: FontWeight.w700,
                 ),
               ),
               SizedBox(height: 4),
