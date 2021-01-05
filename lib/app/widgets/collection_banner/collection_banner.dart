@@ -42,12 +42,14 @@ class CollectionBanner extends StatelessWidget {
                 );
               },
               progressIndicatorBuilder: (_, __, download) {
-                return Container(
-                  height: 80,
-                  width: 80,
-                  padding: EdgeInsets.all(16),
-                  child: CircularProgressIndicator(
-                    value: download.progress,
+                return Center(
+                  child: Container(
+                    height: 80,
+                    width: 80,
+                    padding: EdgeInsets.all(16),
+                    child: CircularProgressIndicator(
+                      value: download.progress,
+                    ),
                   ),
                 );
               },

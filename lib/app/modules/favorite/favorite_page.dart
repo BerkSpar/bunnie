@@ -32,9 +32,10 @@ class _FavoritePageState
         SizedBox(height: 8),
         CarouselSlider(
           options: CarouselOptions(
-            height: 184.0,
+            height: 240.0,
             enlargeCenterPage: true,
             enlargeStrategy: CenterPageEnlargeStrategy.height,
+            autoPlay: true,
           ),
           items: controller.collections.map((collection) {
             return CollectionBanner(
