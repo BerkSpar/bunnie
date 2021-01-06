@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_modular/flutter_modular.dart';
+import 'package:rabbited/app/widgets/post_card/post_card.dart';
 import 'package:rabbited/app/widgets/rounded_image/rounded_image.dart';
 import 'profile_controller.dart';
 
@@ -45,42 +46,33 @@ class _ProfilePageState extends ModularState<ProfilePage, ProfileController> {
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                FlatButton(
+                RaisedButton(
+                  elevation: 0,
                   onPressed: () {},
-                  child: Column(
-                    mainAxisSize: MainAxisSize.min,
-                    children: [
-                      Icon(
-                        Icons.edit,
-                        color: Colors.black54,
-                      ),
-                      SizedBox(height: 4),
-                      Text(
-                        'Editar Perfil',
-                        style: TextStyle(
-                          color: Colors.black54,
-                        ),
-                      ),
-                    ],
+                  child: Icon(Icons.edit),
+                  highlightColor: Theme.of(context).accentColor,
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(90),
                   ),
                 ),
-                FlatButton(
+                SizedBox(width: 8),
+                RaisedButton(
+                  elevation: 0,
                   onPressed: () {},
-                  child: Column(
-                    mainAxisSize: MainAxisSize.min,
-                    children: [
-                      Icon(
-                        Icons.share,
-                        color: Colors.black54,
-                      ),
-                      SizedBox(height: 4),
-                      Text(
-                        'Compartilhar',
-                        style: TextStyle(
-                          color: Colors.black54,
-                        ),
-                      ),
-                    ],
+                  child: Icon(Icons.settings),
+                  highlightColor: Theme.of(context).accentColor,
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(90),
+                  ),
+                ),
+                SizedBox(width: 8),
+                RaisedButton(
+                  elevation: 0,
+                  onPressed: () {},
+                  child: Icon(Icons.share),
+                  highlightColor: Theme.of(context).accentColor,
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(90),
                   ),
                 ),
               ],
@@ -102,12 +94,28 @@ class _ProfilePageState extends ModularState<ProfilePage, ProfileController> {
         SizedBox(height: 8),
         GridView.builder(
           gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-              crossAxisCount: 3, crossAxisSpacing: 8, mainAxisSpacing: 8),
+            crossAxisCount: 5,
+            crossAxisSpacing: 8,
+            mainAxisSpacing: 8,
+          ),
           shrinkWrap: true,
           padding: EdgeInsets.symmetric(horizontal: 16),
           physics: ScrollPhysics(),
-          itemCount: controller.animes.length,
+          itemCount: controller.animes.length + 1,
           itemBuilder: (_, index) {
+            if (index == controller.animes.length) {
+              return Container(
+                decoration: BoxDecoration(
+                  color: Colors.black12,
+                  borderRadius: BorderRadius.circular(8),
+                ),
+                child: Icon(
+                  Icons.more_horiz,
+                  color: Colors.white,
+                ),
+              );
+            }
+
             final anime = controller.animes[index];
 
             return RoundedImage(
@@ -118,6 +126,28 @@ class _ProfilePageState extends ModularState<ProfilePage, ProfileController> {
             );
           },
         ),
+        SizedBox(height: 16),
+        Padding(
+          padding: EdgeInsets.symmetric(horizontal: 16),
+          child: Text(
+            'My Posts',
+            style: Theme.of(context).textTheme.headline4,
+          ),
+        ),
+        SizedBox(height: 8),
+        ListView.builder(
+          padding: EdgeInsets.symmetric(horizontal: 14),
+          shrinkWrap: true,
+          physics: ScrollPhysics(),
+          itemCount: controller.posts.length,
+          itemBuilder: (_, index) {
+            final post = controller.posts[index];
+
+            return PostCard(
+              post: post,
+            );
+          },
+        )
       ],
     );
   }
