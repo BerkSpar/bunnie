@@ -46,6 +46,9 @@ class NumberProgress extends StatelessWidget {
           child: Text(
             '$current of $max episodes',
             textAlign: TextAlign.center,
+            style: TextStyle(
+              color: BunnieColors.blackBrown,
+            ),
           ),
         ),
         Expanded(
@@ -63,6 +66,7 @@ class NumberProgress extends StatelessWidget {
                   '+',
                   style: TextStyle(
                     fontWeight: FontWeight.bold,
+                    color: BunnieColors.blackBrown,
                   ),
                 ),
               ),
