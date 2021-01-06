@@ -14,22 +14,22 @@ abstract class _FavoriteControllerBase with Store {
     Collection(
       imageUrl:
           'https://s4.anilist.co/file/anilistcdn/media/anime/banner/527-69bO9vmmewWm.jpg',
-      name: 'Pokémon',
+      title: 'Pokémon',
     ),
     Collection(
       imageUrl:
           'https://s4.anilist.co/file/anilistcdn/media/anime/banner/20502-pYbTtit95IYv.jpg',
-      name: 'Cute',
+      title: 'Cute',
     ),
     Collection(
       imageUrl:
           'https://s4.anilist.co/file/anilistcdn/media/anime/banner/21519-1ayMXgNlmByb.jpg',
-      name: 'Films',
+      title: 'Films',
     ),
     Collection(
       imageUrl:
           'https://s4.anilist.co/file/anilistcdn/media/anime/banner/101922-YfZhKBUDDS6L.jpg',
-      name: 'Romance',
+      title: 'Romance',
     ),
   ];
 

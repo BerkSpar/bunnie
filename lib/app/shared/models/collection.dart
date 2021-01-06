@@ -1,9 +1,9 @@
 class Collection {
   String imageUrl;
-  String name;
+  String title;
 
   Collection({
-    this.name,
+    this.title,
     this.imageUrl,
   });
 }

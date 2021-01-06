@@ -4,6 +4,7 @@ import 'package:rabbited/app/modules/explore/explore_module.dart';
 import 'package:rabbited/app/modules/favorite/favorite_module.dart';
 import 'package:rabbited/app/modules/home/home_module.dart';
 import 'package:rabbited/app/modules/profile/profile_module.dart';
+import 'package:rabbited/app/utils/bunnie_colors.dart';
 
 import 'app_controller.dart';
 
@@ -19,7 +20,7 @@ class AppWidget extends StatelessWidget {
         textTheme: TextTheme(
           headline4: TextStyle(
             fontSize: 32,
-            color: Colors.orange,
+            color: BunnieColors.main,
             fontWeight: FontWeight.w300,
           ),
         ),
@@ -54,7 +55,7 @@ class _AppState extends State<App> {
               'Bunnie',
               style: TextStyle(
                 fontSize: 24,
-                color: Colors.orangeAccent,
+                color: BunnieColors.main,
                 fontWeight: FontWeight.w600,
               ),
             ),

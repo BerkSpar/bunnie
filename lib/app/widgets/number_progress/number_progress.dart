@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:rabbited/app/utils/bunnie_colors.dart';
 
 class NumberProgress extends StatelessWidget {
   final int current;
@@ -33,6 +34,7 @@ class NumberProgress extends StatelessWidget {
                   '-',
                   style: TextStyle(
                     fontWeight: FontWeight.bold,
+                    color: BunnieColors.blackBrown,
                   ),
                 ),
               ),

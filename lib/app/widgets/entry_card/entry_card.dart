@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:rabbited/app/shared/models/entry.dart';
+import 'package:rabbited/app/utils/bunnie_colors.dart';
 import 'package:rabbited/app/widgets/number_progress/number_progress.dart';
 import 'package:rabbited/app/widgets/rounded_image/rounded_image.dart';
 
@@ -37,6 +38,10 @@ class EntryCard extends StatelessWidget {
                         entry.anime.title,
                         maxLines: 1,
                         overflow: TextOverflow.ellipsis,
+                        style: TextStyle(
+                          color: BunnieColors.blackBrown,
+                          fontSize: 16,
+                        ),
                       ),
                       GestureDetector(
                         onTap: () {},

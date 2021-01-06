@@ -20,7 +20,7 @@ class _FavoritePageState
       children: [
         SizedBox(height: 32),
         Padding(
-          padding: EdgeInsets.symmetric(horizontal: 20),
+          padding: EdgeInsets.symmetric(horizontal: 16),
           child: Text(
             'My Collections',
             style: Theme.of(context).textTheme.headline4,
@@ -42,7 +42,7 @@ class _FavoritePageState
         ),
         SizedBox(height: 24),
         Padding(
-          padding: EdgeInsets.symmetric(horizontal: 20),
+          padding: EdgeInsets.symmetric(horizontal: 16),
           child: Text(
             'My Animes',
             style: Theme.of(context).textTheme.headline4,
@@ -54,7 +54,7 @@ class _FavoritePageState
             return SizedBox(height: 8);
           },
           itemCount: controller.entries.length,
-          padding: EdgeInsets.symmetric(horizontal: 16),
+          padding: EdgeInsets.symmetric(horizontal: 14),
           shrinkWrap: true,
           physics: ScrollPhysics(),
           itemBuilder: (_, index) {

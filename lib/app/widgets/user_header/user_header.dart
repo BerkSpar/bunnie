@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:rabbited/app/shared/models/user.dart';
+import 'package:rabbited/app/utils/bunnie_colors.dart';
 import 'package:rabbited/app/widgets/rounded_image/rounded_image.dart';
 
 class UserHeader extends StatelessWidget {
@@ -30,7 +31,7 @@ class UserHeader extends StatelessWidget {
                     user.name,
                     style: TextStyle(
                       fontSize: 18,
-                      color: Colors.black,
+                      color: BunnieColors.brown,
                       fontWeight: FontWeight.w700,
                     ),
                   ),
@@ -40,6 +41,7 @@ class UserHeader extends StatelessWidget {
                     style: TextStyle(
                       fontSize: 16,
                       fontWeight: FontWeight.w300,
+                      color: BunnieColors.blackBrown,
                     ),
                   ),
                 ],
