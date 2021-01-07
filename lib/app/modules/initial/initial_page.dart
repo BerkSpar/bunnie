@@ -1,14 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_mobx/flutter_mobx.dart';
 import 'package:flutter_modular/flutter_modular.dart';
-import 'package:lottie/lottie.dart';
 import 'package:rabbited/app/utils/bunnie_colors.dart';
 import 'initial_controller.dart';
 
 class InitialPage extends StatefulWidget {
-  final String title;
-  const InitialPage({Key key, this.title = "Initial"}) : super(key: key);
-
   @override
   _InitialPageState createState() => _InitialPageState();
 }

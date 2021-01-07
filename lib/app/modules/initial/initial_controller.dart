@@ -28,6 +28,8 @@ abstract class _InitialControllerBase with Store {
     opacity = 1;
     width = 100;
 
+    await Future.delayed(Duration(milliseconds: 1200));
+
     if (isLogged) {
       Modular.to.pushNamed('/home');
     } else {
