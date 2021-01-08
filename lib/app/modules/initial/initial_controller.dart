@@ -31,9 +31,9 @@ abstract class _InitialControllerBase with Store {
     await Future.delayed(Duration(milliseconds: 1200));
 
     if (isLogged) {
-      Modular.to.pushNamed('/home');
+      Modular.to.pushReplacementNamed('/app');
     } else {
-      Modular.to.pushNamed('/login');
+      Modular.to.pushReplacementNamed('/login');
     }
   }
 }

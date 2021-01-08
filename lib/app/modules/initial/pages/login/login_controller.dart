@@ -8,13 +8,19 @@ class LoginController = _LoginControllerBase with _$LoginController;
 
 abstract class _LoginControllerBase with Store {
   @action
-  login() {}
+  login() {
+    Modular.to.pushReplacementNamed('/app');
+  }
 
   @action
-  loginWithGoogle() {}
+  loginWithGoogle() {
+    Modular.to.pushReplacementNamed('/app');
+  }
 
   @action
-  loginWithFacebook() {}
+  loginWithFacebook() {
+    Modular.to.pushReplacementNamed('/app');
+  }
 
   @action
   createAccount() {}

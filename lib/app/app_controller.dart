@@ -7,12 +7,4 @@ part 'app_controller.g.dart';
 @Injectable()
 class AppController = _AppControllerBase with _$AppController;
 
-abstract class _AppControllerBase with Store {
-  final pageController = PageController();
-
-  int get page => pageController.page?.round() ?? 0;
-
-  switchPage(int index) {
-    pageController.jumpToPage(index);
-  }
-}
+abstract class _AppControllerBase with Store {}
