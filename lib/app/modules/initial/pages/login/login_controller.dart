@@ -7,11 +7,18 @@ part 'login_controller.g.dart';
 class LoginController = _LoginControllerBase with _$LoginController;
 
 abstract class _LoginControllerBase with Store {
-  @observable
-  int value = 0;
+  @action
+  login() {}
 
   @action
-  void increment() {
-    value++;
-  }
+  loginWithGoogle() {}
+
+  @action
+  loginWithFacebook() {}
+
+  @action
+  createAccount() {}
+
+  @action
+  recovery() {}
 }
