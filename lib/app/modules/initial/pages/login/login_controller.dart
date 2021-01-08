@@ -23,7 +23,9 @@ abstract class _LoginControllerBase with Store {
   }
 
   @action
-  createAccount() {}
+  register() {
+    Modular.to.pushNamed('/register');
+  }
 
   @action
   recovery() {}

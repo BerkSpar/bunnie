@@ -56,11 +56,11 @@ mixin _$LoginController on _LoginControllerBase, Store {
   }
 
   @override
-  dynamic createAccount() {
+  dynamic register() {
     final _$actionInfo = _$_LoginControllerBaseActionController.startAction(
-        name: '_LoginControllerBase.createAccount');
+        name: '_LoginControllerBase.register');
     try {
-      return super.createAccount();
+      return super.register();
     } finally {
       _$_LoginControllerBaseActionController.endAction(_$actionInfo);
     }

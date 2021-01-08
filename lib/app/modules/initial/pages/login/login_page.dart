@@ -233,6 +233,28 @@ class _LoginPageState extends ModularState<LoginPage, LoginController> {
                         ),
                       ],
                     ),
+                    SizedBox(height: 16),
+                    FadeAnimation(
+                      1.9,
+                      child: Container(
+                        height: 48,
+                        width: double.maxFinite,
+                        child: OutlineButton(
+                          onPressed: controller.register,
+                          child: Text(
+                            'Create an Account',
+                            style: TextStyle(
+                              fontSize: 16,
+                              color: Colors.black,
+                              fontWeight: FontWeight.bold,
+                            ),
+                          ),
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(8),
+                          ),
+                        ),
+                      ),
+                    ),
                   ],
                 ),
               ),
