@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_mobx/flutter_mobx.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 import 'package:rabbited/app/utils/bunnie_colors.dart';
 import 'package:rabbited/app/modules/head/submodules/explore/explore_module.dart';
@@ -47,6 +48,18 @@ class _HeadPageState extends ModularState<HeadPage, HeadController> {
           RouterOutlet(module: FavoriteModule()),
           RouterOutlet(module: ProfileModule()),
         ],
+      ),
+      floatingActionButton: Observer(
+        builder: (context) {
+          if (controller.fabIcon == null) {
+            return Container();
+          }
+
+          return FloatingActionButton(
+            onPressed: controller.fabAction,
+            child: controller.fabIcon,
+          );
+        },
       ),
       bottomNavigationBar: AnimatedBuilder(
         animation: controller.pageController,

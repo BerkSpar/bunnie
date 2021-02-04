@@ -12,7 +12,27 @@ abstract class _HeadControllerBase with Store {
 
   int get page => pageController.page?.round() ?? 0;
 
+  @observable
+  Icon fabIcon = Icon(Icons.add);
+
   switchPage(int index) {
     pageController.jumpToPage(index);
+
+    switch (page) {
+      case 0:
+        fabIcon = Icon(Icons.add);
+        break;
+      case 1:
+        fabIcon = Icon(Icons.search);
+        break;
+      case 2:
+        fabIcon = Icon(Icons.favorite_outline);
+        break;
+      case 3:
+        fabIcon = null;
+        break;
+    }
   }
+
+  fabAction() {}
 }
