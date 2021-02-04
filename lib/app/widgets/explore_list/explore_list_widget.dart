@@ -29,7 +29,7 @@ class ExploreListWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: _size + 23,
+      height: _size + 30,
       child: ListView.separated(
         shrinkWrap: true,
         scrollDirection: Axis.horizontal,

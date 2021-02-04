@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_modular/flutter_modular.dart';
-import 'package:rabbited/app/shared/models/explore_list.dart';
 import 'package:rabbited/app/utils/bunnie_colors.dart';
 import 'package:rabbited/app/widgets/explore_list/explore_list_widget.dart';
 import 'explore_controller.dart';
