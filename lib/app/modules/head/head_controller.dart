@@ -18,18 +18,20 @@ abstract class _HeadControllerBase with Store {
   switchPage(int index) {
     pageController.jumpToPage(index);
 
-    switch (page) {
-      case 0:
-        fabIcon = Icon(Icons.add);
-        break;
-      case 1:
-        fabIcon = Icon(Icons.search);
-        break;
-      default:
-        fabIcon = null;
-        break;
+    if (page == 0) {
+      fabIcon = Icon(Icons.add);
+    } else if (page == 1) {
+      fabIcon = Icon(Icons.search);
+    } else {
+      fabIcon = null;
     }
   }
 
-  fabAction() {}
+  fabAction() {
+    if (page == 0) {
+      Modular.to.pushNamed('/post');
+    } else if (page == 1) {
+      Modular.to.pushNamed('/search');
+    }
+  }
 }
