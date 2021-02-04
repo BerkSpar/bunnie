@@ -25,10 +25,7 @@ abstract class _HeadControllerBase with Store {
       case 1:
         fabIcon = Icon(Icons.search);
         break;
-      case 2:
-        fabIcon = Icon(Icons.favorite_outline);
-        break;
-      case 3:
+      default:
         fabIcon = null;
         break;
     }
