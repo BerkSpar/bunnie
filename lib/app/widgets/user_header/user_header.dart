@@ -19,7 +19,7 @@ class UserHeader extends StatelessWidget {
               height: 48,
               width: 48,
               borderRadius: BorderRadius.circular(8),
-              imageUrl: user.photoUrl,
+              imageUrl: user.profilePhoto,
             ),
             SizedBox(width: 8),
             Container(

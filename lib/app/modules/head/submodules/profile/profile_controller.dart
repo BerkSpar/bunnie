@@ -80,7 +80,7 @@ abstract class _ProfileControllerBase with Store {
     Post(
       user: User(
         name: 'Felipe Passos',
-        photoUrl:
+        profilePhoto:
             'https://avatars3.githubusercontent.com/u/47111228?s=460&u=2d077bf84376e754ef2ae90d879521f6d5a453ba&v=4',
         username: 'berkspar',
       ),
@@ -92,7 +92,7 @@ abstract class _ProfileControllerBase with Store {
     Post(
       user: User(
         name: 'Felipe Passos',
-        photoUrl:
+        profilePhoto:
             'https://avatars3.githubusercontent.com/u/47111228?s=460&u=2d077bf84376e754ef2ae90d879521f6d5a453ba&v=4',
         username: 'berkspar',
       ),

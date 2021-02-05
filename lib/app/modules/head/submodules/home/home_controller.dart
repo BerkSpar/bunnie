@@ -13,7 +13,7 @@ abstract class _HomeControllerBase with Store {
     Post(
       user: User(
         name: 'Felipe Passos',
-        photoUrl:
+        profilePhoto:
             'https://avatars3.githubusercontent.com/u/47111228?s=460&u=2d077bf84376e754ef2ae90d879521f6d5a453ba&v=4',
         username: 'berkspar',
       ),
@@ -25,7 +25,7 @@ abstract class _HomeControllerBase with Store {
     Post(
       user: User(
         name: 'Bruno Assis',
-        photoUrl:
+        profilePhoto:
             'https://avatars2.githubusercontent.com/u/53619830?s=460&u=9809495b28fe821a29996d7b65b0091723fe95ad&v=4',
         username: 'sklorde',
       ),
@@ -36,7 +36,7 @@ abstract class _HomeControllerBase with Store {
     Post(
       user: User(
         name: 'Felipe Passos',
-        photoUrl:
+        profilePhoto:
             'https://avatars3.githubusercontent.com/u/47111228?s=460&u=2d077bf84376e754ef2ae90d879521f6d5a453ba&v=4',
         username: 'berkspar',
       ),
@@ -46,7 +46,7 @@ abstract class _HomeControllerBase with Store {
     Post(
       user: User(
         name: 'Bruno Assis',
-        photoUrl:
+        profilePhoto:
             'https://avatars2.githubusercontent.com/u/53619830?s=460&u=9809495b28fe821a29996d7b65b0091723fe95ad&v=4',
         username: 'sklorde',
       ),
