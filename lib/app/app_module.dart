@@ -1,3 +1,5 @@
+import 'package:dio/dio.dart';
+import 'shared/repositories/bunnie_api_repository.dart';
 import 'package:rabbited/app/modules/initial/initial_module.dart';
 import 'package:rabbited/app/pages/post/post_page.dart';
 import 'package:rabbited/app/pages/post/post_controller.dart';
@@ -13,6 +15,7 @@ import 'app_widget.dart';
 class AppModule extends MainModule {
   @override
   List<Bind> get binds => [
+        $BunnieApiRepository,
         $CollectionBannerController,
         $PostController,
         $AppController,

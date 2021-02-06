@@ -11,20 +11,23 @@ class User {
   String createdAt;
   String updatedAt;
   String token;
+  String password;
 
-  User(
-      {this.id,
-      this.name,
-      this.lastName,
-      this.mobile,
-      this.username,
-      this.profilePhoto,
-      this.email,
-      this.bio,
-      this.isPublic,
-      this.createdAt,
-      this.updatedAt,
-      this.token});
+  User({
+    this.id,
+    this.name,
+    this.lastName,
+    this.mobile,
+    this.username,
+    this.profilePhoto,
+    this.email,
+    this.bio,
+    this.isPublic,
+    this.createdAt,
+    this.updatedAt,
+    this.token,
+    this.password,
+  });
 
   User.fromJson(Map<String, dynamic> json) {
     id = json['id'];
