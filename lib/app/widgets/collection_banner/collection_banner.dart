@@ -70,7 +70,7 @@ class CollectionBanner extends StatelessWidget {
             child: Padding(
               padding: EdgeInsets.all(16),
               child: Text(
-                collection.title,
+                collection.name,
                 style: TextStyle(
                   fontSize: 24,
                   fontWeight: FontWeight.bold,

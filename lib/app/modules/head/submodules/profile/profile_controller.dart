@@ -1,6 +1,7 @@
 import 'package:mobx/mobx.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 import 'package:rabbited/app/shared/models/anime.dart';
+import 'package:rabbited/app/shared/models/cover_image.dart';
 import 'package:rabbited/app/shared/models/post.dart';
 import 'package:rabbited/app/shared/models/user.dart';
 

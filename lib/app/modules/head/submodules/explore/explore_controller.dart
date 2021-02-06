@@ -2,6 +2,7 @@ import 'package:mobx/mobx.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 import 'package:rabbited/app/shared/models/anime.dart';
 import 'package:rabbited/app/shared/models/collection.dart';
+import 'package:rabbited/app/shared/models/cover_image.dart';
 import 'package:rabbited/app/shared/models/explore_list.dart';
 
 part 'explore_controller.g.dart';
@@ -228,42 +229,42 @@ abstract class _ExploreControllerBase with Store {
         Collection(
           imageUrl:
               'https://s4.anilist.co/file/anilistcdn/media/anime/banner/527-69bO9vmmewWm.jpg',
-          title: 'Pokémon',
+          name: 'Pokémon',
         ),
         Collection(
           imageUrl:
               'https://s4.anilist.co/file/anilistcdn/media/anime/banner/20502-pYbTtit95IYv.jpg',
-          title: 'Cute',
+          name: 'Cute',
         ),
         Collection(
           imageUrl:
               'https://s4.anilist.co/file/anilistcdn/media/anime/banner/21519-1ayMXgNlmByb.jpg',
-          title: 'Films',
+          name: 'Films',
         ),
         Collection(
           imageUrl:
               'https://s4.anilist.co/file/anilistcdn/media/anime/banner/101922-YfZhKBUDDS6L.jpg',
-          title: 'Romance',
+          name: 'Romance',
         ),
         Collection(
           imageUrl:
               'https://s4.anilist.co/file/anilistcdn/media/anime/banner/527-69bO9vmmewWm.jpg',
-          title: 'Pokémon',
+          name: 'Pokémon',
         ),
         Collection(
           imageUrl:
               'https://s4.anilist.co/file/anilistcdn/media/anime/banner/20502-pYbTtit95IYv.jpg',
-          title: 'Cute',
+          name: 'Cute',
         ),
         Collection(
           imageUrl:
               'https://s4.anilist.co/file/anilistcdn/media/anime/banner/21519-1ayMXgNlmByb.jpg',
-          title: 'Films',
+          name: 'Films',
         ),
         Collection(
           imageUrl:
               'https://s4.anilist.co/file/anilistcdn/media/anime/banner/101922-YfZhKBUDDS6L.jpg',
-          title: 'Romance',
+          name: 'Romance',
         ),
       ],
     ),
@@ -274,42 +275,42 @@ abstract class _ExploreControllerBase with Store {
         Collection(
           imageUrl:
               'https://s4.anilist.co/file/anilistcdn/media/anime/banner/527-69bO9vmmewWm.jpg',
-          title: 'Pokémon',
+          name: 'Pokémon',
         ),
         Collection(
           imageUrl:
               'https://s4.anilist.co/file/anilistcdn/media/anime/banner/20502-pYbTtit95IYv.jpg',
-          title: 'Cute',
+          name: 'Cute',
         ),
         Collection(
           imageUrl:
               'https://s4.anilist.co/file/anilistcdn/media/anime/banner/21519-1ayMXgNlmByb.jpg',
-          title: 'Films',
+          name: 'Films',
         ),
         Collection(
           imageUrl:
               'https://s4.anilist.co/file/anilistcdn/media/anime/banner/101922-YfZhKBUDDS6L.jpg',
-          title: 'Romance',
+          name: 'Romance',
         ),
         Collection(
           imageUrl:
               'https://s4.anilist.co/file/anilistcdn/media/anime/banner/527-69bO9vmmewWm.jpg',
-          title: 'Pokémon',
+          name: 'Pokémon',
         ),
         Collection(
           imageUrl:
               'https://s4.anilist.co/file/anilistcdn/media/anime/banner/20502-pYbTtit95IYv.jpg',
-          title: 'Cute',
+          name: 'Cute',
         ),
         Collection(
           imageUrl:
               'https://s4.anilist.co/file/anilistcdn/media/anime/banner/21519-1ayMXgNlmByb.jpg',
-          title: 'Films',
+          name: 'Films',
         ),
         Collection(
           imageUrl:
               'https://s4.anilist.co/file/anilistcdn/media/anime/banner/101922-YfZhKBUDDS6L.jpg',
-          title: 'Romance',
+          name: 'Romance',
         ),
       ],
     ),
