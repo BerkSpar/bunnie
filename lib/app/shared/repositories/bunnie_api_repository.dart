@@ -20,14 +20,18 @@ class BunnieApiRepository extends Disposable {
     client.options = options;
   }
 
-  Future<Either<Exception, User>> signIn(User user) async {
+  Future<Either<Exception, User>> signIn(User info) async {
     try {
       final response = await client.post('/user/signin', data: {
-        "username": user.username,
-        "password": user.password,
+        "username": info.username,
+        "password": info.password,
       });
 
-      return Right(User.fromJson(response.data));
+      final user = User.fromJson(response.data);
+
+      options.headers['x-access-token'] = user.token;
+
+      return Right(user);
     } catch (e) {
       return Left(e);
     }
