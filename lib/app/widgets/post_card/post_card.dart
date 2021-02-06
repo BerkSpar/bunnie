@@ -36,7 +36,7 @@ class PostCard extends StatelessWidget {
               user: post.user,
             ),
             SizedBox(height: 16),
-            Text(post.text),
+            Text(post.content),
             _image(),
             SizedBox(height: 16),
             Row(

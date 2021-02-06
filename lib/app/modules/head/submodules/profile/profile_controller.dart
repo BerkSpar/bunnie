@@ -84,7 +84,7 @@ abstract class _ProfileControllerBase with Store {
             'https://avatars3.githubusercontent.com/u/47111228?s=460&u=2d077bf84376e754ef2ae90d879521f6d5a453ba&v=4',
         username: 'berkspar',
       ),
-      text:
+      content:
           'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam dolor risus, placerat sed scelerisque nec, iaculis eget lectus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce rhoncus aliquam sem, sed congue nisl vehicula et.',
       imageUrl:
           'https://media2.giphy.com/media/fSvqyvXn1M3btN8sDh/giphy.gif?cid=ecf05e47muxb2zyibhamvb8pbqlmejlusbibdmpt2nrvporo&rid=giphy.gif',
@@ -96,7 +96,7 @@ abstract class _ProfileControllerBase with Store {
             'https://avatars3.githubusercontent.com/u/47111228?s=460&u=2d077bf84376e754ef2ae90d879521f6d5a453ba&v=4',
         username: 'berkspar',
       ),
-      text:
+      content:
           'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam dolor risus, placerat sed scelerisque nec, iaculis eget lectus.',
     ),
   ];
