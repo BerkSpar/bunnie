@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_modular/flutter_modular.dart';
+import 'package:rabbited/app/app_controller.dart';
 import 'package:rabbited/app/widgets/post_card/post_card.dart';
 import 'package:rabbited/app/widgets/rounded_image/rounded_image.dart';
 import 'profile_controller.dart';
@@ -10,6 +11,8 @@ class ProfilePage extends StatefulWidget {
 }
 
 class _ProfilePageState extends ModularState<ProfilePage, ProfileController> {
+  final app = Modular.get<AppController>();
+
   @override
   Widget build(BuildContext context) {
     return ListView(
@@ -27,7 +30,7 @@ class _ProfilePageState extends ModularState<ProfilePage, ProfileController> {
             ),
             SizedBox(height: 16),
             Text(
-              'Felipe Passos',
+              app.user.name,
               style: TextStyle(
                 fontSize: 24,
                 fontWeight: FontWeight.w600,
@@ -35,7 +38,7 @@ class _ProfilePageState extends ModularState<ProfilePage, ProfileController> {
             ),
             SizedBox(height: 4),
             Text(
-              '@berkspar',
+              '@${app.user.username}',
               style: TextStyle(
                 fontSize: 18,
                 color: Colors.grey,
