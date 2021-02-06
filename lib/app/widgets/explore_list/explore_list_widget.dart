@@ -55,7 +55,7 @@ class ExploreListWidget extends StatelessWidget {
                 ),
                 SizedBox(height: 8),
                 Text(
-                  item.title,
+                  item.name,
                   maxLines: 1,
                   overflow: TextOverflow.ellipsis,
                   style: TextStyle(

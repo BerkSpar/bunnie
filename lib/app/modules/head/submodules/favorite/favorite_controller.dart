@@ -37,7 +37,7 @@ abstract class _FavoriteControllerBase with Store {
   List<Entry> entries = <Entry>[
     Entry(
       anime: Anime(
-        title: 'Tokyo Ghoul',
+        name: 'Tokyo Ghoul',
         coverImage: CoverImage(
           medium:
               'https://s4.anilist.co/file/anilistcdn/media/manga/cover/small/nx63327-VpmcwQGbXZh5.jpg',
@@ -48,7 +48,7 @@ abstract class _FavoriteControllerBase with Store {
     ),
     Entry(
       anime: Anime(
-        title: 'Naruto',
+        name: 'Naruto',
         coverImage: CoverImage(
           medium:
               'https://s4.anilist.co/file/anilistcdn/media/anime/cover/small/nx20-KCjCtnUTsLcu.jpg',
@@ -59,7 +59,7 @@ abstract class _FavoriteControllerBase with Store {
     ),
     Entry(
       anime: Anime(
-        title: 'Pokémon',
+        name: 'Pokémon',
         coverImage: CoverImage(
           medium:
               'https://s4.anilist.co/file/anilistcdn/media/anime/cover/small/b527-cFxpkJI4026c.png',
@@ -70,7 +70,7 @@ abstract class _FavoriteControllerBase with Store {
     ),
     Entry(
       anime: Anime(
-        title: 'Dragon Ball',
+        name: 'Dragon Ball',
         coverImage: CoverImage(
           medium:
               'https://s4.anilist.co/file/anilistcdn/media/anime/cover/small/bx223-Ld6vrSnd081L.png',
@@ -81,7 +81,7 @@ abstract class _FavoriteControllerBase with Store {
     ),
     Entry(
       anime: Anime(
-        title: 'Digimon',
+        name: 'Digimon',
         coverImage: CoverImage(
           medium:
               'https://s4.anilist.co/file/anilistcdn/media/anime/cover/small/2123-SYK0MA0T7Huy.png',

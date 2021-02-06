@@ -17,63 +17,63 @@ abstract class _ExploreControllerBase with Store {
       exploreListType: ExploreListType.anime,
       itens: <Anime>[
         Anime(
-          title: 'Naruto',
+          name: 'Naruto',
           coverImage: CoverImage(
             medium:
                 'https://s4.anilist.co/file/anilistcdn/media/anime/cover/small/nx20-KCjCtnUTsLcu.jpg',
           ),
         ),
         Anime(
-          title: 'Pokémon',
+          name: 'Pokémon',
           coverImage: CoverImage(
             medium:
                 'https://s4.anilist.co/file/anilistcdn/media/anime/cover/small/b527-cFxpkJI4026c.png',
           ),
         ),
         Anime(
-          title: 'Pokémon',
+          name: 'Pokémon',
           coverImage: CoverImage(
             medium:
                 'https://s4.anilist.co/file/anilistcdn/media/anime/cover/small/b527-cFxpkJI4026c.png',
           ),
         ),
         Anime(
-          title: 'Pokémon',
+          name: 'Pokémon',
           coverImage: CoverImage(
             medium:
                 'https://s4.anilist.co/file/anilistcdn/media/anime/cover/small/b527-cFxpkJI4026c.png',
           ),
         ),
         Anime(
-          title: 'Pokémon',
+          name: 'Pokémon',
           coverImage: CoverImage(
             medium:
                 'https://s4.anilist.co/file/anilistcdn/media/anime/cover/small/b527-cFxpkJI4026c.png',
           ),
         ),
         Anime(
-          title: 'Pokémon',
+          name: 'Pokémon',
           coverImage: CoverImage(
             medium:
                 'https://s4.anilist.co/file/anilistcdn/media/anime/cover/small/b527-cFxpkJI4026c.png',
           ),
         ),
         Anime(
-          title: 'Pokémon',
+          name: 'Pokémon',
           coverImage: CoverImage(
             medium:
                 'https://s4.anilist.co/file/anilistcdn/media/anime/cover/small/b527-cFxpkJI4026c.png',
           ),
         ),
         Anime(
-          title: 'Pokémon',
+          name: 'Pokémon',
           coverImage: CoverImage(
             medium:
                 'https://s4.anilist.co/file/anilistcdn/media/anime/cover/small/b527-cFxpkJI4026c.png',
           ),
         ),
         Anime(
-          title: 'Pokémon',
+          name: 'Pokémon',
           coverImage: CoverImage(
             medium:
                 'https://s4.anilist.co/file/anilistcdn/media/anime/cover/small/b527-cFxpkJI4026c.png',
@@ -86,63 +86,63 @@ abstract class _ExploreControllerBase with Store {
       exploreListType: ExploreListType.anime,
       itens: <Anime>[
         Anime(
-          title: 'Naruto',
+          name: 'Naruto',
           coverImage: CoverImage(
             medium:
                 'https://s4.anilist.co/file/anilistcdn/media/anime/cover/small/nx20-KCjCtnUTsLcu.jpg',
           ),
         ),
         Anime(
-          title: 'Pokémon',
+          name: 'Pokémon',
           coverImage: CoverImage(
             medium:
                 'https://s4.anilist.co/file/anilistcdn/media/anime/cover/small/b527-cFxpkJI4026c.png',
           ),
         ),
         Anime(
-          title: 'Pokémon',
+          name: 'Pokémon',
           coverImage: CoverImage(
             medium:
                 'https://s4.anilist.co/file/anilistcdn/media/anime/cover/small/b527-cFxpkJI4026c.png',
           ),
         ),
         Anime(
-          title: 'Pokémon',
+          name: 'Pokémon',
           coverImage: CoverImage(
             medium:
                 'https://s4.anilist.co/file/anilistcdn/media/anime/cover/small/b527-cFxpkJI4026c.png',
           ),
         ),
         Anime(
-          title: 'Pokémon',
+          name: 'Pokémon',
           coverImage: CoverImage(
             medium:
                 'https://s4.anilist.co/file/anilistcdn/media/anime/cover/small/b527-cFxpkJI4026c.png',
           ),
         ),
         Anime(
-          title: 'Pokémon',
+          name: 'Pokémon',
           coverImage: CoverImage(
             medium:
                 'https://s4.anilist.co/file/anilistcdn/media/anime/cover/small/b527-cFxpkJI4026c.png',
           ),
         ),
         Anime(
-          title: 'Pokémon',
+          name: 'Pokémon',
           coverImage: CoverImage(
             medium:
                 'https://s4.anilist.co/file/anilistcdn/media/anime/cover/small/b527-cFxpkJI4026c.png',
           ),
         ),
         Anime(
-          title: 'Pokémon',
+          name: 'Pokémon',
           coverImage: CoverImage(
             medium:
                 'https://s4.anilist.co/file/anilistcdn/media/anime/cover/small/b527-cFxpkJI4026c.png',
           ),
         ),
         Anime(
-          title: 'Pokémon',
+          name: 'Pokémon',
           coverImage: CoverImage(
             medium:
                 'https://s4.anilist.co/file/anilistcdn/media/anime/cover/small/b527-cFxpkJI4026c.png',
@@ -155,63 +155,63 @@ abstract class _ExploreControllerBase with Store {
       exploreListType: ExploreListType.anime,
       itens: <Anime>[
         Anime(
-          title: 'Naruto',
+          name: 'Naruto',
           coverImage: CoverImage(
             medium:
                 'https://s4.anilist.co/file/anilistcdn/media/anime/cover/small/nx20-KCjCtnUTsLcu.jpg',
           ),
         ),
         Anime(
-          title: 'Pokémon',
+          name: 'Pokémon',
           coverImage: CoverImage(
             medium:
                 'https://s4.anilist.co/file/anilistcdn/media/anime/cover/small/b527-cFxpkJI4026c.png',
           ),
         ),
         Anime(
-          title: 'Pokémon',
+          name: 'Pokémon',
           coverImage: CoverImage(
             medium:
                 'https://s4.anilist.co/file/anilistcdn/media/anime/cover/small/b527-cFxpkJI4026c.png',
           ),
         ),
         Anime(
-          title: 'Pokémon',
+          name: 'Pokémon',
           coverImage: CoverImage(
             medium:
                 'https://s4.anilist.co/file/anilistcdn/media/anime/cover/small/b527-cFxpkJI4026c.png',
           ),
         ),
         Anime(
-          title: 'Pokémon',
+          name: 'Pokémon',
           coverImage: CoverImage(
             medium:
                 'https://s4.anilist.co/file/anilistcdn/media/anime/cover/small/b527-cFxpkJI4026c.png',
           ),
         ),
         Anime(
-          title: 'Pokémon',
+          name: 'Pokémon',
           coverImage: CoverImage(
             medium:
                 'https://s4.anilist.co/file/anilistcdn/media/anime/cover/small/b527-cFxpkJI4026c.png',
           ),
         ),
         Anime(
-          title: 'Pokémon',
+          name: 'Pokémon',
           coverImage: CoverImage(
             medium:
                 'https://s4.anilist.co/file/anilistcdn/media/anime/cover/small/b527-cFxpkJI4026c.png',
           ),
         ),
         Anime(
-          title: 'Pokémon',
+          name: 'Pokémon',
           coverImage: CoverImage(
             medium:
                 'https://s4.anilist.co/file/anilistcdn/media/anime/cover/small/b527-cFxpkJI4026c.png',
           ),
         ),
         Anime(
-          title: 'Pokémon',
+          name: 'Pokémon',
           coverImage: CoverImage(
             medium:
                 'https://s4.anilist.co/file/anilistcdn/media/anime/cover/small/b527-cFxpkJI4026c.png',
