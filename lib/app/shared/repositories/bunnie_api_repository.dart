@@ -27,9 +27,7 @@ class BunnieApiRepository extends Disposable {
         "password": user.password,
       });
 
-      if (response.statusCode == 200) {
-        return Right(User.fromJson(response.data));
-      }
+      return Right(User.fromJson(response.data));
     } catch (e) {
       return Left(e);
     }
