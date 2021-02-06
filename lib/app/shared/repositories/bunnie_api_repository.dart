@@ -2,6 +2,7 @@ import 'package:dartz/dartz.dart';
 import 'package:dio/dio.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 import 'package:rabbited/app/shared/models/collection.dart';
+import 'package:rabbited/app/shared/models/entry.dart';
 import 'package:rabbited/app/shared/models/user.dart';
 import 'package:rabbited/app/utils/links.dart';
 
@@ -51,6 +52,22 @@ class BunnieApiRepository extends Disposable {
       });
 
       return Right(collections);
+    } catch (e) {
+      return Left(e);
+    }
+  }
+
+  Future<Either<Exception, List<Entry>>> getEntries() async {
+    try {
+      final response = await client.get('/entry');
+
+      List<Entry> entries = <Entry>[];
+
+      response.data.forEach((entry) {
+        entries.add(Entry.fromJson(entry));
+      });
+
+      return Right(entries);
     } catch (e) {
       return Left(e);
     }

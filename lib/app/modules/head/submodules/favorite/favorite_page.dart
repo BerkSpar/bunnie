@@ -54,27 +54,41 @@ class _FavoritePageState
             ],
           );
         }),
-        Padding(
-          padding: EdgeInsets.symmetric(horizontal: 16),
-          child: Text(
-            'My Animes',
-            style: Theme.of(context).textTheme.headline4,
-          ),
-        ),
-        SizedBox(height: 8),
-        ListView.separated(
-          separatorBuilder: (_, index) {
-            return SizedBox(height: 8);
-          },
-          itemCount: controller.entries.length,
-          padding: EdgeInsets.symmetric(horizontal: 14),
-          shrinkWrap: true,
-          physics: ScrollPhysics(),
-          itemBuilder: (_, index) {
-            final entry = controller.entries[index];
+        Observer(
+          builder: (context) {
+            if (controller.entries.length == 0) {
+              return Container();
+            }
 
-            return EntryCard(
-              entry: entry,
+            return ListView(
+              shrinkWrap: true,
+              physics: ScrollPhysics(),
+              children: [
+                Padding(
+                  padding: EdgeInsets.symmetric(horizontal: 16),
+                  child: Text(
+                    'My Animes',
+                    style: Theme.of(context).textTheme.headline4,
+                  ),
+                ),
+                SizedBox(height: 8),
+                ListView.separated(
+                  separatorBuilder: (_, index) {
+                    return SizedBox(height: 8);
+                  },
+                  itemCount: controller.entries.length,
+                  padding: EdgeInsets.symmetric(horizontal: 14),
+                  shrinkWrap: true,
+                  physics: ScrollPhysics(),
+                  itemBuilder: (_, index) {
+                    final entry = controller.entries[index];
+
+                    return EntryCard(
+                      entry: entry,
+                    );
+                  },
+                ),
+              ],
             );
           },
         ),

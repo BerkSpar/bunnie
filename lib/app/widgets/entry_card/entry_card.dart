@@ -22,7 +22,7 @@ class EntryCard extends StatelessWidget {
         child: Row(
           children: [
             RoundedImage(
-              imageUrl: entry.anime.coverImage.medium,
+              imageUrl: entry.anime?.coverImage?.medium ?? '',
               borderRadius: BorderRadius.circular(8),
               height: 80,
               width: 80,
@@ -35,7 +35,7 @@ class EntryCard extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       Text(
-                        entry.anime.name,
+                        entry.name,
                         maxLines: 1,
                         overflow: TextOverflow.ellipsis,
                         style: TextStyle(
@@ -56,7 +56,7 @@ class EntryCard extends StatelessWidget {
                   SizedBox(height: 8),
                   NumberProgress(
                     current: entry.currentEpisode,
-                    max: entry.anime.episodes,
+                    max: entry.totalEpisodes,
                     onAdd: () {},
                     onSubtract: () {},
                   ),

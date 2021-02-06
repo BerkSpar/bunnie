@@ -57,6 +57,14 @@ mixin _$FavoriteController on _FavoriteControllerBase, Store {
     return _$getCollectionsAsyncAction.run(() => super.getCollections());
   }
 
+  final _$getEntriesAsyncAction =
+      AsyncAction('_FavoriteControllerBase.getEntries');
+
+  @override
+  Future getEntries() {
+    return _$getEntriesAsyncAction.run(() => super.getEntries());
+  }
+
   @override
   String toString() {
     return '''

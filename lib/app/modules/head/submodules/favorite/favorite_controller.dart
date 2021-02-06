@@ -25,11 +25,18 @@ abstract class _FavoriteControllerBase with Store {
 
   _init() async {
     getCollections();
+    getEntries();
   }
 
   @action
   getCollections() async {
     final result = await api.getCollections();
     collections = result.getOrElse(() => <Collection>[]);
+  }
+
+  @action
+  getEntries() async {
+    final result = await api.getEntries();
+    entries = result.getOrElse(() => <Entry>[]);
   }
 }

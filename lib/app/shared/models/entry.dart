@@ -13,7 +13,7 @@ class Entry {
   String createdAt;
   String updatedAt;
 
-  double get progress => currentEpisode / anime.episodes;
+  double get progress => currentEpisode / totalEpisodes;
 
   Entry({
     this.anime,
