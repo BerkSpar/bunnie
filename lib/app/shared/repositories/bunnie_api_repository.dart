@@ -9,12 +9,13 @@ part 'bunnie_api_repository.g.dart';
 @Injectable()
 class BunnieApiRepository extends Disposable {
   Dio client = Dio();
-  String _token;
   BaseOptions options = BaseOptions(
     baseUrl: bunnie_api_url,
   );
 
-  set token(String token) => _token = token;
+  set token(String token) {
+    options.headers['x-access-token'] = token;
+  }
 
   BunnieApiRepository() {
     client.options = options;
