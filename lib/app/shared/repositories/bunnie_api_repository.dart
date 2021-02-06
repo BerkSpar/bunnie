@@ -73,6 +73,18 @@ class BunnieApiRepository extends Disposable {
     }
   }
 
+  Future<Either<dynamic, Collection>> getCollection(String id) async {
+    try {
+      final response = await client.get('/collections/$id');
+
+      final collection = Collection.fromJson(response.data);
+
+      return Right(collection);
+    } catch (e) {
+      return Left(e);
+    }
+  }
+
   @override
   void dispose() {}
 }

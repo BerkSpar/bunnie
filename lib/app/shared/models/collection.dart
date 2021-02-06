@@ -31,12 +31,12 @@ class Collection {
     isPublic = json['is_public'];
     updatedAt = json['updatedAt'];
     createdAt = json['createdAt'];
-    if (json['animes'] != null) {
-      animes = new List<Anime>();
-      json['animes'].forEach((v) {
-        animes.add(new Anime.fromJson(v));
-      });
-    }
+    // if (json['animes'] != null) {
+    animes = new List<Anime>();
+    //   json['animes'].forEach((v) {
+    //     animes.add(new Anime.fromJson(v));
+    //   });
+    // }
   }
 
   Map<String, dynamic> toJson() {

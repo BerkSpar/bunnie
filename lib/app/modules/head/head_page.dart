@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_mobx/flutter_mobx.dart';
 import 'package:flutter_modular/flutter_modular.dart';
+import 'package:rabbited/app/utils/bunnie_app_bar.dart';
 import 'package:rabbited/app/utils/bunnie_colors.dart';
 import 'package:rabbited/app/modules/head/submodules/explore/explore_module.dart';
 import 'package:rabbited/app/modules/head/submodules/favorite/favorite_module.dart';
@@ -17,29 +18,7 @@ class _HeadPageState extends ModularState<HeadPage, HeadController> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Row(
-          mainAxisSize: MainAxisSize.min,
-          crossAxisAlignment: CrossAxisAlignment.end,
-          children: [
-            Image.asset(
-              'assets/images/logo.png',
-              height: 50,
-            ),
-            Text(
-              'Bunnie',
-              style: TextStyle(
-                fontSize: 24,
-                color: BunnieColors.main,
-                fontWeight: FontWeight.w600,
-              ),
-            ),
-          ],
-        ),
-        centerTitle: true,
-        elevation: 0,
-        backgroundColor: Theme.of(context).scaffoldBackgroundColor,
-      ),
+      appBar: appBar,
       body: PageView(
         controller: controller.pageController,
         children: [

@@ -1,4 +1,4 @@
-import 'package:dio/dio.dart';
+import 'package:rabbited/app/modules/head/submodules/favorite/pages/collection/collection_page.dart';
 import 'shared/repositories/bunnie_api_repository.dart';
 import 'package:rabbited/app/modules/initial/initial_module.dart';
 import 'package:rabbited/app/pages/post/post_page.dart';
@@ -26,6 +26,10 @@ class AppModule extends MainModule {
   List<ModularRouter> get routers => [
         ModularRouter(Modular.initialRoute, module: InitialModule()),
         ModularRouter('/post', child: (_, args) => PostPage()),
+        ModularRouter(
+          '/collection/:id',
+          child: (_, args) => CollectionPage(args.params['id']),
+        ),
       ];
 
   @override

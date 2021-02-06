@@ -4,7 +4,7 @@ description: A new Flutter project.
 version: 0.2.0+2
 
 environment:
-  sdk: ">=2.1.0 <3.0.0"
+  sdk: ">=2.2.0 <3.0.0"
 
 dependencies:
   asuka: ^1.0.4

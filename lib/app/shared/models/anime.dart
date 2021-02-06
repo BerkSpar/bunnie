@@ -20,13 +20,16 @@ class Anime {
   });
 
   Anime.fromJson(Map<String, dynamic> json) {
+    print(json);
     name = json['title'];
     bannerImage = json['bannerImage'];
     episodes = json['episodes'];
     malId = json['mal_id'];
     order = json['order'];
     note = json['note'];
-    coverImage = CoverImage.fromJson(json['coverImage']);
+    if (json['coverImage'] != null) {
+      coverImage = CoverImage.fromJson(json['coverImage']);
+    }
   }
 
   Map<String, dynamic> toJson() {
@@ -37,7 +40,9 @@ class Anime {
     data['mal_id'] = this.malId;
     data['order'] = this.order;
     data['note'] = this.note;
-    data['coverImage'] = this.coverImage.toJson();
+    if (this.coverImage != null) {
+      data['coverImage'] = this.coverImage.toJson();
+    }
     return data;
   }
 }
