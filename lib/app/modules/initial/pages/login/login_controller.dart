@@ -1,9 +1,12 @@
+import 'package:argon_buttons_flutter/argon_buttons_flutter.dart';
 import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
 import 'package:mobx/mobx.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 import 'package:rabbited/app/app_controller.dart';
 import 'package:rabbited/app/shared/models/user.dart';
 import 'package:rabbited/app/shared/repositories/bunnie_api_repository.dart';
+import 'package:asuka/asuka.dart' as asuka;
 
 part 'login_controller.g.dart';
 
@@ -17,19 +20,33 @@ abstract class _LoginControllerBase with Store {
   final usernameCtrl = TextEditingController();
   final passwordCtrl = TextEditingController();
 
+  final formKey = GlobalKey<FormState>();
+
   @action
-  login() async {
+  login(startLoading, stopLoading, btnState) async {
+    if (btnState == ButtonState.Busy) return;
+
+    if (!formKey.currentState.validate()) return;
+
+    FocusScope.of(Modular.navigatorKey.currentContext).unfocus();
+
     User user = User(
       username: usernameCtrl.text,
       password: passwordCtrl.text,
     );
 
-    user = await api.signIn(user);
+    startLoading();
+    final result = await api.signIn(user);
+    stopLoading();
 
-    if (user != null) {
-      app.user = user;
+    if (result.isRight()) {
+      app.user = result.getOrElse(null);
 
       Modular.to.pushReplacementNamed('/app');
+    } else {
+      asuka.showSnackBar(SnackBar(
+        content: Text('You cannot login'),
+      ));
     }
   }
 

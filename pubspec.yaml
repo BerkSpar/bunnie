@@ -7,6 +7,10 @@ environment:
   sdk: ">=2.1.0 <3.0.0"
 
 dependencies:
+  asuka: ^1.0.4
+  dartz: ^0.9.2
+  argon_buttons_flutter: ^1.0.6
+  flutter_spinkit: ^4.1.2+1
   simple_animations: ^2.4.2
   font_awesome_flutter: ^8.11.0
   share: ^0.6.5+4

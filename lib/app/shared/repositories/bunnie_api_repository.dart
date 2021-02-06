@@ -1,3 +1,4 @@
+import 'package:dartz/dartz.dart';
 import 'package:dio/dio.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 import 'package:rabbited/app/shared/models/user.dart';
@@ -19,17 +20,19 @@ class BunnieApiRepository extends Disposable {
     client.options = options;
   }
 
-  Future<User> signIn(User user) async {
-    final response = await client.post('/user/signin', data: {
-      "username": user.username,
-      "password": user.password,
-    });
+  Future<Either<Exception, User>> signIn(User user) async {
+    try {
+      final response = await client.post('/user/signin', data: {
+        "username": user.username,
+        "password": user.password,
+      });
 
-    if (response.statusCode == 200) {
-      return User.fromJson(response.data);
+      if (response.statusCode == 200) {
+        return Right(User.fromJson(response.data));
+      }
+    } catch (e) {
+      return Left(e);
     }
-
-    return null;
   }
 
   @override

@@ -19,19 +19,16 @@ final $LoginController = BindInject(
 // ignore_for_file: non_constant_identifier_names, unnecessary_brace_in_string_interps, unnecessary_lambdas, prefer_expression_function_bodies, lines_longer_than_80_chars, avoid_as, avoid_annotating_with_dynamic
 
 mixin _$LoginController on _LoginControllerBase, Store {
-  final _$_LoginControllerBaseActionController =
-      ActionController(name: '_LoginControllerBase');
+  final _$loginAsyncAction = AsyncAction('_LoginControllerBase.login');
 
   @override
-  dynamic login() {
-    final _$actionInfo = _$_LoginControllerBaseActionController.startAction(
-        name: '_LoginControllerBase.login');
-    try {
-      return super.login();
-    } finally {
-      _$_LoginControllerBaseActionController.endAction(_$actionInfo);
-    }
+  Future login(dynamic startLoading, dynamic stopLoading, dynamic btnState) {
+    return _$loginAsyncAction
+        .run(() => super.login(startLoading, stopLoading, btnState));
   }
+
+  final _$_LoginControllerBaseActionController =
+      ActionController(name: '_LoginControllerBase');
 
   @override
   dynamic loginWithGoogle() {

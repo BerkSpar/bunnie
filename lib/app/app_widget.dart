@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 import 'package:rabbited/app/utils/bunnie_colors.dart';
+import 'package:asuka/asuka.dart' as asuka;
 
 class AppWidget extends StatelessWidget {
   @override
@@ -19,6 +20,7 @@ class AppWidget extends StatelessWidget {
           ),
         ),
       ),
+      builder: asuka.builder,
       initialRoute: '/',
       onGenerateRoute: Modular.generateRoute,
     );
