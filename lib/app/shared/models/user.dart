@@ -4,12 +4,13 @@ class User {
   String lastName;
   String mobile;
   String username;
+  String profilePhoto;
   String email;
   String bio;
-  String profilePhoto;
   bool isPublic;
-  String updatedAt;
   String createdAt;
+  String updatedAt;
+  String token;
 
   User(
       {this.id,
@@ -17,12 +18,13 @@ class User {
       this.lastName,
       this.mobile,
       this.username,
+      this.profilePhoto,
       this.email,
       this.bio,
-      this.profilePhoto,
       this.isPublic,
+      this.createdAt,
       this.updatedAt,
-      this.createdAt});
+      this.token});
 
   User.fromJson(Map<String, dynamic> json) {
     id = json['id'];
@@ -30,12 +32,13 @@ class User {
     lastName = json['last_name'];
     mobile = json['mobile'];
     username = json['username'];
+    profilePhoto = json['profile_photo'];
     email = json['email'];
     bio = json['bio'];
-    profilePhoto = json['profile_photo'];
     isPublic = json['is_public'];
-    updatedAt = json['updatedAt'];
     createdAt = json['createdAt'];
+    updatedAt = json['updatedAt'];
+    token = json['token'];
   }
 
   Map<String, dynamic> toJson() {
@@ -45,12 +48,13 @@ class User {
     data['last_name'] = this.lastName;
     data['mobile'] = this.mobile;
     data['username'] = this.username;
+    data['profile_photo'] = this.profilePhoto;
     data['email'] = this.email;
     data['bio'] = this.bio;
-    data['profile_photo'] = this.profilePhoto;
     data['is_public'] = this.isPublic;
-    data['updatedAt'] = this.updatedAt;
     data['createdAt'] = this.createdAt;
+    data['updatedAt'] = this.updatedAt;
+    data['token'] = this.token;
     return data;
   }
 }
