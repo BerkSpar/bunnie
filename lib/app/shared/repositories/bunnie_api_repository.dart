@@ -1,6 +1,7 @@
 import 'package:dartz/dartz.dart';
 import 'package:dio/dio.dart';
 import 'package:flutter_modular/flutter_modular.dart';
+import 'package:rabbited/app/shared/models/collection.dart';
 import 'package:rabbited/app/shared/models/user.dart';
 import 'package:rabbited/app/utils/links.dart';
 
@@ -19,6 +20,7 @@ class BunnieApiRepository extends Disposable {
 
   BunnieApiRepository() {
     client.options = options;
+    client.options.responseType = ResponseType.json;
   }
 
   Future<Either<Exception, User>> signIn(User info) async {
@@ -33,6 +35,22 @@ class BunnieApiRepository extends Disposable {
       options.headers['x-access-token'] = user.token;
 
       return Right(user);
+    } catch (e) {
+      return Left(e);
+    }
+  }
+
+  Future<Either<Exception, List<Collection>>> getCollections() async {
+    try {
+      final response = await client.get('/collections');
+
+      List<Collection> collections = <Collection>[];
+
+      response.data.forEach((collection) {
+        collections.add(Collection.fromJson(collection));
+      });
+
+      return Right(collections);
     } catch (e) {
       return Left(e);
     }
