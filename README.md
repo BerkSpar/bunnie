@@ -1,5 +1,4 @@
 <h1 align="center">
-  <br>
   <a href="https://www.bunnie.tech"><img src="https://user-images.githubusercontent.com/47111228/111788899-5f996c80-889f-11eb-886c-a03c41ab3d25.png" alt="Bunnie Logo" width="300"></a>
 </h1>
 
@@ -50,7 +49,6 @@ $ git clone https://github.com/BerkSpar/bunnie
 $ cd bunnie
 
 # Run the app
-
 $ flutter run
 ```
 
