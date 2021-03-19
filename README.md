@@ -49,7 +49,7 @@ $ git clone https://github.com/BerkSpar/bunnie
 # Go into the repository
 $ cd bunnie
 
-# Run the app![bunnie](https://user-images.githubusercontent.com/47111228/111787472-b9993280-889d-11eb-81c1-738965735db7.jpg)
+# Run the app
 
 $ flutter run
 ```
