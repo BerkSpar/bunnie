@@ -1,9 +1,9 @@
-<h1 align="center">
+<h3 align="center">
   <a href="https://www.bunnie.tech"><img src="https://user-images.githubusercontent.com/47111228/111788899-5f996c80-889f-11eb-886c-a03c41ab3d25.png" alt="Bunnie Logo" width="300"></a>
-</h1>
+</h3>
 
 <p align="center">
-  An app built in Flutter to share and save your anime lists.
+  <strong>An app built in Flutter to share and save your anime lists.</strong>
   </br>
   <a href="https://github.com/BerkSpar/Bunnie/issues">Report Bug</a>
   ·
