@@ -1,24 +1,26 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_modular/flutter_modular.dart';
-import 'package:rabbited/app/shared/colors.dart';
+import 'package:rabbited/app/utils/bunnie_colors.dart';
+import 'package:asuka/asuka.dart' as asuka;
 
 class AppWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      navigatorKey: Modular.navigatorKey,
-      title: 'Flutter Slidy',
+      title: 'Bunnie',
       theme: ThemeData(
-        primarySwatch: MaterialColor(primaryOrange.value, orange),
-        buttonTheme: ButtonThemeData(
-          textTheme: ButtonTextTheme.primary,
-          shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(10),
+        primarySwatch: Colors.orange,
+        fontFamily: 'Inter',
+        textTheme: TextTheme(
+          headline4: TextStyle(
+            fontSize: 32,
+            color: BunnieColors.main,
+            fontWeight: FontWeight.w300,
           ),
         ),
       ),
-      initialRoute: '/',
-      onGenerateRoute: Modular.generateRoute,
-    );
+      initialRoute: "/",
+      builder: asuka.builder,
+    ).modular();
   }
 }
