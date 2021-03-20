@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_modular/flutter_modular.dart';
-import 'package:rabbited/app/utils/animations/fade_animation.dart';
 import 'package:rabbited/app/utils/bunnie_colors.dart';
 import 'register_controller.dart';
 
@@ -34,32 +33,26 @@ class _RegisterPageState
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             SizedBox(height: 64),
-            FadeAnimation(
-              1,
-              child: Padding(
-                padding: EdgeInsets.symmetric(horizontal: 32),
-                child: Text(
-                  'Create an Account',
-                  style: TextStyle(
-                    color: Colors.white,
-                    fontSize: 32,
-                    fontWeight: FontWeight.bold,
-                  ),
+            Padding(
+              padding: EdgeInsets.symmetric(horizontal: 32),
+              child: Text(
+                'Create an Account',
+                style: TextStyle(
+                  color: Colors.white,
+                  fontSize: 32,
+                  fontWeight: FontWeight.bold,
                 ),
               ),
             ),
             SizedBox(height: 8),
-            FadeAnimation(
-              1.3,
-              child: Padding(
-                padding: EdgeInsets.symmetric(horizontal: 32),
-                child: Text(
-                  'Feel like an otaku',
-                  style: TextStyle(
-                    color: Colors.white,
-                    fontSize: 22,
-                    fontWeight: FontWeight.w300,
-                  ),
+            Padding(
+              padding: EdgeInsets.symmetric(horizontal: 32),
+              child: Text(
+                'Feel like an otaku',
+                style: TextStyle(
+                  color: Colors.white,
+                  fontSize: 22,
+                  fontWeight: FontWeight.w300,
                 ),
               ),
             ),

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 import 'package:rabbited/app/utils/bunnie_colors.dart';
 import 'post_controller.dart';
@@ -62,7 +63,7 @@ class _PostPageState extends ModularState<PostPage, PostController> {
                     SizedBox(height: 16),
                     TextFormField(
                       maxLines: 8,
-                      maxLengthEnforced: true,
+                      maxLengthEnforcement: MaxLengthEnforcement.enforced,
                       maxLength: 255,
                       decoration: InputDecoration(
                         hintText: 'Type something intersting',
@@ -76,12 +77,14 @@ class _PostPageState extends ModularState<PostPage, PostController> {
             Row(
               mainAxisAlignment: MainAxisAlignment.end,
               children: [
-                FlatButton(
+                TextButton(
                   child: Text(
                     'Share',
+                    style: TextStyle(
+                      color: BunnieColors.main,
+                    ),
                   ),
-                  textColor: BunnieColors.main,
-                  onPressed: controller.onShare,
+                  onPressed: store.onShare,
                 ),
               ],
             ),

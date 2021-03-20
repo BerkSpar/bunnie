@@ -32,7 +32,7 @@ class Collection {
     updatedAt = json['updatedAt'];
     createdAt = json['createdAt'];
     // if (json['animes'] != null) {
-    animes = new List<Anime>();
+    animes = <Anime>[];
     //   json['animes'].forEach((v) {
     //     animes.add(new Anime.fromJson(v));
     //   });

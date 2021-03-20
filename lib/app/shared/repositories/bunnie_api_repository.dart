@@ -6,9 +6,6 @@ import 'package:rabbited/app/shared/models/entry.dart';
 import 'package:rabbited/app/shared/models/user.dart';
 import 'package:rabbited/app/utils/links.dart';
 
-part 'bunnie_api_repository.g.dart';
-
-@Injectable()
 class BunnieApiRepository extends Disposable {
   Dio client = Dio();
   BaseOptions options = BaseOptions(

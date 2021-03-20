@@ -3,16 +3,6 @@
 part of 'collection_banner_controller.dart';
 
 // **************************************************************************
-// InjectionGenerator
-// **************************************************************************
-
-final $CollectionBannerController = BindInject(
-  (i) => CollectionBannerController(),
-  singleton: true,
-  lazy: true,
-);
-
-// **************************************************************************
 // StoreGenerator
 // **************************************************************************
 

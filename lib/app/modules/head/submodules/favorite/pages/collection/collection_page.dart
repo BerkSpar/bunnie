@@ -22,16 +22,16 @@ class _CollectionPageState
   @override
   void initState() {
     super.initState();
-    controller.init(widget.id);
+    store.init(widget.id);
   }
 
   Widget getDescription() {
-    if (controller.collection.description == null) {
+    if (store.collection.description == null) {
       return Container();
     }
 
     return Text(
-      controller.collection.description,
+      store.collection.description,
       style: TextStyle(
         fontSize: 16,
         fontWeight: FontWeight.w500,
@@ -46,7 +46,7 @@ class _CollectionPageState
       appBar: secundaryAppBar,
       body: Observer(
         builder: (context) {
-          if (controller.isLoading) {
+          if (store.isLoading) {
             return Center(
               child: SpinKitCircle(
                 color: BunnieColors.main,
@@ -59,11 +59,11 @@ class _CollectionPageState
             children: [
               RoundedImage(
                 borderRadius: BorderRadius.circular(8),
-                imageUrl: controller.collection.imageUrl,
+                imageUrl: store.collection.imageUrl,
               ),
               SizedBox(height: 8),
               Text(
-                controller.collection.name,
+                store.collection.name,
                 style: TextStyle(
                   fontSize: 28,
                   fontWeight: FontWeight.w500,
@@ -72,11 +72,11 @@ class _CollectionPageState
               ),
               getDescription(),
               ListView.builder(
-                itemCount: controller.collection.animes.length,
+                itemCount: store.collection.animes.length,
                 shrinkWrap: true,
                 physics: ScrollPhysics(),
                 itemBuilder: (_, index) {
-                  final anime = controller.collection.animes[index];
+                  final anime = store.collection.animes[index];
 
                   return AnimeListWidget(anime);
                 },

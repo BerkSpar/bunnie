@@ -3,16 +3,14 @@ import 'package:flutter_modular/flutter_modular.dart';
 
 import 'home_page.dart';
 
-class HomeModule extends ChildModule {
+class HomeModule extends Module {
   @override
   List<Bind> get binds => [
-        $HomeController,
+        Bind((i) => HomeController()),
       ];
 
   @override
-  List<ModularRouter> get routers => [
-        ModularRouter(Modular.initialRoute, child: (_, args) => HomePage()),
+  List<ModularRoute> get routes => [
+        ChildRoute(Modular.initialRoute, child: (_, args) => HomePage()),
       ];
-
-  static Inject get to => Inject<HomeModule>.of();
 }

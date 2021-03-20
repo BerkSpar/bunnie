@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:rabbited/app/shared/models/post.dart';
 import 'package:rabbited/app/widgets/rounded_image/rounded_image.dart';
 import 'package:rabbited/app/widgets/user_header/user_header.dart';
-import 'package:share/share.dart';
 
 class PostCard extends StatelessWidget {
   final Post post;

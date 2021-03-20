@@ -26,12 +26,12 @@ class _ExplorePageState extends ModularState<ExplorePage, ExploreController> {
         ListView.separated(
           shrinkWrap: true,
           physics: ScrollPhysics(),
-          itemCount: controller.animeLists.length,
+          itemCount: store.animeLists.length,
           separatorBuilder: (_, index) {
             return SizedBox(height: 16);
           },
           itemBuilder: (_, index) {
-            final exploreList = controller.animeLists[index];
+            final exploreList = store.animeLists[index];
 
             return Column(
               crossAxisAlignment: CrossAxisAlignment.start,
@@ -67,12 +67,12 @@ class _ExplorePageState extends ModularState<ExplorePage, ExploreController> {
         ListView.separated(
           shrinkWrap: true,
           physics: ScrollPhysics(),
-          itemCount: controller.collectionLists.length,
+          itemCount: store.collectionLists.length,
           separatorBuilder: (_, index) {
             return SizedBox(height: 16);
           },
           itemBuilder: (_, index) {
-            final exploreList = controller.collectionLists[index];
+            final exploreList = store.collectionLists[index];
 
             return Column(
               crossAxisAlignment: CrossAxisAlignment.start,

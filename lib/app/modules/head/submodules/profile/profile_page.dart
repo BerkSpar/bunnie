@@ -49,34 +49,19 @@ class _ProfilePageState extends ModularState<ProfilePage, ProfileController> {
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                RaisedButton(
-                  elevation: 0,
+                ElevatedButton(
                   onPressed: () {},
                   child: Icon(Icons.edit),
-                  highlightColor: Theme.of(context).accentColor,
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(90),
-                  ),
                 ),
                 SizedBox(width: 8),
-                RaisedButton(
-                  elevation: 0,
+                ElevatedButton(
                   onPressed: () {},
                   child: Icon(Icons.settings),
-                  highlightColor: Theme.of(context).accentColor,
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(90),
-                  ),
                 ),
                 SizedBox(width: 8),
-                RaisedButton(
-                  elevation: 0,
+                ElevatedButton(
                   onPressed: () {},
                   child: Icon(Icons.share),
-                  highlightColor: Theme.of(context).accentColor,
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(90),
-                  ),
                 ),
               ],
             ),
@@ -104,9 +89,9 @@ class _ProfilePageState extends ModularState<ProfilePage, ProfileController> {
           shrinkWrap: true,
           padding: EdgeInsets.symmetric(horizontal: 16),
           physics: ScrollPhysics(),
-          itemCount: controller.animes.length + 1,
+          itemCount: store.animes.length + 1,
           itemBuilder: (_, index) {
-            if (index == controller.animes.length) {
+            if (index == store.animes.length) {
               return Container(
                 decoration: BoxDecoration(
                   color: Colors.black12,
@@ -119,7 +104,7 @@ class _ProfilePageState extends ModularState<ProfilePage, ProfileController> {
               );
             }
 
-            final anime = controller.animes[index];
+            final anime = store.animes[index];
 
             return RoundedImage(
               height: double.maxFinite,
@@ -142,9 +127,9 @@ class _ProfilePageState extends ModularState<ProfilePage, ProfileController> {
           padding: EdgeInsets.symmetric(horizontal: 14),
           shrinkWrap: true,
           physics: ScrollPhysics(),
-          itemCount: controller.posts.length,
+          itemCount: store.posts.length,
           itemBuilder: (_, index) {
-            final post = controller.posts[index];
+            final post = store.posts[index];
 
             return PostCard(
               post: post,

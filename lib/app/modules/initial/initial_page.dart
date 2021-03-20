@@ -25,10 +25,10 @@ class _InitialPageState extends ModularState<InitialPage, InitialController> {
             Observer(builder: (context) {
               return AnimatedContainer(
                 duration: Duration(seconds: 1),
-                width: controller.width,
+                width: store.width,
                 child: AnimatedOpacity(
                   duration: Duration(seconds: 0),
-                  opacity: controller.opacity,
+                  opacity: store.opacity,
                   child: Text(
                     'Bunnie',
                     maxLines: 1,

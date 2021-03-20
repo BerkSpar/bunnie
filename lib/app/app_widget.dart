@@ -7,7 +7,6 @@ class AppWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      navigatorKey: Modular.navigatorKey,
       title: 'Bunnie',
       theme: ThemeData(
         primarySwatch: Colors.orange,
@@ -20,9 +19,8 @@ class AppWidget extends StatelessWidget {
           ),
         ),
       ),
+      initialRoute: "/",
       builder: asuka.builder,
-      initialRoute: '/',
-      onGenerateRoute: Modular.generateRoute,
-    );
+    ).modular();
   }
 }

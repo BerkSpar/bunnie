@@ -13,9 +13,9 @@ class _HomePageState extends ModularState<HomePage, HomeController> {
   Widget build(BuildContext context) {
     return ListView.builder(
       padding: EdgeInsets.fromLTRB(16, 32, 16, 0),
-      itemCount: controller.posts.length,
+      itemCount: store.posts.length,
       itemBuilder: (_, index) {
-        final post = controller.posts[index];
+        final post = store.posts[index];
 
         return PostCard(
           post: post,

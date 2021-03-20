@@ -1,12 +1,13 @@
 import 'package:argon_buttons_flutter/argon_buttons_flutter.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:mobx/mobx.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 import 'package:rabbited/app/app_controller.dart';
 import 'package:rabbited/app/shared/models/user.dart';
 import 'package:rabbited/app/shared/repositories/bunnie_api_repository.dart';
-import 'package:asuka/asuka.dart' as asuka;
+import 'package:asuka/asuka.dart';
 
 part 'login_controller.g.dart';
 
@@ -28,7 +29,7 @@ abstract class _LoginControllerBase with Store {
 
     if (!formKey.currentState.validate()) return;
 
-    FocusScope.of(Modular.navigatorKey.currentContext).unfocus();
+    SystemChannels.textInput.invokeMethod('TextInput.hide');
 
     User user = User(
       username: usernameCtrl.text,
@@ -42,27 +43,24 @@ abstract class _LoginControllerBase with Store {
     if (result.isRight()) {
       app.user = result.getOrElse(null);
 
-      Modular.to.pushReplacementNamed('/app');
+      Modular.to.navigate(
+        '/app',
+        replaceAll: true,
+      );
     } else {
-      asuka.showSnackBar(SnackBar(
-        content: Text('You cannot login'),
-      ));
+      showSnackBar(AsukaSnackbar.alert('You cannot login'));
     }
   }
 
   @action
-  loginWithGoogle() {
-    Modular.to.pushReplacementNamed('/app');
-  }
+  loginWithGoogle() {}
 
   @action
-  loginWithFacebook() {
-    Modular.to.pushReplacementNamed('/app');
-  }
+  loginWithFacebook() {}
 
   @action
   register() {
-    Modular.to.pushNamed('/register');
+    Modular.to.navigate('/register');
   }
 
   @action

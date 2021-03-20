@@ -49,12 +49,13 @@ class UserHeader extends StatelessWidget {
             ),
           ],
         ),
-        OutlineButton(
+        OutlinedButton(
           onPressed: () {},
-          color: Theme.of(context).accentColor,
-          highlightColor: Theme.of(context).accentColor,
-          hoverColor: Theme.of(context).accentColor,
-          splashColor: Theme.of(context).accentColor,
+          // TODO: Review this lines
+          // color: Theme.of(context).accentColor,
+          // highlightColor: Theme.of(context).accentColor,
+          // hoverColor: Theme.of(context).accentColor,
+          // splashColor: Theme.of(context).accentColor,
           child: Text('Follow'),
         ),
       ],

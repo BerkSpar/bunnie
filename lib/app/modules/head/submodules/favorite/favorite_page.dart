@@ -19,7 +19,7 @@ class _FavoritePageState
       children: [
         SizedBox(height: 32),
         Observer(builder: (context) {
-          if (controller.collections.length == 0) {
+          if (store.collections.length == 0) {
             return Container();
           }
 
@@ -42,7 +42,7 @@ class _FavoritePageState
                       enlargeStrategy: CenterPageEnlargeStrategy.height,
                       autoPlay: true,
                     ),
-                    items: controller.collections.map((collection) {
+                    items: store.collections.map((collection) {
                       return CollectionBanner(
                         collection: collection,
                       );
@@ -56,7 +56,7 @@ class _FavoritePageState
         }),
         Observer(
           builder: (context) {
-            if (controller.entries.length == 0) {
+            if (store.entries.length == 0) {
               return Container();
             }
 
@@ -76,12 +76,12 @@ class _FavoritePageState
                   separatorBuilder: (_, index) {
                     return SizedBox(height: 8);
                   },
-                  itemCount: controller.entries.length,
+                  itemCount: store.entries.length,
                   padding: EdgeInsets.symmetric(horizontal: 14),
                   shrinkWrap: true,
                   physics: ScrollPhysics(),
                   itemBuilder: (_, index) {
-                    final entry = controller.entries[index];
+                    final entry = store.entries[index];
 
                     return EntryCard(
                       entry: entry,
