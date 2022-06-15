@@ -5,12 +5,12 @@ import 'explore_page.dart';
 
 class ExploreModule extends Module {
   @override
-  List<Bind> get binds => [
-        Bind((i) => ExploreController()),
-      ];
+  final List<Bind> binds = [
+    Bind.lazySingleton((i) => ExploreController()),
+  ];
 
   @override
-  List<ModularRoute> get routes => [
-        ChildRoute(Modular.initialRoute, child: (_, args) => ExplorePage()),
-      ];
+  final List<ModularRoute> routes = [
+    ChildRoute(Modular.initialRoute, child: (_, args) => const ExplorePage()),
+  ];
 }

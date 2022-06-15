@@ -1,19 +1,19 @@
-import 'package:rabbited/app/shared/models/anime.dart';
+import 'package:bunnie/app/shared/models/anime.dart';
 
 class Entry {
-  Anime anime;
-  int id;
-  int userId;
-  int malId;
-  String name;
-  int currentEpisode;
-  int totalEpisodes;
-  String status;
-  String note;
-  String createdAt;
-  String updatedAt;
+  Anime? anime;
+  int? id;
+  int? userId;
+  int? malId;
+  String? name;
+  int? currentEpisode;
+  int? totalEpisodes;
+  String? status;
+  String? note;
+  String? createdAt;
+  String? updatedAt;
 
-  double get progress => currentEpisode / totalEpisodes;
+  double? get progress => (currentEpisode ?? 0) / (totalEpisodes ?? 1);
 
   Entry({
     this.anime,
@@ -44,17 +44,17 @@ class Entry {
   }
 
   Map<String, dynamic> toJson() {
-    final Map<String, dynamic> data = new Map<String, dynamic>();
-    data['id'] = this.id;
-    data['user_id'] = this.userId;
-    data['mal_id'] = this.malId;
-    data['name'] = this.name;
-    data['current_episode'] = this.currentEpisode;
-    data['total_episodes'] = this.totalEpisodes;
-    data['status'] = this.status;
-    data['note'] = this.note;
-    data['createdAt'] = this.createdAt;
-    data['updatedAt'] = this.updatedAt;
+    final Map<String, dynamic> data = <String, dynamic>{};
+    data['id'] = id;
+    data['user_id'] = userId;
+    data['mal_id'] = malId;
+    data['name'] = name;
+    data['current_episode'] = currentEpisode;
+    data['total_episodes'] = totalEpisodes;
+    data['status'] = status;
+    data['note'] = note;
+    data['createdAt'] = createdAt;
+    data['updatedAt'] = updatedAt;
     //data['anime'] = ??
     return data;
   }

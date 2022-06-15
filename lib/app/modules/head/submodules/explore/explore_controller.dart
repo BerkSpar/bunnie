@@ -1,9 +1,9 @@
 import 'package:mobx/mobx.dart';
 import 'package:flutter_modular/flutter_modular.dart';
-import 'package:rabbited/app/shared/models/anime.dart';
-import 'package:rabbited/app/shared/models/collection.dart';
-import 'package:rabbited/app/shared/models/cover_image.dart';
-import 'package:rabbited/app/shared/models/explore_list.dart';
+import 'package:bunnie/app/shared/models/anime.dart';
+import 'package:bunnie/app/shared/models/collection.dart';
+import 'package:bunnie/app/shared/models/cover_image.dart';
+import 'package:bunnie/app/shared/models/explore_list.dart';
 
 part 'explore_controller.g.dart';
 

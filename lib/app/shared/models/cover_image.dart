@@ -1,8 +1,8 @@
 class CoverImage {
-  String extraLarge;
-  String large;
-  String medium;
-  String color;
+  String? extraLarge;
+  String? large;
+  String? medium;
+  String? color;
 
   CoverImage({this.extraLarge, this.large, this.medium, this.color});
 
@@ -14,11 +14,11 @@ class CoverImage {
   }
 
   Map<String, dynamic> toJson() {
-    final Map<String, dynamic> data = new Map<String, dynamic>();
-    data['extraLarge'] = this.extraLarge;
-    data['large'] = this.large;
-    data['medium'] = this.medium;
-    data['color'] = this.color;
+    final Map<String, dynamic> data = <String, dynamic>{};
+    data['extraLarge'] = extraLarge;
+    data['large'] = large;
+    data['medium'] = medium;
+    data['color'] = color;
     return data;
   }
 }

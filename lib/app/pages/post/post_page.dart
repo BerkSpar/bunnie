@@ -1,15 +1,19 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_modular/flutter_modular.dart';
-import 'package:rabbited/app/utils/bunnie_colors.dart';
+import 'package:bunnie/app/utils/bunnie_colors.dart';
 import 'post_controller.dart';
 
 class PostPage extends StatefulWidget {
+  const PostPage({Key? key}) : super(key: key);
+
   @override
   _PostPageState createState() => _PostPageState();
 }
 
-class _PostPageState extends ModularState<PostPage, PostController> {
+class _PostPageState extends State<PostPage> {
+  final controller = Modular.get<PostController>();
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -22,7 +26,7 @@ class _PostPageState extends ModularState<PostPage, PostController> {
               'assets/images/logo.png',
               height: 50,
             ),
-            Text(
+            const Text(
               'Bunnie',
               style: TextStyle(
                 fontSize: 24,
@@ -37,14 +41,14 @@ class _PostPageState extends ModularState<PostPage, PostController> {
         backgroundColor: Theme.of(context).scaffoldBackgroundColor,
       ),
       body: Padding(
-        padding: EdgeInsets.fromLTRB(16, 32, 16, 8),
+        padding: const EdgeInsets.fromLTRB(16, 32, 16, 8),
         child: Column(
           children: [
             Expanded(
               child: SingleChildScrollView(
                 child: Column(
                   children: [
-                    Text(
+                    const Text(
                       'Create a new post',
                       textAlign: TextAlign.center,
                       style: TextStyle(
@@ -52,20 +56,20 @@ class _PostPageState extends ModularState<PostPage, PostController> {
                         fontWeight: FontWeight.w500,
                       ),
                     ),
-                    SizedBox(height: 8),
-                    Text(
+                    const SizedBox(height: 8),
+                    const Text(
                       'Ask something, share your animes, be an otaku!',
                       textAlign: TextAlign.center,
                       style: TextStyle(
                         fontWeight: FontWeight.w300,
                       ),
                     ),
-                    SizedBox(height: 16),
+                    const SizedBox(height: 16),
                     TextFormField(
                       maxLines: 8,
                       maxLengthEnforcement: MaxLengthEnforcement.enforced,
                       maxLength: 255,
-                      decoration: InputDecoration(
+                      decoration: const InputDecoration(
                         hintText: 'Type something intersting',
                         border: InputBorder.none,
                       ),
@@ -78,13 +82,13 @@ class _PostPageState extends ModularState<PostPage, PostController> {
               mainAxisAlignment: MainAxisAlignment.end,
               children: [
                 TextButton(
-                  child: Text(
+                  onPressed: controller.onShare,
+                  child: const Text(
                     'Share',
                     style: TextStyle(
                       color: BunnieColors.main,
                     ),
                   ),
-                  onPressed: store.onShare,
                 ),
               ],
             ),

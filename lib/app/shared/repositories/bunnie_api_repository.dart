@@ -1,15 +1,15 @@
 import 'package:dartz/dartz.dart';
 import 'package:dio/dio.dart';
 import 'package:flutter_modular/flutter_modular.dart';
-import 'package:rabbited/app/shared/models/collection.dart';
-import 'package:rabbited/app/shared/models/entry.dart';
-import 'package:rabbited/app/shared/models/user.dart';
-import 'package:rabbited/app/utils/links.dart';
+import 'package:bunnie/app/shared/models/collection.dart';
+import 'package:bunnie/app/shared/models/entry.dart';
+import 'package:bunnie/app/shared/models/user.dart';
+import 'package:bunnie/app/utils/links.dart';
 
 class BunnieApiRepository extends Disposable {
   Dio client = Dio();
   BaseOptions options = BaseOptions(
-    baseUrl: bunnie_api_url,
+    baseUrl: bunnieApiURL,
   );
 
   set token(String token) {
@@ -34,7 +34,7 @@ class BunnieApiRepository extends Disposable {
 
       return Right(user);
     } catch (e) {
-      return Left(e);
+      return Left(e as Exception);
     }
   }
 
@@ -50,7 +50,7 @@ class BunnieApiRepository extends Disposable {
 
       return Right(collections);
     } catch (e) {
-      return Left(e);
+      return Left(e as Exception);
     }
   }
 
@@ -66,7 +66,7 @@ class BunnieApiRepository extends Disposable {
 
       return Right(entries);
     } catch (e) {
-      return Left(e);
+      return Left(e as Exception);
     }
   }
 

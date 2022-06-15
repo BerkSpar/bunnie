@@ -1,28 +1,32 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_mobx/flutter_mobx.dart';
 import 'package:flutter_modular/flutter_modular.dart';
-import 'package:rabbited/app/utils/bunnie_app_bar.dart';
+import 'package:bunnie/app/utils/bunnie_app_bar.dart';
 import 'head_controller.dart';
 
 class HeadPage extends StatefulWidget {
+  const HeadPage({Key? key}) : super(key: key);
+
   @override
   _HeadPageState createState() => _HeadPageState();
 }
 
-class _HeadPageState extends ModularState<HeadPage, HeadController> {
+class _HeadPageState extends State<HeadPage> {
+  final controller = Modular.get<HeadController>();
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: appBar,
       body: Observer(builder: (_) {
-        return RouterOutlet();
+        return const RouterOutlet();
       }),
       bottomNavigationBar: BottomNavigationBar(
-        currentIndex: store.index,
-        onTap: store.switchPage,
+        currentIndex: controller.index,
+        onTap: controller.switchPage,
         type: BottomNavigationBarType.fixed,
         showUnselectedLabels: false,
-        items: [
+        items: const [
           BottomNavigationBarItem(
             icon: Icon(Icons.apps),
             label: 'Home',

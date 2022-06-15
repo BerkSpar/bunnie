@@ -1,7 +1,7 @@
 import 'package:mobx/mobx.dart';
 import 'package:flutter_modular/flutter_modular.dart';
-import 'package:rabbited/app/shared/models/post.dart';
-import 'package:rabbited/app/shared/models/user.dart';
+import 'package:bunnie/app/shared/models/post.dart';
+import 'package:bunnie/app/shared/models/user.dart';
 
 part 'home_controller.g.dart';
 

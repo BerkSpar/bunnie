@@ -29,12 +29,12 @@ mixin _$HeadController on _HeadControllerBase, Store {
 
   @override
   dynamic switchPage(int id) {
-    final _$actionInfo = _$_HeadControllerBaseActionController.startAction(
+    final $actionInfo = _$_HeadControllerBaseActionController.startAction(
         name: '_HeadControllerBase.switchPage');
     try {
       return super.switchPage(id);
     } finally {
-      _$_HeadControllerBaseActionController.endAction(_$actionInfo);
+      _$_HeadControllerBaseActionController.endAction($actionInfo);
     }
   }
 

@@ -5,12 +5,12 @@ import 'home_page.dart';
 
 class HomeModule extends Module {
   @override
-  List<Bind> get binds => [
-        Bind((i) => HomeController()),
-      ];
+  final List<Bind> binds = [
+    Bind.lazySingleton((i) => HomeController()),
+  ];
 
   @override
-  List<ModularRoute> get routes => [
-        ChildRoute(Modular.initialRoute, child: (_, args) => HomePage()),
-      ];
+  final List<ModularRoute> routes = [
+    ChildRoute(Modular.initialRoute, child: (_, args) => const HomePage()),
+  ];
 }

@@ -2,37 +2,43 @@ import 'package:flutter/material.dart';
 import 'package:flutter_mobx/flutter_mobx.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
-import 'package:rabbited/app/utils/bunnie_app_bar.dart';
-import 'package:rabbited/app/utils/bunnie_colors.dart';
-import 'package:rabbited/app/widgets/anime_list/anime_list_widget.dart';
-import 'package:rabbited/app/widgets/rounded_image/rounded_image.dart';
+
+import 'package:bunnie/app/utils/bunnie_app_bar.dart';
+import 'package:bunnie/app/utils/bunnie_colors.dart';
+import 'package:bunnie/app/widgets/anime_list/anime_list_widget.dart';
+import 'package:bunnie/app/widgets/rounded_image/rounded_image.dart';
+
 import 'collection_controller.dart';
 
 class CollectionPage extends StatefulWidget {
-  final String id;
+  final String? id;
 
-  CollectionPage(this.id);
+  const CollectionPage({
+    Key? key,
+    this.id,
+  }) : super(key: key);
 
   @override
   _CollectionPageState createState() => _CollectionPageState();
 }
 
-class _CollectionPageState
-    extends ModularState<CollectionPage, CollectionController> {
+class _CollectionPageState extends State<CollectionPage> {
+  final controller = Modular.get<CollectionController>();
+
   @override
   void initState() {
     super.initState();
-    store.init(widget.id);
+    controller.init(widget.id);
   }
 
   Widget getDescription() {
-    if (store.collection.description == null) {
+    if (controller.collection?.description == null) {
       return Container();
     }
 
     return Text(
-      store.collection.description,
-      style: TextStyle(
+      controller.collection?.description ?? '',
+      style: const TextStyle(
         fontSize: 16,
         fontWeight: FontWeight.w500,
         color: BunnieColors.blackBrown,
@@ -46,8 +52,8 @@ class _CollectionPageState
       appBar: secundaryAppBar,
       body: Observer(
         builder: (context) {
-          if (store.isLoading) {
-            return Center(
+          if (controller.isLoading) {
+            return const Center(
               child: SpinKitCircle(
                 color: BunnieColors.main,
               ),
@@ -55,16 +61,16 @@ class _CollectionPageState
           }
 
           return ListView(
-            padding: EdgeInsets.fromLTRB(16, 16, 16, 0),
+            padding: const EdgeInsets.fromLTRB(16, 16, 16, 0),
             children: [
               RoundedImage(
                 borderRadius: BorderRadius.circular(8),
-                imageUrl: store.collection.imageUrl,
+                imageUrl: controller.collection?.imageUrl ?? '',
               ),
-              SizedBox(height: 8),
+              const SizedBox(height: 8),
               Text(
-                store.collection.name,
-                style: TextStyle(
+                controller.collection?.name ?? '',
+                style: const TextStyle(
                   fontSize: 28,
                   fontWeight: FontWeight.w500,
                   color: BunnieColors.blackBrown,
@@ -72,13 +78,15 @@ class _CollectionPageState
               ),
               getDescription(),
               ListView.builder(
-                itemCount: store.collection.animes.length,
+                itemCount: controller.collection?.animes?.length ?? 0,
                 shrinkWrap: true,
-                physics: ScrollPhysics(),
+                physics: const ScrollPhysics(),
                 itemBuilder: (_, index) {
-                  final anime = store.collection.animes[index];
+                  final anime = controller.collection!.animes![index]!;
 
-                  return AnimeListWidget(anime);
+                  return AnimeListWidget(
+                    anime: anime,
+                  );
                 },
               ),
             ],

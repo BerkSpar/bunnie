@@ -14,12 +14,12 @@ mixin _$RegisterController on _RegisterControllerBase, Store {
 
   @override
   dynamic register() {
-    final _$actionInfo = _$_RegisterControllerBaseActionController.startAction(
+    final $actionInfo = _$_RegisterControllerBaseActionController.startAction(
         name: '_RegisterControllerBase.register');
     try {
       return super.register();
     } finally {
-      _$_RegisterControllerBaseActionController.endAction(_$actionInfo);
+      _$_RegisterControllerBaseActionController.endAction($actionInfo);
     }
   }
 

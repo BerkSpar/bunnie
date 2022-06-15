@@ -18,25 +18,15 @@ abstract class _InitialControllerBase with Store {
   }
 
   _init() async {
-    final minTime = Future.delayed(Duration(seconds: 2));
-
-    //Lógica de login
-    final isLogged = false;
+    final minTime = Future.delayed(const Duration(seconds: 2));
 
     await minTime;
 
     opacity = 1;
     width = 100;
 
-    await Future.delayed(Duration(milliseconds: 1200));
+    await Future.delayed(const Duration(milliseconds: 1200));
 
-    if (isLogged) {
-      Modular.to.navigate(
-        '/head',
-        replaceAll: true,
-      );
-    } else {
-      Modular.to.navigate('/login');
-    }
+    Modular.to.navigate('/login');
   }
 }

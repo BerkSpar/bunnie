@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
-import 'package:rabbited/app/shared/models/user.dart';
-import 'package:rabbited/app/utils/bunnie_colors.dart';
-import 'package:rabbited/app/widgets/rounded_image/rounded_image.dart';
+import 'package:bunnie/app/shared/models/user.dart';
+import 'package:bunnie/app/utils/bunnie_colors.dart';
+import 'package:bunnie/app/widgets/rounded_image/rounded_image.dart';
 
 class UserHeader extends StatelessWidget {
   final User user;
 
-  UserHeader({this.user});
+  const UserHeader({Key? key, required this.user}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -19,26 +19,26 @@ class UserHeader extends StatelessWidget {
               height: 48,
               width: 48,
               borderRadius: BorderRadius.circular(8),
-              imageUrl: user.profilePhoto,
+              imageUrl: user.profilePhoto ?? '',
             ),
-            SizedBox(width: 8),
-            Container(
+            const SizedBox(width: 8),
+            SizedBox(
               height: 48,
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(
-                    user.name,
-                    style: TextStyle(
+                    user.name ?? '',
+                    style: const TextStyle(
                       fontSize: 18,
                       color: BunnieColors.brown,
                       fontWeight: FontWeight.w700,
                     ),
                   ),
-                  SizedBox(height: 4),
+                  const SizedBox(height: 4),
                   Text(
                     '@${user.username}',
-                    style: TextStyle(
+                    style: const TextStyle(
                       fontSize: 16,
                       fontWeight: FontWeight.w300,
                       color: BunnieColors.blackBrown,
@@ -51,12 +51,7 @@ class UserHeader extends StatelessWidget {
         ),
         OutlinedButton(
           onPressed: () {},
-          // TODO: Review this lines
-          // color: Theme.of(context).accentColor,
-          // highlightColor: Theme.of(context).accentColor,
-          // hoverColor: Theme.of(context).accentColor,
-          // splashColor: Theme.of(context).accentColor,
-          child: Text('Follow'),
+          child: const Text('Follow'),
         ),
       ],
     );

@@ -1,14 +1,13 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_modular/flutter_modular.dart';
-import 'package:rabbited/app/shared/models/collection.dart';
+import 'package:bunnie/app/shared/models/collection.dart';
 
 class CollectionBanner extends StatelessWidget {
   final Collection collection;
 
-  CollectionBanner({
-    @required this.collection,
-  });
+  const CollectionBanner({Key? key, required this.collection})
+      : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -17,7 +16,7 @@ class CollectionBanner extends StatelessWidget {
         Modular.to.pushNamed('/collection/${collection.id}');
       },
       child: Container(
-        padding: EdgeInsets.all(8),
+        padding: const EdgeInsets.all(8),
         child: Stack(
           children: [
             Container(
@@ -33,7 +32,7 @@ class CollectionBanner extends StatelessWidget {
                 ),
               ),
               child: CachedNetworkImage(
-                imageUrl: collection.imageUrl,
+                imageUrl: collection.imageUrl ?? '',
                 height: double.maxFinite,
                 width: double.maxFinite,
                 imageBuilder: (_, imageProvider) {
@@ -50,7 +49,7 @@ class CollectionBanner extends StatelessWidget {
                     child: Container(
                       height: 80,
                       width: 80,
-                      padding: EdgeInsets.all(16),
+                      padding: const EdgeInsets.all(16),
                       child: CircularProgressIndicator(
                         value: download.progress,
                       ),
@@ -58,7 +57,7 @@ class CollectionBanner extends StatelessWidget {
                   );
                 },
                 errorWidget: (_, __, ___) {
-                  return Container(
+                  return const SizedBox(
                     height: 80,
                     width: 80,
                     child: Icon(
@@ -72,10 +71,10 @@ class CollectionBanner extends StatelessWidget {
             Align(
               alignment: Alignment.bottomLeft,
               child: Padding(
-                padding: EdgeInsets.all(16),
+                padding: const EdgeInsets.all(16),
                 child: Text(
-                  collection.name,
-                  style: TextStyle(
+                  collection.name ?? '',
+                  style: const TextStyle(
                     fontSize: 24,
                     fontWeight: FontWeight.bold,
                     color: Colors.white,

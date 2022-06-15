@@ -1,13 +1,13 @@
-import 'package:rabbited/app/shared/models/cover_image.dart';
+import 'package:bunnie/app/shared/models/cover_image.dart';
 
 class Anime {
-  String name;
-  String bannerImage;
-  int episodes;
-  CoverImage coverImage;
-  String malId;
-  int order;
-  String note;
+  String? name;
+  String? bannerImage;
+  int? episodes;
+  CoverImage? coverImage;
+  String? malId;
+  int? order;
+  String? note;
 
   Anime({
     this.malId,
@@ -20,7 +20,6 @@ class Anime {
   });
 
   Anime.fromJson(Map<String, dynamic> json) {
-    print(json);
     name = json['title'];
     bannerImage = json['bannerImage'];
     episodes = json['episodes'];
@@ -33,16 +32,14 @@ class Anime {
   }
 
   Map<String, dynamic> toJson() {
-    final Map<String, dynamic> data = new Map<String, dynamic>();
-    data['title'] = this.name;
-    data['bannerImage'] = this.bannerImage;
-    data['episodes'] = this.episodes;
-    data['mal_id'] = this.malId;
-    data['order'] = this.order;
-    data['note'] = this.note;
-    if (this.coverImage != null) {
-      data['coverImage'] = this.coverImage.toJson();
-    }
+    final Map<String, dynamic> data = <String, dynamic>{};
+    data['title'] = name;
+    data['bannerImage'] = bannerImage;
+    data['episodes'] = episodes;
+    data['mal_id'] = malId;
+    data['order'] = order;
+    data['note'] = note;
+    data['coverImage'] = coverImage?.toJson();
     return data;
   }
 }

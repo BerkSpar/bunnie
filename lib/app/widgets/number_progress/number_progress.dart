@@ -1,18 +1,19 @@
 import 'package:flutter/material.dart';
-import 'package:rabbited/app/utils/bunnie_colors.dart';
+import 'package:bunnie/app/utils/bunnie_colors.dart';
 
 class NumberProgress extends StatelessWidget {
   final int current;
   final int max;
-  final Function onAdd;
-  final Function onSubtract;
+  final VoidCallback onAdd;
+  final VoidCallback onSubtract;
 
-  NumberProgress({
-    @required this.current,
-    @required this.max,
-    @required this.onAdd,
-    @required this.onSubtract,
-  });
+  const NumberProgress(
+      {Key? key,
+      required this.current,
+      required this.max,
+      required this.onAdd,
+      required this.onSubtract})
+      : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -26,10 +27,10 @@ class NumberProgress extends StatelessWidget {
             child: Container(
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(8),
-                color: Theme.of(context).accentColor.withOpacity(0.3),
+                color: Theme.of(context).colorScheme.secondary.withOpacity(0.3),
               ),
               height: 20,
-              child: Center(
+              child: const Center(
                 child: Text(
                   '-',
                   style: TextStyle(
@@ -46,7 +47,7 @@ class NumberProgress extends StatelessWidget {
           child: Text(
             '$current of $max episodes',
             textAlign: TextAlign.center,
-            style: TextStyle(
+            style: const TextStyle(
               color: BunnieColors.blackBrown,
             ),
           ),
@@ -58,10 +59,10 @@ class NumberProgress extends StatelessWidget {
             child: Container(
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(8),
-                color: Theme.of(context).accentColor.withOpacity(0.3),
+                color: Theme.of(context).colorScheme.secondary.withOpacity(0.3),
               ),
               height: 20,
-              child: Center(
+              child: const Center(
                 child: Text(
                   '+',
                   style: TextStyle(

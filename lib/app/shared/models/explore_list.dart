@@ -1,10 +1,10 @@
 enum ExploreListType { collection, anime }
 
 class ExploreList {
-  String name;
-  ExploreListType exploreListType;
+  String? name;
+  ExploreListType? exploreListType;
 
-  List<dynamic> itens;
+  List<dynamic>? itens;
 
   ExploreList({
     this.name,

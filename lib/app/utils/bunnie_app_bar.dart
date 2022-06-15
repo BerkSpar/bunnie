@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:rabbited/app/utils/bunnie_colors.dart';
+import 'package:bunnie/app/utils/bunnie_colors.dart';
 
 var appBar = AppBar(
   title: Row(
@@ -10,7 +10,7 @@ var appBar = AppBar(
         'assets/images/logo.png',
         height: 50,
       ),
-      Text(
+      const Text(
         'Bunnie',
         style: TextStyle(
           fontSize: 24,
@@ -22,11 +22,11 @@ var appBar = AppBar(
   ),
   centerTitle: true,
   elevation: 0,
-  backgroundColor: Color(0xFFFFFF),
+  backgroundColor: const Color(0x00ffffff),
 );
 
 var secundaryAppBar = AppBar(
-  title: Text(
+  title: const Text(
     'Bunnie',
     style: TextStyle(
       fontSize: 24,
@@ -36,5 +36,5 @@ var secundaryAppBar = AppBar(
   ),
   centerTitle: true,
   elevation: 0,
-  backgroundColor: Color(0xFFFFFF),
+  backgroundColor: const Color(0x00ffffff),
 );

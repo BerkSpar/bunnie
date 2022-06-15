@@ -1,10 +1,10 @@
 class Comment {
-  int id;
-  int userId;
-  int postId;
-  String content;
-  String createdAt;
-  String updatedAt;
+  int? id;
+  int? userId;
+  int? postId;
+  String? content;
+  String? createdAt;
+  String? updatedAt;
 
   Comment({
     this.id,
@@ -25,13 +25,13 @@ class Comment {
   }
 
   Map<String, dynamic> toJson() {
-    final Map<String, dynamic> data = new Map<String, dynamic>();
-    data['id'] = this.id;
-    data['user_id'] = this.userId;
-    data['post_id'] = this.postId;
-    data['content'] = this.content;
-    data['createdAt'] = this.createdAt;
-    data['updatedAt'] = this.updatedAt;
+    final Map<String, dynamic> data = <String, dynamic>{};
+    data['id'] = id;
+    data['user_id'] = userId;
+    data['post_id'] = postId;
+    data['content'] = content;
+    data['createdAt'] = createdAt;
+    data['updatedAt'] = updatedAt;
     return data;
   }
 }

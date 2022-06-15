@@ -22,45 +22,45 @@ mixin _$LoginController on _LoginControllerBase, Store {
 
   @override
   dynamic loginWithGoogle() {
-    final _$actionInfo = _$_LoginControllerBaseActionController.startAction(
+    final $actionInfo = _$_LoginControllerBaseActionController.startAction(
         name: '_LoginControllerBase.loginWithGoogle');
     try {
       return super.loginWithGoogle();
     } finally {
-      _$_LoginControllerBaseActionController.endAction(_$actionInfo);
+      _$_LoginControllerBaseActionController.endAction($actionInfo);
     }
   }
 
   @override
   dynamic loginWithFacebook() {
-    final _$actionInfo = _$_LoginControllerBaseActionController.startAction(
+    final $actionInfo = _$_LoginControllerBaseActionController.startAction(
         name: '_LoginControllerBase.loginWithFacebook');
     try {
       return super.loginWithFacebook();
     } finally {
-      _$_LoginControllerBaseActionController.endAction(_$actionInfo);
+      _$_LoginControllerBaseActionController.endAction($actionInfo);
     }
   }
 
   @override
   dynamic register() {
-    final _$actionInfo = _$_LoginControllerBaseActionController.startAction(
+    final $actionInfo = _$_LoginControllerBaseActionController.startAction(
         name: '_LoginControllerBase.register');
     try {
       return super.register();
     } finally {
-      _$_LoginControllerBaseActionController.endAction(_$actionInfo);
+      _$_LoginControllerBaseActionController.endAction($actionInfo);
     }
   }
 
   @override
   dynamic recovery() {
-    final _$actionInfo = _$_LoginControllerBaseActionController.startAction(
+    final $actionInfo = _$_LoginControllerBaseActionController.startAction(
         name: '_LoginControllerBase.recovery');
     try {
       return super.recovery();
     } finally {
-      _$_LoginControllerBaseActionController.endAction(_$actionInfo);
+      _$_LoginControllerBaseActionController.endAction($actionInfo);
     }
   }
 

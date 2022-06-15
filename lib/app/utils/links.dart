@@ -1,1 +1,1 @@
-const bunnie_api_url = 'https://www.bunnie.tech';
+const bunnieApiURL = 'https://www.bunnie.tech';

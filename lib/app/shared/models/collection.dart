@@ -1,15 +1,15 @@
-import 'package:rabbited/app/shared/models/anime.dart';
+import 'package:bunnie/app/shared/models/anime.dart';
 
 class Collection {
-  int id;
-  int userId;
-  String imageUrl;
-  String name;
-  String description;
-  bool isPublic;
-  String updatedAt;
-  String createdAt;
-  List<Anime> animes;
+  int? id;
+  int? userId;
+  String? imageUrl;
+  String? name;
+  String? description;
+  bool? isPublic;
+  String? updatedAt;
+  String? createdAt;
+  List<Anime?>? animes;
 
   Collection(
       {this.id,
@@ -40,18 +40,16 @@ class Collection {
   }
 
   Map<String, dynamic> toJson() {
-    final Map<String, dynamic> data = new Map<String, dynamic>();
-    data['id'] = this.id;
-    data['user_id'] = this.userId;
-    data['image_url'] = this.imageUrl;
-    data['name'] = this.name;
-    data['description'] = this.description;
-    data['is_public'] = this.isPublic;
-    data['updatedAt'] = this.updatedAt;
-    data['createdAt'] = this.createdAt;
-    if (this.animes != null) {
-      data['animes'] = this.animes.map((v) => v.toJson()).toList();
-    }
+    final Map<String, dynamic> data = <String, dynamic>{};
+    data['id'] = id;
+    data['user_id'] = userId;
+    data['image_url'] = imageUrl;
+    data['name'] = name;
+    data['description'] = description;
+    data['is_public'] = isPublic;
+    data['updatedAt'] = updatedAt;
+    data['createdAt'] = createdAt;
+    data['animes'] = animes?.map((v) => v?.toJson()).toList();
     return data;
   }
 }

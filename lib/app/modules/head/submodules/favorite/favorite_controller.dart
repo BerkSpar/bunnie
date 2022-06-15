@@ -1,8 +1,8 @@
 import 'package:mobx/mobx.dart';
 import 'package:flutter_modular/flutter_modular.dart';
-import 'package:rabbited/app/shared/models/collection.dart';
-import 'package:rabbited/app/shared/models/entry.dart';
-import 'package:rabbited/app/shared/repositories/bunnie_api_repository.dart';
+import 'package:bunnie/app/shared/models/collection.dart';
+import 'package:bunnie/app/shared/models/entry.dart';
+import 'package:bunnie/app/shared/repositories/bunnie_api_repository.dart';
 
 part 'favorite_controller.g.dart';
 

@@ -6,13 +6,13 @@ import 'favorite_page.dart';
 
 class FavoriteModule extends Module {
   @override
-  List<Bind> get binds => [
-        Bind((i) => CollectionController()),
-        Bind((i) => FavoriteController()),
-      ];
+  final List<Bind> binds = [
+    Bind.lazySingleton((i) => CollectionController()),
+    Bind.lazySingleton((i) => FavoriteController()),
+  ];
 
   @override
-  List<ModularRoute> get routes => [
-        ChildRoute(Modular.initialRoute, child: (_, args) => FavoritePage()),
-      ];
+  final List<ModularRoute> routes = [
+    ChildRoute(Modular.initialRoute, child: (_, args) => const FavoritePage()),
+  ];
 }

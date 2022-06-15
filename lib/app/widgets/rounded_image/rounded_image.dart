@@ -3,16 +3,17 @@ import 'package:flutter/material.dart';
 
 class RoundedImage extends StatelessWidget {
   final String imageUrl;
-  final double height;
-  final double width;
+  final double? height;
+  final double? width;
   final BorderRadius borderRadius;
 
-  RoundedImage({
-    this.height,
-    this.width,
-    @required this.borderRadius,
-    @required this.imageUrl,
-  });
+  const RoundedImage(
+      {Key? key,
+      required this.imageUrl,
+      this.height,
+      this.width,
+      required this.borderRadius})
+      : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -34,7 +35,7 @@ class RoundedImage extends StatelessWidget {
           child: Container(
             height: 80,
             width: 80,
-            padding: EdgeInsets.all(16),
+            padding: const EdgeInsets.all(16),
             child: CircularProgressIndicator(
               value: download.progress,
             ),
@@ -42,7 +43,7 @@ class RoundedImage extends StatelessWidget {
         );
       },
       errorWidget: (_, url, error) {
-        return Container(
+        return const SizedBox(
           height: 80,
           width: 80,
           child: Icon(

@@ -1,14 +1,13 @@
 import 'package:flutter/material.dart';
-import 'package:rabbited/app/shared/models/explore_list.dart';
-import 'package:rabbited/app/utils/bunnie_colors.dart';
-import 'package:rabbited/app/widgets/rounded_image/rounded_image.dart';
+import 'package:bunnie/app/shared/models/explore_list.dart';
+import 'package:bunnie/app/utils/bunnie_colors.dart';
+import 'package:bunnie/app/widgets/rounded_image/rounded_image.dart';
 
 class ExploreListWidget extends StatelessWidget {
   final ExploreList exploreList;
 
-  ExploreListWidget({
-    @required this.exploreList,
-  });
+  const ExploreListWidget({Key? key, required this.exploreList})
+      : super(key: key);
 
   double get _size {
     if (exploreList.exploreListType == ExploreListType.anime) {
@@ -28,24 +27,24 @@ class ExploreListWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
+    return SizedBox(
       height: _size + 30,
       child: ListView.separated(
         shrinkWrap: true,
         scrollDirection: Axis.horizontal,
-        itemCount: exploreList.itens.length,
+        itemCount: exploreList.itens?.length ?? 0,
         separatorBuilder: (_, index) {
-          return SizedBox(width: 8);
+          return const SizedBox(width: 8);
         },
         itemBuilder: (_, index) {
-          final item = exploreList.itens[index];
+          final item = exploreList.itens?[index];
 
           return Padding(
             padding: EdgeInsets.only(left: index == 0 ? 16 : 0),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Container(
+                SizedBox(
                   height: _size,
                   child: RoundedImage(
                     borderRadius: BorderRadius.zero,
@@ -53,12 +52,12 @@ class ExploreListWidget extends StatelessWidget {
                     imageUrl: _imageUrl(item),
                   ),
                 ),
-                SizedBox(height: 8),
+                const SizedBox(height: 8),
                 Text(
                   item.name,
                   maxLines: 1,
                   overflow: TextOverflow.ellipsis,
-                  style: TextStyle(
+                  style: const TextStyle(
                     fontWeight: FontWeight.w300,
                     fontSize: 16,
                     color: BunnieColors.blackBrown,

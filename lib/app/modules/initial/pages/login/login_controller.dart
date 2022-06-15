@@ -4,9 +4,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:mobx/mobx.dart';
 import 'package:flutter_modular/flutter_modular.dart';
-import 'package:rabbited/app/app_controller.dart';
-import 'package:rabbited/app/shared/models/user.dart';
-import 'package:rabbited/app/shared/repositories/bunnie_api_repository.dart';
+import 'package:bunnie/app/app_controller.dart';
+import 'package:bunnie/app/shared/models/user.dart';
+import 'package:bunnie/app/shared/repositories/bunnie_api_repository.dart';
 import 'package:asuka/asuka.dart';
 
 part 'login_controller.g.dart';
@@ -27,7 +27,7 @@ abstract class _LoginControllerBase with Store {
   login(startLoading, stopLoading, btnState) async {
     if (btnState == ButtonState.Busy) return;
 
-    if (!formKey.currentState.validate()) return;
+    if (!(formKey.currentState?.validate() ?? false)) return;
 
     SystemChannels.textInput.invokeMethod('TextInput.hide');
 
@@ -41,19 +41,18 @@ abstract class _LoginControllerBase with Store {
     stopLoading();
 
     if (result.isRight()) {
-      app.user = result.getOrElse(null);
+      app.user = result.getOrElse(() => User());
 
-      Modular.to.navigate(
-        '/app',
-        replaceAll: true,
-      );
+      Modular.to.navigate('/app');
     } else {
       showSnackBar(AsukaSnackbar.alert('You cannot login'));
     }
   }
 
   @action
-  loginWithGoogle() {}
+  loginWithGoogle() {
+    Modular.to.navigate('/app');
+  }
 
   @action
   loginWithFacebook() {}

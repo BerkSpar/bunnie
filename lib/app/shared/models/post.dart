@@ -1,14 +1,14 @@
-import 'package:rabbited/app/shared/models/user.dart';
+import 'package:bunnie/app/shared/models/user.dart';
 
 class Post {
-  int id;
-  String content;
-  String imageUrl;
-  int likes;
-  int comments;
-  String createdAt;
-  String updatedAt;
-  User user;
+  int? id;
+  String? content;
+  String? imageUrl;
+  int? likes;
+  int? comments;
+  String? createdAt;
+  String? updatedAt;
+  User? user;
 
   Post({
     this.id,
@@ -33,15 +33,15 @@ class Post {
   }
 
   Map<String, dynamic> toJson() {
-    final Map<String, dynamic> data = new Map<String, dynamic>();
-    data['id'] = this.id;
-    data['content'] = this.content;
-    data['image_url'] = this.imageUrl;
-    data['likes'] = this.likes;
-    data['comments'] = this.comments;
-    data['createdAt'] = this.createdAt;
-    data['updatedAt'] = this.updatedAt;
-    data['user'] = this.user.toJson();
+    final Map<String, dynamic> data = <String, dynamic>{};
+    data['id'] = id;
+    data['content'] = content;
+    data['image_url'] = imageUrl;
+    data['likes'] = likes;
+    data['comments'] = comments;
+    data['createdAt'] = createdAt;
+    data['updatedAt'] = updatedAt;
+    data['user'] = user?.toJson();
     return data;
   }
 }

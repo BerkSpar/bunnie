@@ -5,12 +5,12 @@ import 'profile_page.dart';
 
 class ProfileModule extends Module {
   @override
-  List<Bind> get binds => [
-        Bind((i) => ProfileController()),
-      ];
+  final List<Bind> binds = [
+    Bind.lazySingleton((i) => ProfileController()),
+  ];
 
   @override
-  List<ModularRoute> get routes => [
-        ChildRoute(Modular.initialRoute, child: (_, args) => ProfilePage()),
-      ];
+  final List<ModularRoute> routes = [
+    ChildRoute(Modular.initialRoute, child: (_, args) => const ProfilePage()),
+  ];
 }
