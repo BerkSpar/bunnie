@@ -1,4 +1,0 @@
-lib/app/modules/search/presenter/widgets/search_anime_delegate/search_anime_delegate_widget.dart
-test/app/modules/search/presenter/widgets/search_anime_delegate/search_anime_delegate_widget_test.dart
-lib/app/modules/search/presenter/widgets/search_anime_delegate/search_anime_delegate_controller.dart
-test/app/modules/search/presenter/widgets/search_anime_delegate/search_anime_delegate_controller_test.dart

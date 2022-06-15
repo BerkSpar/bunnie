@@ -1,4 +1,0 @@
-lib/app/modules/search/presenter/page/anime/anime_page.dart
-test/app/modules/search/presenter/page/anime/anime_page_test.dart
-lib/app/modules/search/presenter/page/anime/anime_controller.dart
-test/app/modules/search/presenter/page/anime/anime_controller_test.dart

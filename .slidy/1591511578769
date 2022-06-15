@@ -1,4 +1,0 @@
-lib/app/modules/home/widgets/search_delegate/search_delegate_widget.dart
-test/app/modules/home/widgets/search_delegate/search_delegate_widget_test.dart
-lib/app/modules/home/widgets/search_delegate/search_delegate_controller.dart
-test/app/modules/home/widgets/search_delegate/search_delegate_controller_test.dart
