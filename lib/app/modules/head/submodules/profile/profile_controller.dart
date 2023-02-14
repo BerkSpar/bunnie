@@ -1,9 +1,9 @@
-import 'package:mobx/mobx.dart';
-import 'package:flutter_modular/flutter_modular.dart';
 import 'package:bunnie/app/shared/models/anime.dart';
 import 'package:bunnie/app/shared/models/cover_image.dart';
 import 'package:bunnie/app/shared/models/post.dart';
 import 'package:bunnie/app/shared/models/user.dart';
+import 'package:flutter_modular/flutter_modular.dart';
+import 'package:mobx/mobx.dart';
 
 part 'profile_controller.g.dart';
 

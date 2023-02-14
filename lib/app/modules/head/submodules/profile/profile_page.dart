@@ -1,8 +1,9 @@
-import 'package:flutter/material.dart';
-import 'package:flutter_modular/flutter_modular.dart';
 import 'package:bunnie/app/app_controller.dart';
 import 'package:bunnie/app/widgets/post_card/post_card.dart';
 import 'package:bunnie/app/widgets/rounded_image/rounded_image.dart';
+import 'package:flutter/material.dart';
+import 'package:flutter_modular/flutter_modular.dart';
+
 import 'profile_controller.dart';
 
 class ProfilePage extends StatefulWidget {
