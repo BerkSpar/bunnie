@@ -1,0 +1,7 @@
+plugins:
+  dart:
+    enabled: true
+    config:
+      - A
+      - B
+      - C
