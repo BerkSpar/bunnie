@@ -1,5 +1,5 @@
-import 'package:flutter/material.dart';
 import 'package:bunnie/app/utils/bunnie_colors.dart';
+import 'package:flutter/material.dart';
 
 class NumberProgress extends StatelessWidget {
   final int current;
@@ -7,13 +7,13 @@ class NumberProgress extends StatelessWidget {
   final VoidCallback onAdd;
   final VoidCallback onSubtract;
 
-  const NumberProgress(
-      {Key? key,
-      required this.current,
-      required this.max,
-      required this.onAdd,
-      required this.onSubtract})
-      : super(key: key);
+  const NumberProgress({
+    Key? key,
+    required this.current,
+    required this.max,
+    required this.onAdd,
+    required this.onSubtract,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

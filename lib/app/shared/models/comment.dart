@@ -25,13 +25,14 @@ class Comment {
   }
 
   Map<String, dynamic> toJson() {
-    final Map<String, dynamic> data = <String, dynamic>{};
+    final Map<String, dynamic> data = {};
     data['id'] = id;
     data['user_id'] = userId;
     data['post_id'] = postId;
     data['content'] = content;
     data['createdAt'] = createdAt;
     data['updatedAt'] = updatedAt;
+
     return data;
   }
 }

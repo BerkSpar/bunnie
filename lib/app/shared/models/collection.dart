@@ -11,16 +11,17 @@ class Collection {
   String? createdAt;
   List<Anime?>? animes;
 
-  Collection(
-      {this.id,
-      this.userId,
-      this.imageUrl,
-      this.name,
-      this.description,
-      this.isPublic,
-      this.updatedAt,
-      this.createdAt,
-      this.animes});
+  Collection({
+    this.id,
+    this.userId,
+    this.imageUrl,
+    this.name,
+    this.description,
+    this.isPublic,
+    this.updatedAt,
+    this.createdAt,
+    this.animes,
+  });
 
   Collection.fromJson(Map<String, dynamic> json) {
     id = json['id'];
@@ -40,7 +41,7 @@ class Collection {
   }
 
   Map<String, dynamic> toJson() {
-    final Map<String, dynamic> data = <String, dynamic>{};
+    final Map<String, dynamic> data = {};
     data['id'] = id;
     data['user_id'] = userId;
     data['image_url'] = imageUrl;
@@ -50,6 +51,7 @@ class Collection {
     data['updatedAt'] = updatedAt;
     data['createdAt'] = createdAt;
     data['animes'] = animes?.map((v) => v?.toJson()).toList();
+
     return data;
   }
 }

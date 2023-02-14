@@ -1,7 +1,8 @@
-import 'package:flutter/material.dart';
-import 'package:flutter_modular/flutter_modular.dart';
 import 'package:bunnie/app/utils/bunnie_colors.dart';
 import 'package:bunnie/app/widgets/explore_list/explore_list_widget.dart';
+import 'package:flutter/material.dart';
+import 'package:flutter_modular/flutter_modular.dart';
+
 import 'explore_controller.dart';
 
 class ExplorePage extends StatefulWidget {
@@ -23,7 +24,7 @@ class _ExplorePageState extends State<ExplorePage> {
           padding: const EdgeInsets.symmetric(horizontal: 16),
           child: Text(
             'Popular Animes',
-            style: Theme.of(context).textTheme.headline4,
+            style: Theme.of(context).textTheme.headlineMedium,
           ),
         ),
         const SizedBox(height: 8),
@@ -64,7 +65,7 @@ class _ExplorePageState extends State<ExplorePage> {
           padding: const EdgeInsets.symmetric(horizontal: 16),
           child: Text(
             'Popular Collections',
-            style: Theme.of(context).textTheme.headline4,
+            style: Theme.of(context).textTheme.headlineMedium,
           ),
         ),
         const SizedBox(height: 8),

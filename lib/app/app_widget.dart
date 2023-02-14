@@ -1,7 +1,7 @@
+import 'package:asuka/asuka.dart' as asuka;
+import 'package:bunnie/app/utils/bunnie_colors.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_modular/flutter_modular.dart';
-import 'package:bunnie/app/utils/bunnie_colors.dart';
-import 'package:asuka/asuka.dart' as asuka;
 
 class AppWidget extends StatelessWidget {
   const AppWidget({Key? key}) : super(key: key);
@@ -14,7 +14,7 @@ class AppWidget extends StatelessWidget {
         primarySwatch: Colors.orange,
         fontFamily: 'Inter',
         textTheme: const TextTheme(
-          headline4: TextStyle(
+          headlineMedium: TextStyle(
             fontSize: 32,
             color: BunnieColors.main,
             fontWeight: FontWeight.w300,

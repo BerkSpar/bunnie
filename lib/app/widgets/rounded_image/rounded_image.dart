@@ -7,13 +7,13 @@ class RoundedImage extends StatelessWidget {
   final double? width;
   final BorderRadius borderRadius;
 
-  const RoundedImage(
-      {Key? key,
-      required this.imageUrl,
-      this.height,
-      this.width,
-      required this.borderRadius})
-      : super(key: key);
+  const RoundedImage({
+    Key? key,
+    required this.imageUrl,
+    this.height,
+    this.width,
+    required this.borderRadius,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

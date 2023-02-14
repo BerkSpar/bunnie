@@ -45,7 +45,7 @@ class User {
   }
 
   Map<String, dynamic> toJson() {
-    final Map<String, dynamic> data = <String, dynamic>{};
+    final Map<String, dynamic> data = {};
     data['id'] = id;
     data['name'] = name;
     data['last_name'] = lastName;
@@ -58,6 +58,7 @@ class User {
     data['createdAt'] = createdAt;
     data['updatedAt'] = updatedAt;
     data['token'] = token;
+
     return data;
   }
 }

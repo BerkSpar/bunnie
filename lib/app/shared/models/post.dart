@@ -33,7 +33,7 @@ class Post {
   }
 
   Map<String, dynamic> toJson() {
-    final Map<String, dynamic> data = <String, dynamic>{};
+    final Map<String, dynamic> data = {};
     data['id'] = id;
     data['content'] = content;
     data['image_url'] = imageUrl;
@@ -42,6 +42,7 @@ class Post {
     data['createdAt'] = createdAt;
     data['updatedAt'] = updatedAt;
     data['user'] = user?.toJson();
+
     return data;
   }
 }

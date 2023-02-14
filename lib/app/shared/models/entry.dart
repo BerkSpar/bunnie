@@ -44,7 +44,7 @@ class Entry {
   }
 
   Map<String, dynamic> toJson() {
-    final Map<String, dynamic> data = <String, dynamic>{};
+    final Map<String, dynamic> data = {};
     data['id'] = id;
     data['user_id'] = userId;
     data['mal_id'] = malId;
@@ -56,6 +56,7 @@ class Entry {
     data['createdAt'] = createdAt;
     data['updatedAt'] = updatedAt;
     //data['anime'] = ??
+
     return data;
   }
 }

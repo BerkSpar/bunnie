@@ -32,7 +32,7 @@ class _FavoritePageState extends State<FavoritePage> {
                 padding: const EdgeInsets.symmetric(horizontal: 16),
                 child: Text(
                   'My Collections',
-                  style: Theme.of(context).textTheme.headline4,
+                  style: Theme.of(context).textTheme.headlineMedium,
                 ),
               ),
               const SizedBox(height: 8),
@@ -71,7 +71,7 @@ class _FavoritePageState extends State<FavoritePage> {
                   padding: const EdgeInsets.symmetric(horizontal: 16),
                   child: Text(
                     'My Animes',
-                    style: Theme.of(context).textTheme.headline4,
+                    style: Theme.of(context).textTheme.headlineMedium,
                   ),
                 ),
                 const SizedBox(height: 8),

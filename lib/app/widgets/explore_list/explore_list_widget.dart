@@ -1,7 +1,7 @@
-import 'package:flutter/material.dart';
 import 'package:bunnie/app/shared/models/explore_list.dart';
 import 'package:bunnie/app/utils/bunnie_colors.dart';
 import 'package:bunnie/app/widgets/rounded_image/rounded_image.dart';
+import 'package:flutter/material.dart';
 
 class ExploreListWidget extends StatelessWidget {
   final ExploreList exploreList;
@@ -10,19 +10,13 @@ class ExploreListWidget extends StatelessWidget {
       : super(key: key);
 
   double get _size {
-    if (exploreList.exploreListType == ExploreListType.anime) {
-      return 112;
-    } else {
-      return 136;
-    }
+    return exploreList.exploreListType == ExploreListType.anime ? 112 : 136;
   }
 
   String _imageUrl(dynamic item) {
-    if (exploreList.exploreListType == ExploreListType.anime) {
-      return item.coverImage.medium;
-    } else {
-      return item.imageUrl;
-    }
+    return exploreList.exploreListType == ExploreListType.anime
+        ? item.coverImage.medium
+        : item.imageUrl;
   }
 
   @override

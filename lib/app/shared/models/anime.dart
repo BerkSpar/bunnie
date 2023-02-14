@@ -32,7 +32,7 @@ class Anime {
   }
 
   Map<String, dynamic> toJson() {
-    final Map<String, dynamic> data = <String, dynamic>{};
+    final Map<String, dynamic> data = {};
     data['title'] = name;
     data['bannerImage'] = bannerImage;
     data['episodes'] = episodes;
@@ -40,6 +40,7 @@ class Anime {
     data['order'] = order;
     data['note'] = note;
     data['coverImage'] = coverImage?.toJson();
+
     return data;
   }
 }
