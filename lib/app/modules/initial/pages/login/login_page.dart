@@ -1,9 +1,8 @@
-import 'package:argon_buttons_flutter/argon_buttons_flutter.dart';
+import 'package:bunnie/app/utils/bunnie_colors.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_modular/flutter_modular.dart';
-import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:bunnie/app/utils/bunnie_colors.dart';
+
 import 'login_controller.dart';
 
 class LoginPage extends StatefulWidget {
@@ -125,17 +124,18 @@ class _LoginPageState extends State<LoginPage> {
                         SizedBox(
                           height: 48,
                           width: double.maxFinite,
-                          child: ArgonButton(
-                            height: 48,
-                            width: double.maxFinite,
-                            borderRadius: 8,
-                            color: BunnieColors.main.withGreen(130),
-                            onTap: controller.login,
-                            elevation: 0,
-                            loader: const SpinKitFadingCircle(
-                              color: Colors.white,
-                              size: 24,
-                            ),
+                          child: ElevatedButton(
+                            // height: 48,
+                            // width: double.maxFinite,
+                            // borderRadius: 8,
+                            // color: BunnieColors.main.withGreen(130),
+                            // onTap: controller.login,
+                            // elevation: 0,
+                            // loader: const SpinKitFadingCircle(
+                            //   color: Colors.white,
+                            //   size: 24,
+                            // ),
+                            onPressed: () => controller.login(),
                             child: const Text(
                               'Login',
                               style: TextStyle(

@@ -6,10 +6,11 @@ part of 'head_controller.dart';
 // StoreGenerator
 // **************************************************************************
 
-// ignore_for_file: non_constant_identifier_names, unnecessary_brace_in_string_interps, unnecessary_lambdas, prefer_expression_function_bodies, lines_longer_than_80_chars, avoid_as, avoid_annotating_with_dynamic
+// ignore_for_file: non_constant_identifier_names, unnecessary_brace_in_string_interps, unnecessary_lambdas, prefer_expression_function_bodies, lines_longer_than_80_chars, avoid_as, avoid_annotating_with_dynamic, no_leading_underscores_for_local_identifiers
 
 mixin _$HeadController on _HeadControllerBase, Store {
-  final _$indexAtom = Atom(name: '_HeadControllerBase.index');
+  late final _$indexAtom =
+      Atom(name: '_HeadControllerBase.index', context: context);
 
   @override
   int get index {
@@ -24,17 +25,17 @@ mixin _$HeadController on _HeadControllerBase, Store {
     });
   }
 
-  final _$_HeadControllerBaseActionController =
-      ActionController(name: '_HeadControllerBase');
+  late final _$_HeadControllerBaseActionController =
+      ActionController(name: '_HeadControllerBase', context: context);
 
   @override
-  dynamic switchPage(int id) {
-    final $actionInfo = _$_HeadControllerBaseActionController.startAction(
+  dynamic switchPage(int index) {
+    final _$actionInfo = _$_HeadControllerBaseActionController.startAction(
         name: '_HeadControllerBase.switchPage');
     try {
-      return super.switchPage(id);
+      return super.switchPage(index);
     } finally {
-      _$_HeadControllerBaseActionController.endAction($actionInfo);
+      _$_HeadControllerBaseActionController.endAction(_$actionInfo);
     }
   }
 
