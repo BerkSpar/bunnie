@@ -139,7 +139,7 @@ class _ProfilePageState extends State<ProfilePage> {
               post: post,
             );
           },
-        )
+        ),
       ],
     );
   }
